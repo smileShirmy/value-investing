@@ -1,0 +1,283 @@
+import {
+  ProfitValuationGrowthType,
+  type ProfitValuationGrowth,
+  type StockItem,
+  type ValuationData,
+} from "../../types";
+import { computed, ref } from "vue";
+import {
+  formatNum,
+  formatPercent,
+  numToAHundredMillion,
+} from "../../fetch-data/helper";
+import { type DynamicData } from "../../fetch-data/types";
+
+export interface ProfitValuationFutureData {
+  year: number;
+  profit: number;
+  displayProfit: number;
+  growth: number;
+  displayGrowth: number;
+  eps: number;
+  displayEps: number;
+}
+
+export class ProfitValuation {
+  growth = ref<ProfitValuationGrowth>({
+    type: ProfitValuationGrowthType.RATE,
+    data: [],
+  });
+
+  // 上一年利润
+  private prevYearProfit: number;
+
+  // 上一年年份
+  private prevYear: number;
+
+  // 每股现金
+  cashPerShare: number;
+
+  price = 0;
+
+  tableData = ref<ProfitValuationFutureData[]>([]);
+
+  totalSharesOutstanding: number;
+
+  backYearsNum = ref<number>(8);
+
+  // 合计未来 n 年 eps
+  sumEps = computed(() => {
+    const rest = this.backYearsNum.value % 1;
+    const years = Math.floor(this.backYearsNum.value);
+    let sum = 0;
+    for (let i = 0; i < years; i += 1) {
+      sum += this.tableData.value[i].eps;
+    }
+    if (rest > 0) {
+      sum += rest * this.tableData.value[years].eps;
+    }
+    return formatNum(sum, 2);
+  });
+
+  // 锚点
+  anchor = computed(() => {
+    return this.sumEps.value;
+  });
+
+  // 击球区边缘
+  battingEdge = computed(() => formatNum(this.anchor.value * 1.05, 2));
+
+  // 还可以跌
+  couldFallAnother = computed(() => {
+    const percent = ((this.price - this.anchor.value) / this.price) * 100;
+    return formatPercent(-percent);
+  });
+
+  // 当前股价长期平均收益率
+  longTermAverageReturnYieldWithPrice = computed(() => {
+    const result =
+      (this.anchor.value + (this.anchor.value - this.price)) /
+      this.backYearsNum.value /
+      this.anchor.value;
+    return formatPercent(result * 100);
+  });
+
+  // 预期锚点收益率
+  longTermAverageReturnYieldWithAnchor = computed(() => {
+    const result = 1 / this.backYearsNum.value;
+    return formatPercent(result * 100);
+  });
+
+  constructor(
+    valuationData: ValuationData,
+    stockItem: StockItem,
+    dynamicData: DynamicData,
+    growth?: ProfitValuationGrowth
+  ) {
+    if (growth) {
+      this.growth.value = growth;
+    }
+
+    if (stockItem.profitValuationConfig) {
+      this.backYearsNum.value = stockItem.profitValuationConfig.backYearsNum;
+    }
+
+    const lastData =
+      valuationData.historyData[valuationData.historyData.length - 1];
+
+    this.prevYearProfit = numToAHundredMillion(lastData.profit, 8);
+    this.prevYear = Number(lastData.year);
+
+    this.totalSharesOutstanding = numToAHundredMillion(
+      dynamicData.totalSharesOutstanding,
+      8
+    );
+
+    this.price = dynamicData.price;
+
+    this.cashPerShare = formatNum(
+      valuationData.cash / dynamicData.totalSharesOutstanding,
+      2
+    );
+
+    this.initTable();
+  }
+
+  initTable() {
+    const data: ProfitValuationFutureData[] = [];
+    let prevProfit = this.prevYearProfit;
+
+    for (let i = 0; i < 20; i += 1) {
+      let growthRate = 0;
+      let profit = 0;
+      const growth = this.growth.value;
+
+      // 按增长率推算
+      if (growth.type === ProfitValuationGrowthType.RATE) {
+        growthRate = growth.data[i] ?? growth.data[growth.data.length - 1] ?? 0;
+        profit = prevProfit * (1 + growthRate);
+      }
+      // 按利润推算
+      else if (growth.type === ProfitValuationGrowthType.PROFIT) {
+        profit = growth.data[i] ?? growth.data[i - 1] ?? prevProfit;
+        growthRate = (profit - prevProfit) / prevProfit;
+      }
+
+      const eps = profit / this.totalSharesOutstanding;
+      const profitValue = profit;
+      const growthValue = growthRate * 100;
+
+      data.push({
+        year: this.prevYear + i + 1,
+        profit: profitValue,
+        displayProfit: formatNum(profitValue, 2),
+        growth: growthValue,
+        displayGrowth: formatNum(growthValue, 2),
+        eps,
+        displayEps: formatNum(eps, 2),
+      });
+
+      prevProfit = profit;
+    }
+
+    this.tableData.value = data;
+  }
+
+  handleFocus(
+    row: ProfitValuationFutureData,
+    displayKey: keyof ProfitValuationFutureData,
+    rawKey: keyof ProfitValuationFutureData
+  ) {
+    row[displayKey] = row[rawKey];
+  }
+
+  dynamicPE(row: ProfitValuationFutureData) {
+    return formatNum(this.price / row.eps, 2);
+  }
+
+  handleBlur(
+    row: ProfitValuationFutureData,
+    displayKey: keyof ProfitValuationFutureData,
+    rawKey: keyof ProfitValuationFutureData
+  ) {
+    const num = formatNum(row[rawKey], 2);
+    if (!isNaN(num)) {
+      row[displayKey] = Math.floor(num * 100) / 100;
+    } else {
+      row[displayKey] = row[rawKey];
+    }
+  }
+
+  updateCell(
+    index: number,
+    field: keyof ProfitValuationFutureData,
+    event: Event
+  ) {
+    let value = 0;
+    if (event.target instanceof HTMLInputElement) {
+      value = parseFloat(event.target.value);
+    }
+    if (typeof value !== "number") return;
+
+    const row = this.tableData.value[index];
+    const prevProfit =
+      index === 0
+        ? this.prevYearProfit
+        : this.tableData.value[index - 1].profit;
+
+    // 根据修改的字段重新计算
+    switch (field) {
+      case "profit":
+        // 修改净利润 → 计算增长率和每股收益
+        row.profit = value;
+        row.displayProfit = value; // 实时显示原始输入
+        row.growth = prevProfit ? ((value - prevProfit) / prevProfit) * 100 : 0;
+        row.displayGrowth = formatNum(row.growth, 2);
+        row.eps = this.totalSharesOutstanding
+          ? value / this.totalSharesOutstanding
+          : 0;
+        row.displayEps = formatNum(row.eps, 2);
+        break;
+
+      case "growth":
+        // 修改增长率 → 计算净利润和每股收益
+        row.growth = value;
+        row.displayGrowth = value;
+        row.profit = prevProfit * (1 + value / 100);
+        row.displayProfit = formatNum(row.profit, 2);
+        row.eps = this.totalSharesOutstanding
+          ? row.profit / this.totalSharesOutstanding
+          : 0;
+        row.displayEps = formatNum(row.eps, 2);
+        break;
+
+      case "eps":
+        // 修改每股收益 → 计算净利润和增长率
+        row.eps = value;
+        row.displayEps = value;
+        row.profit = value * this.totalSharesOutstanding;
+        row.displayProfit = formatNum(row.profit, 2);
+        row.growth = prevProfit
+          ? ((row.profit - prevProfit) / prevProfit) * 100
+          : 0;
+        row.displayEps = formatNum(row.growth, 2);
+        break;
+    }
+
+    // 更新当前行后，重新计算后续所有行(增长率不受影响，因此不计算)
+    this.recalculateFrom(index + 1);
+
+    this.recalculateOther();
+  }
+
+  // 从指定行开始重新计算后续所有行(增长率不受影响，因此不计算)
+  recalculateFrom(startIndex: number) {
+    let prevProfit =
+      startIndex === 0
+        ? this.prevYearProfit
+        : this.tableData.value[startIndex - 1].profit;
+
+    for (let i = startIndex; i < this.tableData.value.length; i++) {
+      const row = this.tableData.value[i];
+      row.profit = prevProfit * (1 + row.growth / 100);
+      row.displayProfit = formatNum(row.profit, 2);
+      row.eps = this.totalSharesOutstanding
+        ? row.profit / this.totalSharesOutstanding
+        : 0;
+      row.displayEps = formatNum(row.eps, 2);
+
+      prevProfit = row.profit;
+    }
+  }
+
+  recalculateOther() {
+    let sumDiscountingProfit = 0;
+    let sumDividend = 0;
+
+    for (let i = 0; i < this.tableData.value.length; i++) {
+      const row = this.tableData.value[i];
+
+      //
+    }
+  }
+}

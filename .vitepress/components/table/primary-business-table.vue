@@ -1,0 +1,172 @@
+<script setup lang="ts">
+import { ref } from "vue";
+import AppTable, { type TableColumn } from "../shared/app-table.vue";
+import { data } from "../../service/data";
+import { computed } from "vue";
+
+const props = defineProps<{
+  code: keyof typeof data;
+}>();
+
+const primaryBusinessData = data[props.code].primaryBusinessData;
+
+// 定义表格列
+const columns: TableColumn[] = [
+  {
+    key: "year",
+    title: "年份",
+    merge: {
+      enable: true,
+    },
+  },
+  // {
+  //   key: "mainType",
+  //   title: "行业、产品、地区",
+  //   merge: {
+  //     enable: true,
+  //   },
+  // },
+  {
+    key: "itemName",
+    title: "类型",
+  },
+  {
+    key: "mainBusinessIncome",
+    title: "主营收入",
+    formatter: (value: number) => (value / 100000000).toFixed(2),
+  },
+  {
+    key: "mbiRatio",
+    title: "收入比例",
+    formatter: (value: number) =>
+      isNaN(value) ? "-" : (value * 100).toFixed(2) + "%",
+  },
+  {
+    key: "mainBusinessCost",
+    title: "主营成本",
+    formatter: (value: number) => (value / 100000000).toFixed(2),
+  },
+  {
+    key: "mbcRatio",
+    title: "成本比例",
+    formatter: (value: number) =>
+      isNaN(value) ? "-" : (value * 100).toFixed(2) + "%",
+  },
+  {
+    key: "mainBusinessProfit",
+    title: "主营利润",
+    formatter: (value: number) => (value / 100000000).toFixed(2),
+  },
+  {
+    key: "mbpRatio",
+    title: "利润比例",
+    formatter: (value: number) =>
+      isNaN(value) ? "-" : (value * 100).toFixed(2) + "%",
+  },
+  {
+    key: "grossProfitRatio",
+    title: "毛利率",
+    formatter: (value: number) =>
+      isNaN(value) ? "-" : (value * 100).toFixed(2) + "%",
+  },
+];
+
+// 计算表格数据
+const tableData = computed(() => {
+  // 确保数据按报告期降序排列
+  return [...primaryBusinessData].sort((a, b) => {
+    // 假设报告期格式为 "YYYY-MM-DD" 或类似可比较的字符串格式
+    return a.year.localeCompare(b.year);
+  });
+});
+
+const industryTableData = computed(() =>
+  tableData.value.filter((v) => v.mainType === "行业")
+);
+
+const productTableData = computed(() =>
+  tableData.value.filter((v) => v.mainType === "产品")
+);
+
+const regionTableData = computed(() =>
+  tableData.value.filter((v) => v.mainType === "地区")
+);
+
+const activeTab = ref<"industry" | "product" | "region">("industry");
+
+const currentTableData = computed(() => {
+  switch (activeTab.value) {
+    case "industry":
+      return industryTableData.value;
+    case "product":
+      return productTableData.value;
+    case "region":
+      return regionTableData.value;
+  }
+});
+
+const currentCaption = computed(() => {
+  switch (activeTab.value) {
+    case "industry":
+      return `${props.code} 主营业务数据（行业）`;
+    case "product":
+      return `${props.code} 主营业务数据（产品）`;
+    case "region":
+      return `${props.code} 主营业务数据（地区）`;
+  }
+});
+</script>
+
+<template>
+  <div class="tabs">
+    <button
+      :class="{ active: activeTab === 'industry' }"
+      @click="activeTab = 'industry'"
+    >
+      行业
+    </button>
+    <button
+      :class="{ active: activeTab === 'product' }"
+      @click="activeTab = 'product'"
+    >
+      产品
+    </button>
+    <button
+      :class="{ active: activeTab === 'region' }"
+      @click="activeTab = 'region'"
+    >
+      地区
+    </button>
+  </div>
+
+  <AppTable
+    v-if="currentTableData.length"
+    :data="currentTableData"
+    :columns="columns"
+    :caption="currentCaption"
+    default-selected-key="mainBusinessIncome"
+    group-key="itemName"
+  />
+</template>
+
+<style scoped>
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.tabs button {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.tabs button.active {
+  background: #1890ff;
+  color: white;
+  border-color: #1890ff;
+}
+</style>

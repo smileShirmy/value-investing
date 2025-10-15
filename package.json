@@ -1,0 +1,20 @@
+{
+  "scripts": {
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview",
+    "fetch-data": "tsx fetch-data/fetch-stock-data.ts",
+    "handle-data": "tsx fetch-data/handle-stock-data.ts",
+    "update-data": "pnpm run fetch-data & pnpm run handle-data"
+  },
+  "devDependencies": {
+    "sass-embedded": "^1.92.1",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2",
+    "vitepress": "^1.6.4"
+  },
+  "dependencies": {
+    "axios": "^1.11.0",
+    "echarts": "^6.0.0"
+  }
+}
