@@ -1,10 +1,24 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, onBeforeMount, ref } from "vue";
+import {
+  getDynamicData,
+  getExchangeRate,
+} from "../../../fetch-data/fetch-stock-data";
 import { formatNum, formatPercent } from "../../../fetch-data/helper";
 import { data } from "../../service/data";
 
+const props = withDefaults(
+  defineProps<{
+    currentValue?: boolean; // 当前股价模式
+  }>(),
+  {
+    currentValue: false,
+  }
+);
+
 interface BasicItem {
   code: keyof typeof data;
+  hkCode?: string;
   name: string;
   costBasis: number; // 持有成本
   sharesHeld: number; // 持有股数
@@ -40,7 +54,7 @@ interface portfolio {
   perspectiveSurplusRate: number; // 透视盈余收益率
 }
 
-const basicStocks: BasicItem[] = [
+const basicStocks = ref<BasicItem[]>([
   {
     code: "000858",
     name: "五粮液",
@@ -57,6 +71,7 @@ const basicStocks: BasicItem[] = [
   },
   {
     code: "600938",
+    hkCode: "00883",
     name: "中国海洋石油H",
     // costBasis: 18.436, // 16.8898
     costBasis: 16.8898,
@@ -72,6 +87,7 @@ const basicStocks: BasicItem[] = [
   },
   {
     code: "601919",
+    hkCode: "01919",
     name: "中远海控H",
     // costBasis: 12.091, // 11.0769
     costBasis: 11.0769,
@@ -106,15 +122,37 @@ const basicStocks: BasicItem[] = [
     sharesHeld: 200,
     dividendTaxRatio: 0,
   },
-];
+]);
+
+const useCurrentValue = async () => {
+  const codes = basicStocks.value.map((v) => (v.hkCode ? v.hkCode : v.code));
+  const arr = await getDynamicData(codes);
+  const exchangeRate = await getExchangeRate();
+
+  for (let i = 0; i < basicStocks.value.length; i += 1) {
+    const item = basicStocks.value[i];
+    if (item.hkCode) {
+      // H 股的价格转换为 A 股的价格
+      item.costBasis = arr[i].price / exchangeRate;
+    } else {
+      item.costBasis = arr[i].price;
+    }
+  }
+};
+
+onBeforeMount(() => {
+  if (props.currentValue) {
+    useCurrentValue();
+  }
+});
 
 const portfolio = computed<portfolio>(() => {
-  const sumShareHoldingValue = basicStocks.reduce((pre, cur) => {
+  const sumShareHoldingValue = basicStocks.value.reduce((pre, cur) => {
     const value = cur.costBasis * cur.sharesHeld;
     return pre + value;
   }, 0);
 
-  const stocks: StockItem[] = basicStocks.map((v) => {
+  const stocks: StockItem[] = basicStocks.value.map((v) => {
     const { valuationData, dynamicData, recentYearData } = data[v.code];
     const lastValuationHistoryData =
       valuationData.historyData[valuationData.historyData.length - 1];
@@ -194,13 +232,15 @@ const portfolio = computed<portfolio>(() => {
     <section>
       <table class="valuation-table">
         <caption>
-          持仓组合透视盈余
+          {{
+            props.currentValue ? "当前股价" : ""
+          }}持仓组合透视盈余
         </caption>
         <thead>
           <tr>
             <th>序列号</th>
             <th>持股公司</th>
-            <th>持仓成本</th>
+            <th>{{ props.currentValue ? "当前股价" : "持仓成本" }}</th>
             <th>持有股数</th>
             <th>持仓金额</th>
             <th>持股比例</th>
@@ -218,7 +258,9 @@ const portfolio = computed<portfolio>(() => {
           <tr v-for="(item, i) in portfolio.stocks" :keys="i">
             <td>{{ i + 1 }}</td>
             <td class="bold-td">{{ item.name }}</td>
-            <td class="bold-td cost-basis">{{ item.costBasis }}</td>
+            <td class="bold-td cost-basis">
+              {{ formatNum(item.costBasis, 3) }}
+            </td>
             <td class="bold-td">{{ item.sharesHeld }}</td>
             <td>{{ formatNum(item.shareholdingValue, 2) }}</td>
             <td class="bold-td">
@@ -305,14 +347,16 @@ const portfolio = computed<portfolio>(() => {
       </table>
 
       <table class="valuation-table surplus-table">
-        <tr>
-          <td>透视盈余</td>
-          <td>{{ formatNum(portfolio.perspectiveSurplus, 2) }}</td>
-        </tr>
-        <tr>
-          <td>透视盈余收益率</td>
-          <td>{{ formatPercent(portfolio.perspectiveSurplusRate * 100) }}</td>
-        </tr>
+        <tbody>
+          <tr>
+            <td>透视盈余</td>
+            <td>{{ formatNum(portfolio.perspectiveSurplus, 2) }}</td>
+          </tr>
+          <tr>
+            <td>透视盈余收益率</td>
+            <td>{{ formatPercent(portfolio.perspectiveSurplusRate * 100) }}</td>
+          </tr>
+        </tbody>
       </table>
     </section>
   </div>

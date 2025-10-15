@@ -129,7 +129,7 @@ interface DynamicDataResponse {
 // secids=0.000001  // 平安银行（000001.SZ）
 // secids=1.600519  // 贵州茅台（600519.SH）
 // secids=1.600519,0.000001,116.00700,AAPL
-async function getDynamicData(codes: string[]): Promise<DynamicData[]> {
+export async function getDynamicData(codes: string[]): Promise<DynamicData[]> {
   const secids = stocksToSecIds(codes);
 
   const res = await axios.get(
@@ -265,6 +265,23 @@ async function getDividend(
     return res.data.result.data;
   }
   return null;
+}
+
+/**
+ * 获取人民币和港币汇率
+ */
+export async function getExchangeRate() {
+  const res = await axios.get(
+    "https://push2.eastmoney.com/api/qt/ulist.np/get",
+    {
+      params: {
+        fields: "f2",
+        secids: "133.CNHHKD",
+        v: v(),
+      },
+    }
+  );
+  return res.data.data.diff[0].f2 / 10000;
 }
 
 async function fetchAStockData(stockItem: StockItem) {
