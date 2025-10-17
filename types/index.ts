@@ -70,29 +70,6 @@ export const stockData: StockItem[] = [
     },
   },
   {
-    name: "美的集团",
-    code: "000333",
-    profitValuationConfig: {
-      specialOffer: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [0],
-      },
-      conservative: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [0.05],
-      },
-      neutral: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [0.07],
-      },
-      optimistic: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [0.09],
-      },
-      backYearsNum: 9,
-    },
-  },
-  {
     name: "海尔智家",
     code: "600690",
     profitValuationConfig: {
@@ -116,6 +93,29 @@ export const stockData: StockItem[] = [
     },
   },
   {
+    name: "美的集团",
+    code: "000333",
+    profitValuationConfig: {
+      specialOffer: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0],
+      },
+      conservative: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.05],
+      },
+      neutral: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.07],
+      },
+      optimistic: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.09],
+      },
+      backYearsNum: 9,
+    },
+  },
+  {
     name: "比亚迪",
     code: "002594",
     profitValuationConfig: {
@@ -135,7 +135,7 @@ export const stockData: StockItem[] = [
         type: ProfitValuationGrowthType.RATE,
         data: [0.15],
       },
-      backYearsNum: 9,
+      backYearsNum: 10,
     },
   },
   {

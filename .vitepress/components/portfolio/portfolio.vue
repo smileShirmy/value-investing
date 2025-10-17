@@ -102,6 +102,13 @@ const basicStocks = ref<BasicItem[]>([
     dividendTaxRatio: 0,
   },
   {
+    code: "002594",
+    name: "比亚迪",
+    costBasis: 104.561,
+    sharesHeld: 100,
+    dividendTaxRatio: 0,
+  },
+  {
     code: "600690",
     name: "海尔智家",
     costBasis: 25.023,
