@@ -1,4 +1,4 @@
-# 格力电器
+# 盐湖股份
 
 ## 综合信息
 
@@ -48,7 +48,7 @@
 
 ### 一、基本营收数据
 
-<BasicRevenueTable code="000651" />
+<BasicRevenueTable code="000792" />
 
 1. 看收入、净利润和利润率
 2. 看收入利润发展过程
@@ -65,7 +65,7 @@
 
 ### 二、成本费用构成
 
-<CostsExpensesTable code="000651" />
+<CostsExpensesTable code="000792" />
 
 1. 研发资本化往往被诟病为操纵利润，需特别注意，研发费用资本化放在开发费用中
 2. 看研发费用总额变化
@@ -85,11 +85,11 @@
 
 更详细的数据需要查阅财报。
 
-<PrimaryBusinessTable code="000651"/>
+<PrimaryBusinessTable code="000792"/>
 
 ### 五、资产负债
 
-<BalanceTable code="000651" />
+<BalanceTable code="000792" />
 
 1. 总资产（轻资产还是重资产，业绩优秀、资产不“重”的企业来说，信息量不多，看一眼就够了。）
 2. 债务（行业欣欣向荣、利润现金流好的龙头公司无须过度关注。有息债务是多少？现金流是否充沛？）
@@ -100,7 +100,7 @@
 
 #### WC
 
-<WorkingCapitalTable code="000651" />
+<WorkingCapitalTable code="000792" />
 
 把企业看成一个投入产出系统，目的是服务客户，客户满意，企业获得收入，实现商业循环。
 
@@ -132,7 +132,7 @@ WC 是实际经营性流动资产减去经营性流动负债，衡量净流动�
 
 #### 固定资产
 
-<FixedAssetInvestmentAnalysisTable  code="000651"/>
+<FixedAssetInvestmentAnalysisTable  code="000792"/>
 
 这里的数据还是用期末数，如果特别重要，也就是资产特别“重”​，数字变动剧烈的，考虑采用期间数 ​（期初+期末）/2
 
@@ -178,13 +178,13 @@ ROE、ROA 我们常用，ROIC 用得少一点，主要是 ROIC 数据需要处�
 
 ROIC 只要与 ROE 同步就问题不大，由于 ROIC 的拆解比较复杂，非专业投资人看看指标就好，如果偏离很大，就需要去找找原因。科沃斯这里差不多，我们就不浪费时间了。
 
-<ReturnTable code="000651" />
+<ReturnTable code="000792" />
 
 如果有精力，可对资产周转率进一步拆解，资产周转率代表资产效率，拆解后可以对资产效率变化的原因有进一步了解。
 
 想拆解资产周转率指标，首先准备平均资产数据。平均资产数=（期初数+期末数）/2，周转天数=365× 资产/收入或者主营业务成本，存货对应主营业务成本，其他对应销售收入。
 
-<TurnoverRateTable code="000651" />
+<TurnoverRateTable code="000792" />
 
 ## 非财务信息“八问”
 
@@ -220,49 +220,9 @@ ROIC 只要与 ROE 同步就问题不大，由于 ROIC 的拆解比较复杂，�
 
 未来会怎样，对未来做出预测
 
-## 同行对比
-
-<CompareDataTable :codes="['600690', '000651', '000333']" />
-
-1. 对比营业收入及增速
-2. 对比净利润及增速
-3. 对比净利率、毛利率、期间费用率
-4. 对比销售费用、研发费用
-5. 对比 1 元收入所需 WC
-
-<ComparePrimaryBusinessTable :codes="[
-  { code: '600690', compareItems: {
-      industry: [],
-      product: ['空调'],
-      region: ['内', '外'] 
-    }
-  },
-  { code: '000651', compareItems: {
-      industry: [],
-      product: ['空调', '消费电器'],
-      region: ['内', '外']
-    }
-  },
-  { code: '000333', compareItems: {
-      industry: [],
-      product: ['空调', '智能家居'],
-      region: ['内', '外']
-    }
-  }
-]" />
-
-1. 对比主营业务分析
-
-<CompareTurnoverRateTable :codes="['600690', '000651', '000333']" />
-
-1. 对比周转率分析
-2. 对比 1 元收入需要的固定资产分析
-
-<CompareReturnTable :codes="['600690', '000651', '000333']" />
-
-1. 对比 ROE，ROIC 分析
-
 ## 估值和结论
+
+<ProfitValuationGroup code="000792" />
 
 ## 零散思考
 

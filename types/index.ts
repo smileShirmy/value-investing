@@ -158,6 +158,29 @@ export const stockData: StockItem[] = [
     name: "中国神华",
     code: "601088",
   },
+  {
+    name: "盐湖股份",
+    code: "000792",
+    profitValuationConfig: {
+      specialOffer: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.35, 0.05],
+      },
+      conservative: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.35, 0.1],
+      },
+      neutral: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.35, 0.12],
+      },
+      optimistic: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.35, 0.15],
+      },
+      backYearsNum: 10,
+    },
+  },
 ];
 
 export const getStockItem = (code: string) => {

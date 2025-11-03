@@ -61,6 +61,15 @@ export default defineConfig({
           text: "分析示例",
           items: [{ text: "格力", link: "/company/example/gree.md" }],
         },
+        {
+          text: "农业化工",
+          items: [
+            {
+              text: "盐湖股份",
+              link: "/company/agricultural-chemicals/yanhu.md",
+            },
+          ],
+        },
       ],
     },
 
