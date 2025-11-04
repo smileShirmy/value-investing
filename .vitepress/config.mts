@@ -37,7 +37,16 @@ export default defineConfig({
         {
           text: "白酒",
           items: [
+            {
+              text: "白酒",
+              link: "/company/chinese-sprites/chinese-sprites.md",
+            },
+            { text: "贵州茅台", link: "/company/chinese-sprites/moutai.md" },
             { text: "五粮液", link: "/company/chinese-sprites/wuliangye.md" },
+            {
+              text: "泸州老窖",
+              link: "/company/chinese-sprites/luzhoulaojiao.md",
+            },
             { text: "古井贡", link: "/company/chinese-sprites/gujinggong.md" },
             // { text: "科沃斯", link: "/company/chinese-sprites/kewosi.md" },
           ],

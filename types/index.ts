@@ -43,8 +43,16 @@ export const stockData: StockItem[] = [
     code: "603486",
   },
   {
+    name: "贵州茅台",
+    code: "600519",
+  },
+  {
     name: "五粮液",
     code: "000858",
+  },
+  {
+    name: "泸州老窖",
+    code: "000568",
   },
   {
     name: "格力电器",
