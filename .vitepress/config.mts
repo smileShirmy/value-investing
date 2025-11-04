@@ -38,6 +38,7 @@ export default defineConfig({
           text: "白酒",
           items: [
             { text: "五粮液", link: "/company/chinese-sprites/wuliangye.md" },
+            { text: "古井贡", link: "/company/chinese-sprites/gujinggong.md" },
             // { text: "科沃斯", link: "/company/chinese-sprites/kewosi.md" },
           ],
         },

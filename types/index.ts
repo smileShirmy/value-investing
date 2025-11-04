@@ -164,21 +164,44 @@ export const stockData: StockItem[] = [
     profitValuationConfig: {
       specialOffer: {
         type: ProfitValuationGrowthType.RATE,
-        data: [0.35, 0.05],
+        data: [0.35, 0.03],
       },
       conservative: {
         type: ProfitValuationGrowthType.RATE,
-        data: [0.35, 0.1],
+        data: [0.35, 0.08],
       },
       neutral: {
         type: ProfitValuationGrowthType.RATE,
-        data: [0.35, 0.12],
+        data: [0.35, 0.1],
       },
       optimistic: {
         type: ProfitValuationGrowthType.RATE,
-        data: [0.35, 0.15],
+        data: [0.35, 0.12],
       },
       backYearsNum: 10,
+    },
+  },
+  {
+    name: "古井贡酒",
+    code: "000596",
+    profitValuationConfig: {
+      specialOffer: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [-0.2, 0],
+      },
+      conservative: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [-0.2, 0.05],
+      },
+      neutral: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [-0.2, 0.09],
+      },
+      optimistic: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [-0.2, 0.12],
+      },
+      backYearsNum: 8,
     },
   },
 ];
