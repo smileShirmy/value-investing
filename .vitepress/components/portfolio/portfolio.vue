@@ -20,6 +20,7 @@ interface BasicItem {
   code: keyof typeof data;
   hkCode?: string;
   name: string;
+  industry: string; // 行业
   costBasis: number; // 持有成本
   sharesHeld: number; // 持有股数
   dividendTaxRatio: number; // 股息税率
@@ -28,6 +29,8 @@ interface BasicItem {
 interface StockItem extends BasicItem {
   shareholdingValue: number; // 持有市值
   shareholdingRatio: number; // 持股比例
+  industryRatio: number;
+  rowspan: number;
   dps: number; // 每股分红
   eps: number; // 每股净利润
   dividend: number; // 股息
@@ -58,6 +61,7 @@ const basicStocks = ref<BasicItem[]>([
   {
     code: "000858",
     name: "五粮液",
+    industry: "白酒",
     costBasis: 122.819,
     sharesHeld: 400,
     dividendTaxRatio: 0,
@@ -65,14 +69,33 @@ const basicStocks = ref<BasicItem[]>([
   {
     code: "000651",
     name: "格力电器",
+    industry: "白色家电",
     costBasis: 41.02,
     sharesHeld: 800,
+    dividendTaxRatio: 0,
+  },
+  {
+    code: "002594",
+    name: "比亚迪",
+    industry: "乘用车",
+    costBasis: 99.86,
+    sharesHeld: 200,
+    dividendTaxRatio: 0,
+  },
+  {
+    code: "000596",
+    hkCode: "200596",
+    industry: "白酒",
+    name: "古井贡B",
+    costBasis: 87.9687, // 11.0769
+    sharesHeld: 200,
     dividendTaxRatio: 0,
   },
   {
     code: "600938",
     hkCode: "00883",
     name: "中国海洋石油H",
+    industry: "能源",
     // costBasis: 18.436, // 16.8898
     costBasis: 16.4654,
     sharesHeld: 1000,
@@ -81,6 +104,7 @@ const basicStocks = ref<BasicItem[]>([
   {
     code: "600900",
     name: "长江电力",
+    industry: "电力",
     costBasis: 27.855,
     sharesHeld: 600,
     dividendTaxRatio: 0,
@@ -89,6 +113,7 @@ const basicStocks = ref<BasicItem[]>([
     code: "601919",
     hkCode: "01919",
     name: "中远海控H",
+    industry: "航运",
     // costBasis: 12.091, // 11.0769
     costBasis: 11.1144,
     sharesHeld: 1000,
@@ -97,35 +122,23 @@ const basicStocks = ref<BasicItem[]>([
   {
     code: "600886",
     name: "国投电力",
+    industry: "电力",
     costBasis: 13.429,
     sharesHeld: 800,
     dividendTaxRatio: 0,
   },
   {
-    code: "002594",
-    name: "比亚迪",
-    costBasis: 104.561,
-    sharesHeld: 100,
-    dividendTaxRatio: 0,
-  },
-  {
     code: "600690",
     name: "海尔智家",
+    industry: "白色家电",
     costBasis: 25.023,
     sharesHeld: 400,
     dividendTaxRatio: 0,
   },
   {
-    code: "000596",
-    hkCode: "200596",
-    name: "古井贡B",
-    costBasis: 88.4401, // 11.0769
-    sharesHeld: 100,
-    dividendTaxRatio: 0,
-  },
-  {
     code: "601088",
     name: "中国神华",
+    industry: "能源",
     costBasis: 35.045,
     sharesHeld: 200,
     dividendTaxRatio: 0,
@@ -133,6 +146,7 @@ const basicStocks = ref<BasicItem[]>([
   {
     code: "601919",
     name: "中远海控",
+    industry: "航运",
     costBasis: 15.335, // 11.0769
     sharesHeld: 200,
     dividendTaxRatio: 0,
@@ -167,41 +181,71 @@ const portfolio = computed<portfolio>(() => {
     return pre + value;
   }, 0);
 
-  const stocks: StockItem[] = basicStocks.value.map((v) => {
-    const { valuationData, dynamicData, recentYearData } = data[v.code];
-    const lastValuationHistoryData =
-      valuationData.historyData[valuationData.historyData.length - 1];
-    // 每股分红
-    const dps =
-      lastValuationHistoryData.totalDividend /
-      dynamicData.totalSharesOutstanding;
+  const sortedStocks: Omit<StockItem, "industryRatio" | "rowspan">[] =
+    basicStocks.value
+      .map((v) => {
+        const { valuationData, dynamicData, recentYearData } = data[v.code];
+        const lastValuationHistoryData =
+          valuationData.historyData[valuationData.historyData.length - 1];
+        // 每股分红
+        const dps =
+          lastValuationHistoryData.totalDividend /
+          dynamicData.totalSharesOutstanding;
 
-    const shareholdingValue = v.costBasis * v.sharesHeld;
-    const eps = recentYearData.netProfit / dynamicData.totalSharesOutstanding;
+        const shareholdingValue = v.costBasis * v.sharesHeld;
+        const eps =
+          recentYearData.netProfit / dynamicData.totalSharesOutstanding;
 
-    const dividend = dps * v.sharesHeld;
-    const dividendTax = dividend * v.dividendTaxRatio;
-    const netDividend = dividend - dividendTax;
-    const dividendRate = netDividend / shareholdingValue;
-    const holdingNetProfit = eps * v.sharesHeld;
-    const retainedNetProfit = holdingNetProfit - dividend;
-    const paybackPeriod = v.costBasis / eps;
+        const dividend = dps * v.sharesHeld;
+        const dividendTax = dividend * v.dividendTaxRatio;
+        const netDividend = dividend - dividendTax;
+        const dividendRate = netDividend / shareholdingValue;
+        const holdingNetProfit = eps * v.sharesHeld;
+        const retainedNetProfit = holdingNetProfit - dividend;
+        const paybackPeriod = v.costBasis / eps;
 
-    return {
-      ...v,
-      shareholdingValue,
-      shareholdingRatio: shareholdingValue / sumShareHoldingValue,
-      dps,
-      eps,
-      dividend,
-      dividendTax,
-      netDividend,
-      dividendRate,
-      holdingNetProfit,
-      retainedNetProfit,
-      paybackPeriod,
-    };
-  });
+        return {
+          ...v,
+          shareholdingValue,
+          shareholdingRatio: shareholdingValue / sumShareHoldingValue,
+          dps,
+          eps,
+          dividend,
+          dividendTax,
+          netDividend,
+          dividendRate,
+          holdingNetProfit,
+          retainedNetProfit,
+          paybackPeriod,
+        };
+      })
+      .sort((a, b) => b.shareholdingValue - a.shareholdingValue);
+
+  const industryMap = new Map<
+    string,
+    Omit<StockItem, "industryRatio" | "rowspan">[]
+  >();
+  for (const stock of sortedStocks) {
+    const exist = industryMap.get(stock.industry);
+    if (exist) {
+      exist.push(stock);
+    } else {
+      industryMap.set(stock.industry, [stock]);
+    }
+  }
+  const stocks: StockItem[] = [];
+  for (const arr of Array.from(industryMap.values())) {
+    const total = arr.reduce((pre, cur) => pre + cur.shareholdingValue, 0);
+    stocks.push(
+      ...arr.map((v, i) => {
+        return {
+          ...v,
+          rowspan: i === 0 ? arr.length : 0,
+          industryRatio: total / sumShareHoldingValue,
+        };
+      })
+    );
+  }
 
   let sumNetDividend = 0;
   let sumDividendTax = 0;
@@ -259,6 +303,8 @@ const portfolio = computed<portfolio>(() => {
             <th>持有股数</th>
             <th>持仓金额</th>
             <th>持股比例</th>
+            <th>行业</th>
+            <th>行业比例</th>
             <th>预计分红</th>
             <th>每股净利润</th>
             <th>股息率</th>
@@ -281,6 +327,12 @@ const portfolio = computed<portfolio>(() => {
             <td class="bold-td">
               {{ formatPercent(item.shareholdingRatio * 100) }}
             </td>
+            <td v-if="item.rowspan > 0" :rowspan="item.rowspan" class="bold-td">
+              {{ item.industry }}
+            </td>
+            <td v-if="item.rowspan > 0" :rowspan="item.rowspan" class="bold-td">
+              {{ formatPercent(item.industryRatio * 100) }}
+            </td>
             <td class="dps">{{ formatNum(item.dps, 2).toFixed(2) }}</td>
             <td class="eps">{{ formatNum(item.eps, 2).toFixed(2) }}</td>
             <td>{{ formatPercent(item.dividendRate * 100) }}</td>
@@ -294,11 +346,13 @@ const portfolio = computed<portfolio>(() => {
             <td></td>
             <td></td>
             <td></td>
-            <td class="bold-td">组合总成本</td>
+            <td class="bold-td">组合总市值</td>
             <td>
               {{ formatNum(portfolio.sumShareHoldingValue, 2).toFixed(2) }}
             </td>
             <td>100.00%</td>
+            <td></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -319,6 +373,8 @@ const portfolio = computed<portfolio>(() => {
             </td>
           </tr>
           <tr class="bold-tr">
+            <td></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -352,6 +408,8 @@ const portfolio = computed<portfolio>(() => {
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
+            <td></td>
             <td>股息税率</td>
             <td class="sum-dividend-rate">组合股息率</td>
             <td class="sum-holding-net-profit-margin">总收益率</td>
@@ -361,18 +419,22 @@ const portfolio = computed<portfolio>(() => {
         </tbody>
       </table>
 
-      <table class="valuation-table surplus-table">
-        <tbody>
-          <tr>
-            <td>透视盈余</td>
-            <td>{{ formatNum(portfolio.perspectiveSurplus, 2) }}</td>
-          </tr>
-          <tr>
-            <td>透视盈余收益率</td>
-            <td>{{ formatPercent(portfolio.perspectiveSurplusRate * 100) }}</td>
-          </tr>
-        </tbody>
-      </table>
+      <footer class="portfolio-footer">
+        <table class="valuation-table surplus-table">
+          <tbody>
+            <tr>
+              <td>透视盈余</td>
+              <td>{{ formatNum(portfolio.perspectiveSurplus, 2) }}</td>
+            </tr>
+            <tr>
+              <td>透视盈余收益率</td>
+              <td>
+                {{ formatPercent(portfolio.perspectiveSurplusRate * 100) }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </footer>
     </section>
   </div>
 </template>
