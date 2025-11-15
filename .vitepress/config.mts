@@ -48,7 +48,10 @@ export default defineConfig({
               link: "/company/chinese-sprites/luzhoulaojiao.md",
             },
             { text: "古井贡", link: "/company/chinese-sprites/gujinggong.md" },
-            // { text: "科沃斯", link: "/company/chinese-sprites/kewosi.md" },
+            {
+              text: "山西汾酒",
+              link: "/company/chinese-sprites/shanxifenjiu.md",
+            },
           ],
         },
         {
@@ -62,6 +65,10 @@ export default defineConfig({
             { text: "美的", link: "/company/home-appliance/midea.md" },
             { text: "海尔", link: "/company/home-appliance/haier.md" },
           ],
+        },
+        {
+          text: "航运",
+          items: [{ text: "中远海控", link: "/company/shipping/cosco.md" }],
         },
         {
           text: "汽车",

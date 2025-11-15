@@ -24,10 +24,10 @@ export interface ProfitValuationGrowth {
 }
 
 export interface ProfitValuationConfig {
-  specialOffer: ProfitValuationGrowth;
-  conservative: ProfitValuationGrowth;
-  neutral: ProfitValuationGrowth;
-  optimistic: ProfitValuationGrowth;
+  specialOffer?: ProfitValuationGrowth;
+  conservative?: ProfitValuationGrowth;
+  neutral?: ProfitValuationGrowth;
+  optimistic?: ProfitValuationGrowth;
   backYearsNum: number;
 }
 
@@ -157,6 +157,13 @@ export const stockData: StockItem[] = [
   {
     name: "中远海控",
     code: "601919",
+    profitValuationConfig: {
+      conservative: {
+        type: ProfitValuationGrowthType.PROFIT,
+        data: [150],
+      },
+      backYearsNum: 7,
+    },
   },
   {
     name: "国投电力",
@@ -212,7 +219,43 @@ export const stockData: StockItem[] = [
       backYearsNum: 8,
     },
   },
+  {
+    name: "山西汾酒",
+    code: "600809",
+    profitValuationConfig: {
+      specialOffer: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0, 0],
+      },
+      conservative: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0, 0.05],
+      },
+      neutral: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0, 0.09],
+      },
+      optimistic: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0, 0.12],
+      },
+      backYearsNum: 8,
+    },
+  },
 ];
+
+(function validate() {
+  const map: Record<string, number> = {};
+  for (const item of stockData) {
+    const val = map[item.code];
+    if (typeof val === "number") {
+      map[item.code] = val + 1;
+      console.warn(`存在重复的 code：${item.code}_${item.name}`);
+    } else {
+      map[item.code] = 1;
+    }
+  }
+})();
 
 export const getStockItem = (code: string) => {
   const item = stockData.find((v) => v.code === code);

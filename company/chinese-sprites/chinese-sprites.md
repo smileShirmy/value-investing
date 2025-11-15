@@ -6,7 +6,7 @@
 
 ## 同行对比
 
-<CompareDataTable :codes="['600519', '000858', '000568', '000596']" />
+<CompareDataTable :codes="['600519', '000858', '000568', '000596', '600809']" />
 
 1. 对比营业收入及增速
 2. 对比净利润及增速
@@ -38,16 +38,22 @@
       product: [],
       region: []
     }
+  },
+    { code: '600809', compareItems: {
+      industry: [],
+      product: [],
+      region: []
+    }
   }
 ]" />
 
 1. 对比主营业务分析
 
-<CompareTurnoverRateTable :codes="['600519', '000858', '000568', '000596']" />
+<CompareTurnoverRateTable :codes="['600519', '000858', '000568', '000596', '600809']" />
 
 1. 对比周转率分析
 2. 对比 1 元收入需要的固定资产分析
 
-<CompareReturnTable :codes="['600519', '000858', '000568', '000596']" />
+<CompareReturnTable :codes="['600519', '000858', '000568', '000596', '600809']" />
 
 1. 对比 ROE，ROIC 分析

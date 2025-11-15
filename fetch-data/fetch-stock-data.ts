@@ -338,8 +338,17 @@ async function fetchAStockData(stockItem: StockItem) {
     .catch((err) => console.error("异步保存出错:", err));
 }
 
-function main() {
+const sleep = (timeout: number) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(true);
+    }, timeout);
+  });
+};
+
+async function main() {
   for (const stock of stockData) {
+    await sleep(5000);
     fetchAStockData(stock);
   }
 }

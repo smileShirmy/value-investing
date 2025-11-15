@@ -14,24 +14,28 @@ const stockItem = getStockItem(props.code);
   <div class="profit-valuation-group-container">
     <template v-if="stockItem.profitValuationConfig">
       <profitValuation
+        v-if="stockItem.profitValuationConfig?.specialOffer"
         class="valuation-item"
         :code="props.code"
         caption="特价估算"
         :growth="stockItem.profitValuationConfig?.specialOffer"
       />
       <profitValuation
+        v-if="stockItem.profitValuationConfig?.conservative"
         class="valuation-item"
         :code="props.code"
         caption="保守估算"
         :growth="stockItem.profitValuationConfig?.conservative"
       />
       <profitValuation
+        v-if="stockItem.profitValuationConfig?.neutral"
         class="valuation-item"
         :code="props.code"
         caption="均值估算"
         :growth="stockItem.profitValuationConfig?.neutral"
       />
       <profitValuation
+        v-if="stockItem.profitValuationConfig?.optimistic"
         class="valuation-item"
         :code="props.code"
         caption="乐观估算"
