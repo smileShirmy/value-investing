@@ -347,10 +347,27 @@ const sleep = (timeout: number) => {
 };
 
 async function main() {
+  // 检查是否有 -f 参数
+  const forceUpdate = process.argv.includes('-f');
+  
   for (const stock of stockData) {
+    // 检查是否已经存在对应的数据文件
+    const fs = require('fs');
+    const path = require('path');
+    const dataFilePath = path.join(__dirname, '..', 'data', `${stock.code}.json`);
+    
+    // 如果不是强制更新且文件已存在，则跳过
+    if (!forceUpdate && fs.existsSync(dataFilePath)) {
+      console.log(`数据文件 ${stock.code}.json 已存在，跳过更新`);
+      continue;
+    }
+    
+    console.log(`正在获取 ${stock.code} 的数据...`);
     await sleep(5000);
-    fetchAStockData(stock);
+    await fetchAStockData(stock);
   }
+  
+  console.log('数据更新完成！');
 }
 
 main();
