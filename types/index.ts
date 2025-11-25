@@ -242,6 +242,14 @@ export const stockData: StockItem[] = [
       backYearsNum: 8,
     },
   },
+  {
+    name: "爱玛科技",
+    code: "603529",
+  },
+  {
+    name: "九号公司",
+    code: "689009",
+  },
 ];
 
 (function validate() {

@@ -87,6 +87,14 @@ export default defineConfig({
             },
           ],
         },
+        {
+          text: "摩托车",
+          items: [
+            { text: "摩托车", link: "/company/motorcycle/motorcycle.md" },
+            { text: "九号公司", link: "/company/motorcycle/ninebot.md" },
+            { text: "爱玛科技", link: "/company/motorcycle/aima.md" },
+          ],
+        },
       ],
     },
 

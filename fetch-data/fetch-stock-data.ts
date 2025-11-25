@@ -333,7 +333,7 @@ async function fetchAStockData(stockItem: StockItem) {
     ...eastMoneyData,
   };
 
-  saveJsonToFileAsync(data, `./data/${code}.json`)
+  await saveJsonToFileAsync(data, `./data/${code}.json`)
     .then((result) => console.log(`异步保存${result ? "成功" : "失败"}`))
     .catch((err) => console.error("异步保存出错:", err));
 }
@@ -372,11 +372,12 @@ async function main() {
       continue;
     }
 
-    console.log(`正在获取 ${stock.code} 的数据...`);
+    console.log(`正在获取 ${stock.name}(${stock.code}) 的数据...`);
     if (i > 0) {
       await sleep(5000);
     }
     await fetchAStockData(stock);
+    console.log(`获取 ${stock.name}(${stock.code}) 数据成功`);
   }
 
   console.log("数据更新完成！");
