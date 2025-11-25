@@ -87,8 +87,8 @@ const basicStocks = ref<BasicItem[]>([
     hkCode: "200596",
     industry: "白酒",
     name: "古井贡B",
-    costBasis: 87.9687, // 11.0769
-    sharesHeld: 200,
+    costBasis: 87.741, // 11.0769
+    sharesHeld: 400,
     dividendTaxRatio: 0,
   },
   {
@@ -139,15 +139,15 @@ const basicStocks = ref<BasicItem[]>([
     code: "601088",
     name: "中国神华",
     industry: "能源",
-    costBasis: 35.045,
-    sharesHeld: 200,
+    costBasis: 25.927,
+    sharesHeld: 100,
     dividendTaxRatio: 0,
   },
   {
     code: "601919",
     name: "中远海控",
     industry: "航运",
-    costBasis: 15.335, // 11.0769
+    costBasis: 14.775,
     sharesHeld: 200,
     dividendTaxRatio: 0,
   },
