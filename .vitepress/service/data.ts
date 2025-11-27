@@ -2200,10 +2200,10 @@ const data = {
       "netProfitMargin": 52.273359
     },
     "dynamicData": {
-      "price": 1456.6,
-      "marketValue": 1824056795169,
-      "PB": 7.1,
-      "PE": 21.17,
+      "price": 1441.87,
+      "marketValue": 1805610854902,
+      "PB": 7.02,
+      "PE": 20.95,
       "totalSharesOutstanding": 1252270215
     },
     "recentYearData": {
@@ -4807,10 +4807,10 @@ const data = {
       "netProfitMargin": 6.845069
     },
     "dynamicData": {
-      "price": 26.93,
-      "marketValue": 252615877585,
-      "PB": 2.14,
-      "PE": 10.91,
+      "price": 27.53,
+      "marketValue": 258244155585,
+      "PB": 2.19,
+      "PE": 11.15,
       "totalSharesOutstanding": 9380463334
     },
     "recentYearData": {
@@ -7102,10 +7102,10 @@ const data = {
       "netProfitMargin": 34.025984
     },
     "dynamicData": {
-      "price": 196.58,
-      "marketValue": 239820566761,
-      "PB": 6.18,
-      "PE": 15.77,
+      "price": 194.09,
+      "marketValue": 236782855848,
+      "PB": 6.11,
+      "PE": 15.57,
       "totalSharesOutstanding": 1219964222
     },
     "recentYearData": {
@@ -9973,10 +9973,10 @@ const data = {
       "netProfitMargin": 20.797154
     },
     "dynamicData": {
-      "price": 13.91,
-      "marketValue": 111342515184,
+      "price": 13.94,
+      "marketValue": 111582650012,
       "PB": 1.68,
-      "PE": 12.81,
+      "PE": 12.84,
       "totalSharesOutstanding": 8004494262
     },
     "recentYearData": {
@@ -11944,10 +11944,10 @@ const data = {
       "netProfitMargin": 38.974399
     },
     "dynamicData": {
-      "price": 28.34,
-      "marketValue": 693429290071,
-      "PB": 3.14,
-      "PE": 18.45,
+      "price": 28.07,
+      "marketValue": 686822871288,
+      "PB": 3.11,
+      "PE": 18.27,
       "totalSharesOutstanding": 24468217716
     },
     "recentYearData": {
@@ -13585,10 +13585,10 @@ const data = {
       "netProfitMargin": 32.813324
     },
     "dynamicData": {
-      "price": 29.02,
-      "marketValue": 1379319264616,
-      "PB": 1.76,
-      "PE": 10.14,
+      "price": 28.14,
+      "marketValue": 1337492905110,
+      "PB": 1.7,
+      "PE": 9.84,
       "totalSharesOutstanding": 47529953984
     },
     "recentYearData": {
@@ -16504,10 +16504,10 @@ const data = {
       "netProfitMargin": 20.35168
     },
     "dynamicData": {
-      "price": 42.09,
-      "marketValue": 836266004906,
-      "PB": 2.11,
-      "PE": 16.06,
+      "price": 41.25,
+      "marketValue": 819576448144,
+      "PB": 2.07,
+      "PE": 15.74,
       "totalSharesOutstanding": 19868519955
     },
     "recentYearData": {
@@ -19195,10 +19195,10 @@ const data = {
       "netProfitMargin": 23.687531
     },
     "dynamicData": {
-      "price": 15.33,
-      "marketValue": 237457940149,
-      "PB": 1.02,
-      "PE": 6.58,
+      "price": 14.64,
+      "marketValue": 226770009379,
+      "PB": 0.98,
+      "PE": 6.28,
       "totalSharesOutstanding": 15489754739
     },
     "recentYearData": {
@@ -21454,10 +21454,10 @@ const data = {
       "netProfitMargin": 4.870385
     },
     "dynamicData": {
-      "price": 81.32,
-      "marketValue": 47094140945,
-      "PB": 5.48,
-      "PE": 24.91,
+      "price": 80.41,
+      "marketValue": 46567140597,
+      "PB": 5.42,
+      "PE": 24.63,
       "totalSharesOutstanding": 579121261
     },
     "recentYearData": {
@@ -24556,10 +24556,10 @@ const data = {
       "netProfitMargin": 9.314665
     },
     "dynamicData": {
-      "price": 30.56,
-      "marketValue": 26560550335,
-      "PB": 2.79,
-      "PE": 10.44,
+      "price": 30.38,
+      "marketValue": 26404107303,
+      "PB": 2.77,
+      "PE": 10.38,
       "totalSharesOutstanding": 869127956
     },
     "recentYearData": {
@@ -26503,10 +26503,10 @@ const data = {
       "netProfitMargin": 7.645048
     },
     "dynamicData": {
-      "price": 56.34,
-      "marketValue": 40429388388,
-      "PB": 5.66,
-      "PE": 16.97,
+      "price": 56.22,
+      "marketValue": 40343276804,
+      "PB": 5.65,
+      "PE": 16.93,
       "totalSharesOutstanding": 717596528
     },
     "recentYearData": {
@@ -29038,11 +29038,11 @@ const data = {
       "netProfitMargin": 9.519158
     },
     "dynamicData": {
-      "price": 79.23,
-      "marketValue": 608887956814,
-      "PB": 2.76,
-      "PE": 12.05,
-      "totalSharesOutstanding": 7685068242
+      "price": 80.38,
+      "marketValue": 617867880734,
+      "PB": 2.8,
+      "PE": 12.23,
+      "totalSharesOutstanding": 7686836038
     },
     "recentYearData": {
       "netProfit": 44721506000
@@ -31261,11 +31261,11 @@ const data = {
       "netProfitMargin": 43.267313
     },
     "dynamicData": {
-      "price": 139.62,
-      "marketValue": 205513868849,
-      "PB": 4.14,
-      "PE": 14.32,
-      "totalSharesOutstanding": 1471951503
+      "price": 134.95,
+      "marketValue": 198638567907,
+      "PB": 4,
+      "PE": 13.84,
+      "totalSharesOutstanding": 1471941963
     },
     "recentYearData": {
       "netProfit": 12642339975.28
@@ -33472,10 +33472,10 @@ const data = {
       "netProfitMargin": 24.203193
     },
     "dynamicData": {
-      "price": 161.6,
-      "marketValue": 85421760000,
-      "PB": 3.35,
-      "PE": 16.18,
+      "price": 163.78,
+      "marketValue": 86574108000,
+      "PB": 3.4,
+      "PE": 16.4,
       "totalSharesOutstanding": 528600000
     },
     "recentYearData": {
@@ -35971,10 +35971,10 @@ const data = {
       "netProfitMargin": 17.112732
     },
     "dynamicData": {
-      "price": 40.62,
-      "marketValue": 227529101199,
-      "PB": 1.58,
-      "PE": 7.95,
+      "price": 40.43,
+      "marketValue": 226464834109,
+      "PB": 1.57,
+      "PE": 7.91,
       "totalSharesOutstanding": 5601405741
     },
     "recentYearData": {
@@ -40657,10 +40657,10 @@ const data = {
       "netProfitMargin": 32.469406
     },
     "dynamicData": {
-      "price": 26.09,
-      "marketValue": 138057127595,
-      "PB": 3.36,
-      "PE": 23,
+      "price": 26.26,
+      "marketValue": 138956694927,
+      "PB": 3.38,
+      "PE": 23.15,
       "totalSharesOutstanding": 5291572541
     },
     "recentYearData": {
@@ -43312,10 +43312,10 @@ const data = {
       "netProfitMargin": 37.222757
     },
     "dynamicData": {
-      "price": 120.21,
-      "marketValue": 466608098281,
-      "PB": 3.27,
-      "PE": 16.27,
+      "price": 117.85,
+      "marketValue": 457447503389,
+      "PB": 3.21,
+      "PE": 15.95,
       "totalSharesOutstanding": 3881608005
     },
     "recentYearData": {
@@ -45823,10 +45823,10 @@ const data = {
       "netProfitMargin": 5.351667
     },
     "dynamicData": {
-      "price": 98.37,
-      "marketValue": 896858724469,
-      "PB": 4.08,
-      "PE": 28.83,
+      "price": 94.68,
+      "marketValue": 863216265454,
+      "PB": 3.93,
+      "PE": 27.75,
       "totalSharesOutstanding": 9117197565
     },
     "recentYearData": {
