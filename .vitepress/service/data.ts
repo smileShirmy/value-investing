@@ -2,6 +2,23 @@ const data = {
   "600519": {
     "basicRevenueData": [
       {
+        "year": "2025Q3",
+        "revenue": 128453707655.86,
+        "netProfit": 64626746712.18,
+        "netProfitMargin": 0.5031131283911349,
+        "netProfitExcludingNon": 64680616431.2,
+        "coreProfit": 86475972955.97,
+        "cashFlowFromOperating": 38196802155.27,
+        "fcf": 35913939885.38,
+        "capex": 2282862269.89,
+        "fcfOverNetProfit": 0.5557132567004399,
+        "netProfitExcludingNonOvernetProfit": 1.0008335514591182,
+        "cashFlowFromOperatingOverNetProfit": 0.5910370566134526,
+        "operatingProfit": 62033543381.14,
+        "financialProfit": 2593203331.04,
+        "operatingProfitOverNetProfit": 0.9598741471145217
+      },
+      {
         "year": "2024",
         "revenue": 170899152276.34,
         "netProfit": 86228146421.62,
@@ -174,6 +191,23 @@ const data = {
     ],
     "costsExpensesData": [
       {
+        "year": "2025Q3",
+        "grossProfitMargin": 91.293383,
+        "netProfitMargin": 50.311312839113484,
+        "grossProfitMinusNetProfit": 40.98207016088652,
+        "devExpenses": 113086640.98,
+        "manageExpenses": 5503383668.62,
+        "devAndManageExpenses": 5616470309.599999,
+        "sellingExpenses": 4478672252.48,
+        "financialExpenses": -634730437.77,
+        "totalOperatingExpenses": 9460412124.309998,
+        "sellingExpensesRatio": 0.03486604111481779,
+        "devExpensesRatio": 0.0008803688351524281,
+        "manageExpensesRatio": 0.04284332285187206,
+        "devAndManageExpensesRatio": 0.04372369168702449,
+        "totalOperatingExpensesRatio": 7.364841
+      },
+      {
         "year": "2024",
         "grossProfitMargin": 91.931216,
         "netProfitMargin": 50.455572934727655,
@@ -345,6 +379,21 @@ const data = {
       }
     ],
     "balanceData": [
+      {
+        "year": "2025Q3",
+        "currentAssets": 256587161700.86,
+        "cash": 51753057846.45,
+        "inventory": 55858862716.48,
+        "nonCurrentAssets": 48151023229,
+        "totalAssets": 304738184929.86,
+        "equity": 257069964386.23,
+        "interestFreeLiabilities": 10571298926.15,
+        "interestBearingDebt": 262564048.4,
+        "interestExpense": 6505588.51,
+        "interestFreeLiabilitiesOverTotal": 0.034689774530825994,
+        "interestBearingDebtOverTotal": 0.0008616053431585314,
+        "debtRatio": 12.808752
+      },
       {
         "year": "2024",
         "currentAssets": 251726674636.66,
@@ -676,9 +725,36 @@ const data = {
         "advancesToRevenueRatio": 0.2529604217412349,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": 1412688105.6100006
+      },
+      {
+        "year": "2014",
+        "wcPerYuanRevenue": 0.5547283034610884,
+        "wc": 17514951807.57,
+        "receivables": 1852144779.07,
+        "prepayments": 2864210404.28,
+        "inventory": 14982364367.85,
+        "accountsPayable": 707534647.54,
+        "customerAdvances": 1476233096.09,
+        "contractLiabilities": 0,
+        "receivablesToRevenueRatio": 0.05866057425369294,
+        "prepaymentsToRevenueRatio": 0.09071441336396567,
+        "inventoryToRevenueRatio": 0.474516953225141,
+        "accountsPayableToRevenueRatio": 0.022408825270085444,
+        "advancesToRevenueRatio": 0.04675481211162577,
+        "contractLiabilitiesToRevenueRatio": 0,
+        "changeInWC": 4406412916.059999
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
+      {
+        "year": "2025Q3",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.07147454386343795,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 9181170162.27,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
       {
         "year": "2024",
         "fixedAssetsPerYuanRevenue": 0.1405632127545417,
@@ -771,6 +847,15 @@ const data = {
       }
     ],
     "returnData": [
+      {
+        "year": "2025Q3",
+        "roe": 24.64,
+        "roa": 29.621501,
+        "roic": 25.601791,
+        "netProfitMargin": 52.080088,
+        "assetTurnover": 43.3684,
+        "equityMultiplier": 1.146904
+      },
       {
         "year": "2024",
         "roe": 36.02,
@@ -1012,6 +1097,21 @@ const data = {
         "receivablesDays": 0.025004,
         "inventoryDays": 2339.806731,
         "fixedAssetsDays": 182.30932391794758
+      },
+      {
+        "year": "2014",
+        "totalAssets": 65873165224.63,
+        "avgTotalAssets": 60663657950.84,
+        "avgCurrentAssets": 44751256254.275,
+        "avgInventory": 13409587303.44,
+        "equity": 55311550841.12,
+        "avgEquity": 49720321557.19,
+        "totalAssetsDays": 677.864853,
+        "currentAssetsDays": 500.057279,
+        "wcDays": 202.47583076329727,
+        "receivablesDays": 0.029835,
+        "inventoryDays": 2064.292117,
+        "fixedAssetsDays": 159.5288043235174
       }
     ],
     "primaryBusinessData": [
@@ -2113,6 +2213,23 @@ const data = {
   "600690": {
     "basicRevenueData": [
       {
+        "year": "2025Q3",
+        "revenue": 234053617957.34,
+        "netProfit": 17372697304.12,
+        "netProfitMargin": 0.07422528844346447,
+        "netProfitExcludingNon": 16892328611.67,
+        "coreProfit": 28745085851.940018,
+        "cashFlowFromOperating": 17491126692.81,
+        "fcf": 10913077543.580002,
+        "capex": 6578049149.23,
+        "fcfOverNetProfit": 0.628174045316033,
+        "netProfitExcludingNonOvernetProfit": 0.9723492164722125,
+        "cashFlowFromOperatingOverNetProfit": 1.0068169833743617,
+        "operatingProfit": 16045866730.509998,
+        "financialProfit": 1326830573.6100001,
+        "operatingProfitOverNetProfit": 0.923625528587588
+      },
+      {
         "year": "2024",
         "revenue": 285981225203.93,
         "netProfit": 18741120122.93,
@@ -2285,6 +2402,23 @@ const data = {
     ],
     "costsExpensesData": [
       {
+        "year": "2025Q3",
+        "grossProfitMargin": 27.207727,
+        "netProfitMargin": 7.422528844346448,
+        "grossProfitMinusNetProfit": 19.78519815565355,
+        "devExpenses": 9222403975.84,
+        "manageExpenses": 8793916575.47,
+        "devAndManageExpenses": 18016320551.309998,
+        "sellingExpenses": 24847892008.45,
+        "financialExpenses": -260655470.26,
+        "totalOperatingExpenses": 42603557089.49999,
+        "sellingExpensesRatio": 0.10616324680346931,
+        "devExpensesRatio": 0.03940295414498113,
+        "manageExpensesRatio": 0.03757223089400323,
+        "devAndManageExpensesRatio": 0.07697518503898436,
+        "totalOperatingExpensesRatio": 18.202477
+      },
+      {
         "year": "2024",
         "grossProfitMargin": 27.796985,
         "netProfitMargin": 6.5532694006628995,
@@ -2456,6 +2590,21 @@ const data = {
       }
     ],
     "balanceData": [
+      {
+        "year": "2025Q3",
+        "currentAssets": 149746293008.24997,
+        "cash": 45155831316.03,
+        "inventory": 42347409108.08,
+        "nonCurrentAssets": 141769725771.35,
+        "totalAssets": 291516018779.6,
+        "equity": 119576206497.34,
+        "interestFreeLiabilities": 79227927714.68001,
+        "interestBearingDebt": 69529293098.33,
+        "interestExpense": 2102436881.95,
+        "interestFreeLiabilitiesOverTotal": 0.2717789850669582,
+        "interestBearingDebtOverTotal": 0.2385093395189973,
+        "debtRatio": 56.483914
+      },
       {
         "year": "2024",
         "currentAssets": 152114261223.79,
@@ -2787,9 +2936,36 @@ const data = {
         "advancesToRevenueRatio": 0.03500574158174301,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": -3414505819.829994
+      },
+      {
+        "year": "2014",
+        "wcPerYuanRevenue": 0.1384386359843469,
+        "wc": 13418824299.819996,
+        "receivables": 23210498702.94,
+        "prepayments": 836083992.96,
+        "inventory": 9021640940.91,
+        "accountsPayable": 15312971646.36,
+        "customerAdvances": 4336427690.63,
+        "contractLiabilities": 0,
+        "receivablesToRevenueRatio": 0.23945687857278,
+        "prepaymentsToRevenueRatio": 0.00862566831248259,
+        "inventoryToRevenueRatio": 0.09307400099253658,
+        "accountsPayableToRevenueRatio": 0.15798007785357876,
+        "advancesToRevenueRatio": 0.0447378340398735,
+        "contractLiabilitiesToRevenueRatio": 0,
+        "changeInWC": 2739058144.4799957
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
+      {
+        "year": "2025Q3",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.2077836528326345,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 48632515697.87,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
       {
         "year": "2024",
         "fixedAssetsPerYuanRevenue": 0.1512171496967407,
@@ -2882,6 +3058,15 @@ const data = {
       }
     ],
     "returnData": [
+      {
+        "year": "2025Q3",
+        "roe": 14.97,
+        "roa": 8.04977,
+        "roic": 12.114231,
+        "netProfitMargin": 7.622975,
+        "assetTurnover": 80.3959,
+        "equityMultiplier": 2.298
+      },
       {
         "year": "2024",
         "roe": 17.7,
@@ -3123,6 +3308,21 @@ const data = {
         "receivablesDays": 25.827763,
         "inventoryDays": 48.942692,
         "fixedAssetsDays": 39.75753074746769
+      },
+      {
+        "year": "2014",
+        "totalAssets": 82348719644.44,
+        "avgTotalAssets": 71720754296.07,
+        "avgCurrentAssets": 57643057689.520004,
+        "avgInventory": 7965276922.725,
+        "equity": 31922996160.21,
+        "avgEquity": 25976928952.395,
+        "totalAssetsDays": 275.953158,
+        "currentAssetsDays": 220.469073,
+        "wcDays": 50.530102134286615,
+        "receivablesDays": 19.510701,
+        "inventoryDays": 40.469685,
+        "fixedAssetsDays": 32.79361526954938
       }
     ],
     "primaryBusinessData": [
@@ -4620,6 +4820,23 @@ const data = {
   "600809": {
     "basicRevenueData": [
       {
+        "year": "2025Q3",
+        "revenue": 32924416755.68,
+        "netProfit": 11404509070.8,
+        "netProfitMargin": 0.346384543587474,
+        "netProfitExcludingNon": 11411294175.75,
+        "coreProfit": 15400407623.000002,
+        "cashFlowFromOperating": 8982107362.78,
+        "fcf": 7968051732.150001,
+        "capex": 1014055630.63,
+        "fcfOverNetProfit": 0.6986755574206458,
+        "netProfitExcludingNonOvernetProfit": 1.0005949493229283,
+        "cashFlowFromOperatingOverNetProfit": 0.7875926361247505,
+        "operatingProfit": 11282597625.47,
+        "financialProfit": 121911445.33,
+        "operatingProfitOverNetProfit": 0.9893102417146442
+      },
+      {
         "year": "2024",
         "revenue": 36010992321.46,
         "netProfit": 12242884323.77,
@@ -4792,6 +5009,23 @@ const data = {
     ],
     "costsExpensesData": [
       {
+        "year": "2025Q3",
+        "grossProfitMargin": 76.0997,
+        "netProfitMargin": 34.6384543587474,
+        "grossProfitMinusNetProfit": 41.461245641252596,
+        "devExpenses": 122467205.85,
+        "manageExpenses": 959569505.9,
+        "devAndManageExpenses": 1082036711.75,
+        "sellingExpenses": 3293376268.5,
+        "financialExpenses": -12106095.8,
+        "totalOperatingExpenses": 4363306884.45,
+        "sellingExpensesRatio": 0.10002838601330238,
+        "devExpensesRatio": 0.003719646934333997,
+        "manageExpensesRatio": 0.02914461668434745,
+        "devAndManageExpensesRatio": 0.032864263618681444,
+        "totalOperatingExpensesRatio": 13.252495
+      },
+      {
         "year": "2024",
         "grossProfitMargin": 76.202608,
         "netProfitMargin": 33.997631096864026,
@@ -4963,6 +5197,21 @@ const data = {
       }
     ],
     "balanceData": [
+      {
+        "year": "2025Q3",
+        "currentAssets": 44363926440.53,
+        "cash": 11307089303.57,
+        "inventory": 13003746739.19,
+        "nonCurrentAssets": 10186922616.29,
+        "totalAssets": 54550849056.82,
+        "equity": 38779847796.72,
+        "interestFreeLiabilities": 9403646576.01,
+        "interestBearingDebt": 1098835477.18,
+        "interestExpense": 10662260.03,
+        "interestFreeLiabilitiesOverTotal": 0.172383138642172,
+        "interestBearingDebtOverTotal": 0.020143324919387712,
+        "debtRatio": 27.997623
+      },
       {
         "year": "2024",
         "currentAssets": 44033737431.35,
@@ -5294,9 +5543,36 @@ const data = {
         "advancesToRevenueRatio": 0.09412563901052455,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": -105527960.58999968
+      },
+      {
+        "year": "2014",
+        "wcPerYuanRevenue": 0.594718399212864,
+        "wc": 2328957316.61,
+        "receivables": 1077853280.49,
+        "prepayments": 61613626.94,
+        "inventory": 1898168166.99,
+        "accountsPayable": 319857068.79,
+        "customerAdvances": 388820689.02,
+        "contractLiabilities": 0,
+        "receivablesToRevenueRatio": 0.2752386971575787,
+        "prepaymentsToRevenueRatio": 0.015733546219212,
+        "inventoryToRevenueRatio": 0.4847128479590539,
+        "accountsPayableToRevenueRatio": 0.08167813234318806,
+        "advancesToRevenueRatio": 0.09928855977979253,
+        "contractLiabilitiesToRevenueRatio": 0,
+        "changeInWC": -77184461.21999979
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
+      {
+        "year": "2025Q3",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.0468801447780763,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 1543501424.2399998,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
       {
         "year": "2024",
         "fixedAssetsPerYuanRevenue": 0.13542315539424388,
@@ -5389,6 +5665,15 @@ const data = {
       }
     ],
     "returnData": [
+      {
+        "year": "2025Q3",
+        "roe": 31.82,
+        "roa": 28.541436,
+        "roic": 30.741304,
+        "netProfitMargin": 34.777003,
+        "assetTurnover": 60.9451,
+        "equityMultiplier": 1.388843
+      },
       {
         "year": "2024",
         "roe": 39.68,
@@ -5630,6 +5915,21 @@ const data = {
         "receivablesDays": 0.53887,
         "inventoryDays": 509.850779,
         "fixedAssetsDays": 178.09297940130745
+      },
+      {
+        "year": "2014",
+        "totalAssets": 5786101809.64,
+        "avgTotalAssets": 5801398203.88,
+        "avgCurrentAssets": 3952269669.455,
+        "avgInventory": 1882488494.155,
+        "equity": 3935708946.38,
+        "avgEquity": 3905941901.185,
+        "totalAssetsDays": 533.316502,
+        "currentAssetsDays": 363.328039,
+        "wcDays": 217.07221571269537,
+        "receivablesDays": 0.112898,
+        "inventoryDays": 531.433436,
+        "fixedAssetsDays": 142.40191475802646
       }
     ],
     "primaryBusinessData": [
@@ -6815,6 +7115,23 @@ const data = {
   "600886": {
     "basicRevenueData": [
       {
+        "year": "2025Q3",
+        "revenue": 40572491647.42,
+        "netProfit": 6517030546.19,
+        "netProfitMargin": 0.16062682575237938,
+        "netProfitExcludingNon": 6500836063.15,
+        "coreProfit": 12292681548.49,
+        "cashFlowFromOperating": 24072540650.59,
+        "fcf": 10220069873.19,
+        "capex": 13852470777.4,
+        "fcfOverNetProfit": 1.5682096010989053,
+        "netProfitExcludingNonOvernetProfit": 0.9975150518437469,
+        "cashFlowFromOperatingOverNetProfit": 3.693789752859658,
+        "operatingProfit": 5779976341.92,
+        "financialProfit": 737054204.27,
+        "operatingProfitOverNetProfit": 0.8869033681757257
+      },
+      {
         "year": "2024",
         "revenue": 57819279281.44,
         "netProfit": 6643033266.19,
@@ -6987,6 +7304,23 @@ const data = {
     ],
     "costsExpensesData": [
       {
+        "year": "2025Q3",
+        "grossProfitMargin": 43.506605,
+        "netProfitMargin": 16.06268257523794,
+        "grossProfitMinusNetProfit": 27.44392242476206,
+        "devExpenses": 64618973.07,
+        "manageExpenses": 1324798828.45,
+        "devAndManageExpenses": 1389417801.52,
+        "sellingExpenses": 32306921.82,
+        "financialExpenses": 2053553076.66,
+        "totalOperatingExpenses": 3475277800,
+        "sellingExpensesRatio": 0.0007962765043061977,
+        "devExpensesRatio": 0.0015926794349123766,
+        "manageExpensesRatio": 0.032652636667293365,
+        "devAndManageExpensesRatio": 0.03424531610220574,
+        "totalOperatingExpensesRatio": 8.565601
+      },
+      {
         "year": "2024",
         "grossProfitMargin": 37.477097,
         "netProfitMargin": 11.489304862923836,
@@ -7158,6 +7492,21 @@ const data = {
       }
     ],
     "balanceData": [
+      {
+        "year": "2025Q3",
+        "currentAssets": 45060158955.78,
+        "cash": 26878974573.45,
+        "inventory": 1216292775.06,
+        "nonCurrentAssets": 268951097854.98,
+        "totalAssets": 314011256810.76,
+        "equity": 71969118764.73,
+        "interestFreeLiabilities": 7282843360.889999,
+        "interestBearingDebt": 159886905070.91,
+        "interestExpense": 3102731937.57,
+        "interestFreeLiabilitiesOverTotal": 0.023192937205047493,
+        "interestBearingDebtOverTotal": 0.5091757113894373,
+        "debtRatio": 61.159787
+      },
       {
         "year": "2024",
         "currentAssets": 29842633419.36,
@@ -7489,9 +7838,36 @@ const data = {
         "advancesToRevenueRatio": 0.0011856580910063425,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": -2460133738.74
+      },
+      {
+        "year": "2014",
+        "wcPerYuanRevenue": 0.12039778434884324,
+        "wc": 3967970149.14,
+        "receivables": 3236260180.38,
+        "prepayments": 1425496732.54,
+        "inventory": 1091607309.76,
+        "accountsPayable": 1779302733.72,
+        "customerAdvances": 6091339.82,
+        "contractLiabilities": 0,
+        "receivablesToRevenueRatio": 0.09819593914500296,
+        "prepaymentsToRevenueRatio": 0.04325300890469883,
+        "inventoryToRevenueRatio": 0.03312199853685651,
+        "accountsPayableToRevenueRatio": 0.05398833629637002,
+        "advancesToRevenueRatio": 0.0001848259413450557,
+        "contractLiabilitiesToRevenueRatio": 0,
+        "changeInWC": 498226649.40999985
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
+      {
+        "year": "2025Q3",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.21503058962770852,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 8724326801.61,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
       {
         "year": "2024",
         "fixedAssetsPerYuanRevenue": 3.941052130660265,
@@ -7584,6 +7960,15 @@ const data = {
       }
     ],
     "returnData": [
+      {
+        "year": "2025Q3",
+        "roe": 10.06,
+        "roa": 5.615045,
+        "roic": 4.378033,
+        "netProfitMargin": 29.099418,
+        "assetTurnover": 13.2905,
+        "equityMultiplier": 2.574651
+      },
       {
         "year": "2024",
         "roe": 11.8,
@@ -7825,6 +8210,21 @@ const data = {
         "receivablesDays": 30.814002,
         "inventoryDays": 23.321556,
         "fixedAssetsDays": 1907.7892489025267
+      },
+      {
+        "year": "2014",
+        "totalAssets": 173751883460.6,
+        "avgTotalAssets": 166655324732.405,
+        "avgCurrentAssets": 12017227700.154999,
+        "avgInventory": 1031464359.9,
+        "equity": 42739138189.48,
+        "avgEquity": 38236463488.515,
+        "totalAssetsDays": 1814.224225,
+        "currentAssetsDays": 129.625108,
+        "wcDays": 43.94519128732778,
+        "receivablesDays": 34.000401,
+        "inventoryDays": 22.864572,
+        "fixedAssetsDays": 1677.3227655200653
       }
     ],
     "primaryBusinessData": [
@@ -9586,6 +9986,23 @@ const data = {
   "600900": {
     "basicRevenueData": [
       {
+        "year": "2025Q3",
+        "revenue": 65741285681.72,
+        "netProfit": 28192874494.95,
+        "netProfitMargin": 0.42884580370762815,
+        "netProfitExcludingNon": 28206547059.13,
+        "coreProfit": 29914476069.429996,
+        "cashFlowFromOperating": 42895214451.84,
+        "fcf": 34544055217.31,
+        "capex": 8351159234.53,
+        "fcfOverNetProfit": 1.2252760967491145,
+        "netProfitExcludingNonOvernetProfit": 1.0004849652412156,
+        "cashFlowFromOperatingOverNetProfit": 1.5214913420596232,
+        "operatingProfit": 23816290738.260002,
+        "financialProfit": 4376583756.690001,
+        "operatingProfitOverNetProfit": 0.8447627694907822
+      },
+      {
         "year": "2024",
         "revenue": 84491870566.52,
         "netProfit": 32496172808.65,
@@ -9758,6 +10175,23 @@ const data = {
     ],
     "costsExpensesData": [
       {
+        "year": "2025Q3",
+        "grossProfitMargin": 62.477197,
+        "netProfitMargin": 42.88458037076281,
+        "grossProfitMinusNetProfit": 19.592616629237185,
+        "devExpenses": 411682995.77,
+        "manageExpenses": 997059661.17,
+        "devAndManageExpenses": 1408742656.94,
+        "sellingExpenses": 137574448.83,
+        "financialExpenses": 7161129089.09,
+        "totalOperatingExpenses": 8707446194.86,
+        "sellingExpensesRatio": 0.0020926644102467547,
+        "devExpensesRatio": 0.006262168308711255,
+        "manageExpensesRatio": 0.01516641560673405,
+        "devAndManageExpensesRatio": 0.021428583915445307,
+        "totalOperatingExpensesRatio": 13.245019
+      },
+      {
         "year": "2024",
         "grossProfitMargin": 59.13412,
         "netProfitMargin": 38.46070940406739,
@@ -9929,6 +10363,21 @@ const data = {
       }
     ],
     "balanceData": [
+      {
+        "year": "2025Q3",
+        "currentAssets": 27112931148.25,
+        "cash": 10328949334.16,
+        "inventory": 830768173.22,
+        "nonCurrentAssets": 541656071657.45996,
+        "totalAssets": 568769002805.71,
+        "equity": 221105824660.31003,
+        "interestFreeLiabilities": 1840559584.27,
+        "interestBearingDebt": 288709654869.91,
+        "interestExpense": 7258299004.69,
+        "interestFreeLiabilitiesOverTotal": 0.0032360405985393166,
+        "interestBearingDebtOverTotal": 0.5076044113615883,
+        "debtRatio": 59.035779
+      },
       {
         "year": "2024",
         "currentAssets": 17203768778.54,
@@ -10260,9 +10709,36 @@ const data = {
         "advancesToRevenueRatio": 0.0018855427216528014,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": 1228284977.14
+      },
+      {
+        "year": "2014",
+        "wcPerYuanRevenue": 0.0784931037149121,
+        "wc": 2111291227.8999999,
+        "receivables": 1926720436.4,
+        "prepayments": 9113703.48,
+        "inventory": 427754155.45,
+        "accountsPayable": 154233615.34,
+        "customerAdvances": 98063452.09,
+        "contractLiabilities": 0,
+        "receivablesToRevenueRatio": 0.07163117292653717,
+        "prepaymentsToRevenueRatio": 0.00033882718927134105,
+        "inventoryToRevenueRatio": 0.015902946426589227,
+        "accountsPayableToRevenueRatio": 0.005734062172583367,
+        "advancesToRevenueRatio": 0.003645780654902272,
+        "contractLiabilitiesToRevenueRatio": 0,
+        "changeInWC": 368215709.48000026
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
+      {
+        "year": "2025Q3",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.4134577459989957,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 27181243797.04,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
       {
         "year": "2024",
         "fixedAssetsPerYuanRevenue": 5.201166417245413,
@@ -10355,6 +10831,15 @@ const data = {
       }
     ],
     "returnData": [
+      {
+        "year": "2025Q3",
+        "roe": 13.01,
+        "roa": 7.201275,
+        "roic": 6.967832,
+        "netProfitMargin": 43.436141,
+        "assetTurnover": 11.582699999999999,
+        "equityMultiplier": 2.441154
+      },
       {
         "year": "2024",
         "roe": 15.71,
@@ -10596,6 +11081,21 @@ const data = {
         "receivablesDays": 25.726755,
         "inventoryDays": 15.245254,
         "fixedAssetsDays": 2150.0388227178696
+      },
+      {
+        "year": "2014",
+        "totalAssets": 146994120608.48,
+        "avgTotalAssets": 148300658941.11,
+        "avgCurrentAssets": 5456782493.440001,
+        "avgInventory": 439355605.475,
+        "equity": 86136494012.85,
+        "avgEquity": 82158865082.04001,
+        "totalAssetsDays": 1984.855706,
+        "currentAssetsDays": 73.033565,
+        "wcDays": 28.649982855942916,
+        "receivablesDays": 21.566133,
+        "inventoryDays": 15.934951,
+        "fixedAssetsDays": 1689.3503285279394
       }
     ],
     "primaryBusinessData": [
@@ -11457,6 +11957,23 @@ const data = {
   "600938": {
     "basicRevenueData": [
       {
+        "year": "2025Q3",
+        "revenue": 312503000000,
+        "netProfit": 101971000000,
+        "netProfitMargin": 0.3263040674809522,
+        "netProfitExcludingNon": 100915000000,
+        "coreProfit": 139536000000,
+        "cashFlowFromOperating": 171749000000,
+        "fcf": 93956000000,
+        "capex": 77793000000,
+        "fcfOverNetProfit": 0.9213992213472458,
+        "netProfitExcludingNonOvernetProfit": 0.989644114503143,
+        "cashFlowFromOperatingOverNetProfit": 1.6842925929921253,
+        "operatingProfit": 102652000000,
+        "financialProfit": -681000000,
+        "operatingProfitOverNetProfit": 1.0066783693403025
+      },
+      {
         "year": "2024",
         "revenue": 420506000000,
         "netProfit": 137936000000,
@@ -11578,6 +12095,23 @@ const data = {
     ],
     "costsExpensesData": [
       {
+        "year": "2025Q3",
+        "grossProfitMargin": 52.238538,
+        "netProfitMargin": 32.63040674809522,
+        "grossProfitMinusNetProfit": 19.60813125190478,
+        "devExpenses": 1112000000,
+        "manageExpenses": 5400000000,
+        "devAndManageExpenses": 6512000000,
+        "sellingExpenses": 2777000000,
+        "financialExpenses": 467000000,
+        "totalOperatingExpenses": 9756000000,
+        "sellingExpensesRatio": 0.008886314691378962,
+        "devExpensesRatio": 0.003558365839687939,
+        "manageExpensesRatio": 0.017279834113592508,
+        "devAndManageExpensesRatio": 0.02083819995328045,
+        "totalOperatingExpensesRatio": 3.12189
+      },
+      {
         "year": "2024",
         "grossProfitMargin": 53.628961,
         "netProfitMargin": 32.80238569723143,
@@ -11698,6 +12232,21 @@ const data = {
       }
     ],
     "balanceData": [
+      {
+        "year": "2025Q3",
+        "currentAssets": 332678000000,
+        "cash": 242029000000,
+        "inventory": 6207000000,
+        "nonCurrentAssets": 793796000000,
+        "totalAssets": 1126474000000,
+        "equity": 785561000000,
+        "interestFreeLiabilities": 73159000000,
+        "interestBearingDebt": 71103000000,
+        "interestExpense": 1953000000,
+        "interestFreeLiabilitiesOverTotal": 0.06494512967010335,
+        "interestBearingDebtOverTotal": 0.06311996548522203,
+        "debtRatio": 30.085559
+      },
       {
         "year": "2024",
         "currentAssets": 264609000000,
@@ -11934,6 +12483,15 @@ const data = {
     ],
     "fixedAssetInvestmentAnalysisData": [
       {
+        "year": "2025Q3",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.09448549293926778,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 29527000000,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
+      {
         "year": "2024",
         "fixedAssetsPerYuanRevenue": 0.01602593066448517,
         "longTermOperatingAssetsPerYuanRevenue": 0.0885195454999453,
@@ -11998,6 +12556,15 @@ const data = {
       }
     ],
     "returnData": [
+      {
+        "year": "2025Q3",
+        "roe": 13.01,
+        "roa": 12.926966,
+        "roic": 12.254473,
+        "netProfitMargin": 32.659206,
+        "assetTurnover": 28.633799999999997,
+        "equityMultiplier": 1.430319
+      },
       {
         "year": "2024",
         "roe": 19.36,
@@ -13031,6 +13598,23 @@ const data = {
   "601088": {
     "basicRevenueData": [
       {
+        "year": "2025Q3",
+        "revenue": 213151000000,
+        "netProfit": 39052000000,
+        "netProfitMargin": 0.18321283972395155,
+        "netProfitExcludingNon": 38704000000,
+        "coreProfit": 55168000000,
+        "cashFlowFromOperating": 65253000000,
+        "fcf": 34742000000,
+        "capex": 30511000000,
+        "fcfOverNetProfit": 0.889634333708901,
+        "netProfitExcludingNonOvernetProfit": 0.9910888046706955,
+        "cashFlowFromOperatingOverNetProfit": 1.6709259448939875,
+        "operatingProfit": 35889000000,
+        "financialProfit": 3163000000,
+        "operatingProfitOverNetProfit": 0.9190054286592236
+      },
+      {
         "year": "2024",
         "revenue": 338375000000,
         "netProfit": 58671000000,
@@ -13203,6 +13787,23 @@ const data = {
     ],
     "costsExpensesData": [
       {
+        "year": "2025Q3",
+        "grossProfitMargin": 36.044869,
+        "netProfitMargin": 18.321283972395154,
+        "grossProfitMinusNetProfit": 17.723585027604845,
+        "devExpenses": 1340000000,
+        "manageExpenses": 7498000000,
+        "devAndManageExpenses": 8838000000,
+        "sellingExpenses": 383000000,
+        "financialExpenses": 271000000,
+        "totalOperatingExpenses": 9492000000,
+        "sellingExpensesRatio": 0.0017968482437333158,
+        "devExpensesRatio": 0.006286623098179225,
+        "manageExpensesRatio": 0.0351769402911551,
+        "devAndManageExpensesRatio": 0.041463563389334324,
+        "totalOperatingExpensesRatio": 4.453181
+      },
+      {
         "year": "2024",
         "grossProfitMargin": 34.040044,
         "netProfitMargin": 17.339046915404506,
@@ -13374,6 +13975,21 @@ const data = {
       }
     ],
     "balanceData": [
+      {
+        "year": "2025Q3",
+        "currentAssets": 175275000000,
+        "cash": 124418000000,
+        "inventory": 13661000000,
+        "nonCurrentAssets": 467601000000,
+        "totalAssets": 642876000000,
+        "equity": 416085000000,
+        "interestFreeLiabilities": 39206000000,
+        "interestBearingDebt": 42515000000,
+        "interestExpense": 1838000000,
+        "interestFreeLiabilitiesOverTotal": 0.06098532220832634,
+        "interestBearingDebtOverTotal": 0.06613250455764409,
+        "debtRatio": 24.361152
+      },
       {
         "year": "2024",
         "currentAssets": 207139000000,
@@ -13705,9 +14321,36 @@ const data = {
         "advancesToRevenueRatio": 0.020466597766972197,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": 8568000000
+      },
+      {
+        "year": "2014",
+        "wcPerYuanRevenue": 0.05428696741359486,
+        "wc": 13739000000,
+        "receivables": 30850000000,
+        "prepayments": 5917000000,
+        "inventory": 15980000000,
+        "accountsPayable": 34624000000,
+        "customerAdvances": 4384000000,
+        "contractLiabilities": 0,
+        "receivablesToRevenueRatio": 0.12189773234656098,
+        "prepaymentsToRevenueRatio": 0.023379866524946558,
+        "inventoryToRevenueRatio": 0.06314183996428022,
+        "accountsPayableToRevenueRatio": 0.13680995412535907,
+        "advancesToRevenueRatio": 0.01732251729683382,
+        "contractLiabilitiesToRevenueRatio": 0,
+        "changeInWC": 5383000000
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
+      {
+        "year": "2025Q3",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.34043940680550405,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 72565000000,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
       {
         "year": "2024",
         "fixedAssetsPerYuanRevenue": 0.7868016254155892,
@@ -13800,6 +14443,15 @@ const data = {
       }
     ],
     "returnData": [
+      {
+        "year": "2025Q3",
+        "roe": 9.35,
+        "roa": 9.291493,
+        "roic": 8.879102,
+        "netProfitMargin": 22.013502,
+        "assetTurnover": 32.5198,
+        "equityMultiplier": 1.322071
+      },
       {
         "year": "2024",
         "roe": 14.04,
@@ -14041,6 +14693,21 @@ const data = {
         "receivablesDays": 48.798603,
         "inventoryDays": 46.93852,
         "fixedAssetsDays": 737.6187249038511
+      },
+      {
+        "year": "2014",
+        "totalAssets": 544571000000,
+        "avgTotalAssets": 526122500000,
+        "avgCurrentAssets": 120527000000,
+        "avgInventory": 16810500000,
+        "equity": 359598000000,
+        "avgEquity": 344567500000,
+        "totalAssetsDays": 753.940248,
+        "currentAssetsDays": 173.973667,
+        "wcDays": 19.814743105962123,
+        "receivablesDays": 33.185778,
+        "inventoryDays": 36.864972,
+        "fixedAssetsDays": 506.51986913280734
       }
     ],
     "primaryBusinessData": [
@@ -15850,6 +16517,23 @@ const data = {
   "601919": {
     "basicRevenueData": [
       {
+        "year": "2025Q3",
+        "revenue": 167598747676.26,
+        "netProfit": 27069589917.56,
+        "netProfitMargin": 0.16151427318447886,
+        "netProfitExcludingNon": 26965216579.44,
+        "coreProfit": 29646219521.640003,
+        "cashFlowFromOperating": 39981831734.27,
+        "fcf": 22963882571.71,
+        "capex": 17017949162.56,
+        "fcfOverNetProfit": 0.8483276858513975,
+        "netProfitExcludingNonOvernetProfit": 0.9961442586150041,
+        "cashFlowFromOperatingOverNetProfit": 1.47700175200415,
+        "operatingProfit": 22601605365.100002,
+        "financialProfit": 4467984552.46,
+        "operatingProfitOverNetProfit": 0.8349445054000754
+      },
+      {
         "year": "2024",
         "revenue": 233859078966.99002,
         "netProfit": 49100495233.55,
@@ -16022,6 +16706,23 @@ const data = {
     ],
     "costsExpensesData": [
       {
+        "year": "2025Q3",
+        "grossProfitMargin": 21.975268,
+        "netProfitMargin": 16.151427318447887,
+        "grossProfitMinusNetProfit": 5.823840681552113,
+        "devExpenses": 796892074.91,
+        "manageExpenses": 5587771351.05,
+        "devAndManageExpenses": 6384663425.96,
+        "sellingExpenses": 593394371.04,
+        "financialExpenses": -2492730291.6,
+        "totalOperatingExpenses": 4485327505.4,
+        "sellingExpensesRatio": 0.0035405656621386138,
+        "devExpensesRatio": 0.004754761511997133,
+        "manageExpensesRatio": 0.03334017365000571,
+        "devAndManageExpensesRatio": 0.038094935162002845,
+        "totalOperatingExpensesRatio": 2.676229
+      },
+      {
         "year": "2024",
         "grossProfitMargin": 29.541147,
         "netProfitMargin": 20.99576182820796,
@@ -16193,6 +16894,21 @@ const data = {
       }
     ],
     "balanceData": [
+      {
+        "year": "2025Q3",
+        "currentAssets": 195485019503.05,
+        "cash": 171418757310.56998,
+        "inventory": 6506999833.79,
+        "nonCurrentAssets": 304547759710.6,
+        "totalAssets": 500032779213.64996,
+        "equity": 232239574651.27002,
+        "interestFreeLiabilities": 82879273920.68,
+        "interestBearingDebt": 75830313905.8,
+        "interestExpense": 2269723234.17,
+        "interestFreeLiabilitiesOverTotal": 0.16574768168402018,
+        "interestBearingDebtOverTotal": 0.15165068583113797,
+        "debtRatio": 43.463357
+      },
       {
         "year": "2024",
         "currentAssets": 206116976847.04,
@@ -16524,9 +17240,36 @@ const data = {
         "advancesToRevenueRatio": 0.0072715199777251965,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": 120634797.53999758
+      },
+      {
+        "year": "2014",
+        "wcPerYuanRevenue": -0.041694621997080884,
+        "wc": -2684068619.4299994,
+        "receivables": 3777308431.61,
+        "prepayments": 1743392871.27,
+        "inventory": 2199829657.09,
+        "accountsPayable": 9910370081.65,
+        "customerAdvances": 494229497.75,
+        "contractLiabilities": 0,
+        "receivablesToRevenueRatio": 0.05867713145717243,
+        "prepaymentsToRevenueRatio": 0.02708205976322801,
+        "inventoryToRevenueRatio": 0.034172399821064896,
+        "accountsPayableToRevenueRatio": 0.15394879676858905,
+        "advancesToRevenueRatio": 0.007677416269957181,
+        "contractLiabilitiesToRevenueRatio": 0,
+        "changeInWC": -97756030.78999805
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
+      {
+        "year": "2025Q3",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.33451346399195886,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 56064037645.9,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
       {
         "year": "2024",
         "fixedAssetsPerYuanRevenue": 0.6442404286329904,
@@ -16619,6 +17362,15 @@ const data = {
       }
     ],
     "returnData": [
+      {
+        "year": "2025Q3",
+        "roe": 11.37,
+        "roa": 7.85246,
+        "roic": 9.480193,
+        "netProfitMargin": 18.369056,
+        "assetTurnover": 33.6035,
+        "equityMultiplier": 1.768764
+      },
       {
         "year": "2024",
         "roe": 22.6,
@@ -16860,6 +17612,21 @@ const data = {
         "receivablesDays": 22.26957,
         "inventoryDays": 11.984252,
         "fixedAssetsDays": 485.0391970022254
+      },
+      {
+        "year": "2014",
+        "totalAssets": 148820394026.43002,
+        "avgTotalAssets": 155373102406.96503,
+        "avgCurrentAssets": 57833637947.085,
+        "avgInventory": 2422676098.48,
+        "equity": 42957957760.88,
+        "avgEquity": 42535882252.185,
+        "totalAssetsDays": 868.889931,
+        "currentAssetsDays": 323.421911,
+        "wcDays": -15.218537028934522,
+        "receivablesDays": 22.19945,
+        "inventoryDays": 14.571947,
+        "fixedAssetsDays": 454.4038075219789
       }
     ],
     "primaryBusinessData": [
@@ -18441,6 +19208,23 @@ const data = {
   "603486": {
     "basicRevenueData": [
       {
+        "year": "2025Q3",
+        "revenue": 12877214351.06,
+        "netProfit": 1417934929.49,
+        "netProfitMargin": 0.11011193033167778,
+        "netProfitExcludingNon": 1284463383.89,
+        "coreProfit": 2014964346.98,
+        "cashFlowFromOperating": 1962908583.14,
+        "fcf": 1337666806.88,
+        "capex": 625241776.26,
+        "fcfOverNetProfit": 0.9433908277872309,
+        "netProfitExcludingNonOvernetProfit": 0.905869061531613,
+        "cashFlowFromOperatingOverNetProfit": 1.3843432038492876,
+        "operatingProfit": 1284221497.27,
+        "financialProfit": 133713432.22,
+        "operatingProfitOverNetProfit": 0.90569847075557
+      },
+      {
         "year": "2024",
         "revenue": 16542228496.41,
         "netProfit": 806087087.89,
@@ -18613,6 +19397,23 @@ const data = {
     ],
     "costsExpensesData": [
       {
+        "year": "2025Q3",
+        "grossProfitMargin": 49.738383,
+        "netProfitMargin": 11.011193033167778,
+        "grossProfitMinusNetProfit": 38.72718996683222,
+        "devExpenses": 711595290.53,
+        "manageExpenses": 408339738.23,
+        "devAndManageExpenses": 1119935028.76,
+        "sellingExpenses": 3910428767.88,
+        "financialExpenses": -132434871.85,
+        "totalOperatingExpenses": 4897928924.79,
+        "sellingExpensesRatio": 0.3036703949529356,
+        "devExpensesRatio": 0.055260033042117095,
+        "manageExpensesRatio": 0.031710254026825854,
+        "devAndManageExpensesRatio": 0.08697028706894294,
+        "totalOperatingExpensesRatio": 38.035624
+      },
+      {
         "year": "2024",
         "grossProfitMargin": 46.523946,
         "netProfitMargin": 4.872905050640168,
@@ -18784,6 +19585,21 @@ const data = {
       }
     ],
     "balanceData": [
+      {
+        "year": "2025Q3",
+        "currentAssets": 12203137973.59,
+        "cash": 5622839874.16,
+        "inventory": 3413144990.35,
+        "nonCurrentAssets": 4293706151.39,
+        "totalAssets": 16496844124.98,
+        "equity": 8713176834.99,
+        "interestFreeLiabilities": 4495021460.26,
+        "interestBearingDebt": 2434636660.89,
+        "interestExpense": 32699977.52,
+        "interestFreeLiabilitiesOverTotal": 0.2724776585270336,
+        "interestBearingDebtOverTotal": 0.14758196431058002,
+        "debtRatio": 47.183661
+      },
       {
         "year": "2024",
         "currentAssets": 11452653188.57,
@@ -19115,9 +19931,36 @@ const data = {
         "advancesToRevenueRatio": 0.012210521752284119,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": -81086710.92000002
+      },
+      {
+        "year": "2014",
+        "wcPerYuanRevenue": 0.13131082671086056,
+        "wc": 303834999.5500001,
+        "receivables": 528162896.84,
+        "prepayments": 53719129.13,
+        "inventory": 350980065.19,
+        "accountsPayable": 620899758.49,
+        "customerAdvances": 8127333.12,
+        "contractLiabilities": 0,
+        "receivablesToRevenueRatio": 0.22826042662886278,
+        "prepaymentsToRevenueRatio": 0.023216230081113346,
+        "inventoryToRevenueRatio": 0.15168589065574825,
+        "accountsPayableToRevenueRatio": 0.2683392654323834,
+        "advancesToRevenueRatio": 0.0035124552224804983,
+        "contractLiabilitiesToRevenueRatio": 0,
+        "changeInWC": 53144809.18000004
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
+      {
+        "year": "2025Q3",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.022585307861716194,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 290835850.52,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
       {
         "year": "2024",
         "fixedAssetsPerYuanRevenue": 0.14220149573502164,
@@ -19210,6 +20053,15 @@ const data = {
       }
     ],
     "returnData": [
+      {
+        "year": "2025Q3",
+        "roe": 18.2,
+        "roa": 9.933712,
+        "roic": 15.039667,
+        "netProfitMargin": 11.008721,
+        "assetTurnover": 81.7006,
+        "equityMultiplier": 1.893353
+      },
       {
         "year": "2024",
         "roe": 11.76,
@@ -19451,6 +20303,21 @@ const data = {
         "receivablesDays": 55.573641,
         "inventoryDays": 80.779767,
         "fixedAssetsDays": 50.20474637513986
+      },
+      {
+        "year": "2014",
+        "totalAssets": 1601940858.52,
+        "avgTotalAssets": 1467268380.675,
+        "avgCurrentAssets": 1111949358.705,
+        "avgInventory": 329609992.525,
+        "equity": 801860246.94,
+        "avgEquity": 666977340.395,
+        "totalAssetsDays": 228.283643,
+        "currentAssetsDays": 173.001649,
+        "wcDays": 47.9284517494641,
+        "receivablesDays": 72.928967,
+        "inventoryDays": 72.829933,
+        "fixedAssetsDays": 12.033329203922923
       }
     ],
     "primaryBusinessData": [
@@ -20600,6 +21467,23 @@ const data = {
   "603529": {
     "basicRevenueData": [
       {
+        "year": "2025Q3",
+        "revenue": 21092965212.4,
+        "netProfit": 1907429170.29,
+        "netProfitMargin": 0.09042963618830947,
+        "netProfitExcludingNon": 1833797089.37,
+        "coreProfit": 2519449856.9900026,
+        "cashFlowFromOperating": 5569479681.61,
+        "fcf": 3468989031.3999996,
+        "capex": 2100490650.21,
+        "fcfOverNetProfit": 1.8186725281508538,
+        "netProfitExcludingNonOvernetProfit": 0.9613972135548261,
+        "cashFlowFromOperatingOverNetProfit": 2.9198880715257345,
+        "operatingProfit": 1828890882.8799999,
+        "financialProfit": 78538287.41,
+        "operatingProfitOverNetProfit": 0.958825056975479
+      },
+      {
         "year": "2024",
         "revenue": 21606294218.19,
         "netProfit": 1987928242.51,
@@ -20772,6 +21656,23 @@ const data = {
     ],
     "costsExpensesData": [
       {
+        "year": "2025Q3",
+        "grossProfitMargin": 18.770665,
+        "netProfitMargin": 9.042963618830948,
+        "grossProfitMinusNetProfit": 9.727701381169053,
+        "devExpenses": 547725333.72,
+        "manageExpenses": 534526725.64,
+        "devAndManageExpenses": 1082252059.3600001,
+        "sellingExpenses": 794847895.21,
+        "financialExpenses": -132497536.52,
+        "totalOperatingExpenses": 1744602418.0500002,
+        "sellingExpensesRatio": 0.03768307998454052,
+        "devExpensesRatio": 0.025967204146243348,
+        "manageExpensesRatio": 0.025341469075470042,
+        "devAndManageExpensesRatio": 0.0513086732217134,
+        "totalOperatingExpensesRatio": 8.271015
+      },
+      {
         "year": "2024",
         "grossProfitMargin": 17.821786,
         "netProfitMargin": 9.200690421203255,
@@ -20943,6 +21844,21 @@ const data = {
       }
     ],
     "balanceData": [
+      {
+        "year": "2025Q3",
+        "currentAssets": 14513926884.69,
+        "cash": 2611185403.91,
+        "inventory": 781263502.38,
+        "nonCurrentAssets": 12958441947.04,
+        "totalAssets": 27472368831.73,
+        "equity": 9949649259.8,
+        "interestFreeLiabilities": 13292468386.59,
+        "interestBearingDebt": 9024564884.74,
+        "interestExpense": 53893714.55,
+        "interestFreeLiabilitiesOverTotal": 0.48384864326797633,
+        "interestBearingDebtOverTotal": 0.32849605871324866,
+        "debtRatio": 63.343856
+      },
       {
         "year": "2024",
         "currentAssets": 10233052319.89,
@@ -21278,6 +22194,15 @@ const data = {
     ],
     "fixedAssetInvestmentAnalysisData": [
       {
+        "year": "2025Q3",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.05002307054722272,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 1055134886.87,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
+      {
         "year": "2024",
         "fixedAssetsPerYuanRevenue": 0.2653654361636436,
         "longTermOperatingAssetsPerYuanRevenue": 0.3216851783430102,
@@ -21369,6 +22294,15 @@ const data = {
       }
     ],
     "returnData": [
+      {
+        "year": "2025Q3",
+        "roe": 19.29,
+        "roa": 9.139866,
+        "roic": 17.935159,
+        "netProfitMargin": 9.227694,
+        "assetTurnover": 83.0576,
+        "equityMultiplier": 2.728055
+      },
       {
         "year": "2024",
         "roe": 23.75,
@@ -23635,6 +24569,23 @@ const data = {
   "689009": {
     "basicRevenueData": [
       {
+        "year": "2025Q3",
+        "revenue": 18389664846.85,
+        "netProfit": 1787203046.19,
+        "netProfitMargin": 0.09718518858684548,
+        "netProfitExcludingNon": 1798695202.76,
+        "coreProfit": 2923638246.0199986,
+        "cashFlowFromOperating": 4840105362.89,
+        "fcf": 4016180963.4700003,
+        "capex": 823924399.42,
+        "fcfOverNetProfit": 2.2471878458532095,
+        "netProfitExcludingNonOvernetProfit": 1.0064302467447666,
+        "cashFlowFromOperatingOverNetProfit": 2.708201160023897,
+        "operatingProfit": 1729615787.49,
+        "financialProfit": 57587258.699999996,
+        "operatingProfitOverNetProfit": 0.967777998799428
+      },
+      {
         "year": "2024",
         "revenue": 14195808623.28,
         "netProfit": 1084126917.88,
@@ -23790,6 +24741,23 @@ const data = {
     ],
     "costsExpensesData": [
       {
+        "year": "2025Q3",
+        "grossProfitMargin": 29.887328,
+        "netProfitMargin": 9.718518858684549,
+        "grossProfitMinusNetProfit": 20.16880914131545,
+        "devExpenses": 871644924.42,
+        "manageExpenses": 1013256109.21,
+        "devAndManageExpenses": 1884901033.63,
+        "sellingExpenses": 1444361036.08,
+        "financialExpenses": -278494637.03,
+        "totalOperatingExpenses": 3050767432.6800003,
+        "sellingExpensesRatio": 0.07854199889496123,
+        "devExpensesRatio": 0.0473986302457984,
+        "manageExpensesRatio": 0.055099215654469236,
+        "devAndManageExpensesRatio": 0.10249784590026764,
+        "totalOperatingExpensesRatio": 16.589576
+      },
+      {
         "year": "2024",
         "grossProfitMargin": 28.235711,
         "netProfitMargin": 7.636950783501814,
@@ -23944,6 +24912,21 @@ const data = {
       }
     ],
     "balanceData": [
+      {
+        "year": "2025Q3",
+        "currentAssets": 16168728240.82,
+        "cash": 9731387321.09,
+        "inventory": 1663098975.76,
+        "nonCurrentAssets": 4446868734.52,
+        "totalAssets": 20615596975.34,
+        "equity": 7119734553.72,
+        "interestFreeLiabilities": 10117740736.849998,
+        "interestBearingDebt": 5651222261.990001,
+        "interestExpense": 1685396.1,
+        "interestFreeLiabilitiesOverTotal": 0.490780875710398,
+        "interestBearingDebtOverTotal": 0.2741236292477918,
+        "debtRatio": 64.950958
+      },
       {
         "year": "2024",
         "currentAssets": 12401067216.77,
@@ -24246,6 +25229,15 @@ const data = {
     ],
     "fixedAssetInvestmentAnalysisData": [
       {
+        "year": "2025Q3",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.05902923079677236,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 1085527770.52,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
+      {
         "year": "2024",
         "fixedAssetsPerYuanRevenue": 0.1081061639647134,
         "longTermOperatingAssetsPerYuanRevenue": 0.18468307017752958,
@@ -24328,6 +25320,15 @@ const data = {
       }
     ],
     "returnData": [
+      {
+        "year": "2025Q3",
+        "roe": 23.12,
+        "roa": 12.99911,
+        "roic": 26.296433,
+        "netProfitMargin": 9.514513,
+        "assetTurnover": 101.3385,
+        "equityMultiplier": 2.853145
+      },
       {
         "year": "2024",
         "roe": 19.1,
@@ -25515,6 +26516,23 @@ const data = {
   "000333": {
     "basicRevenueData": [
       {
+        "year": "2025Q3",
+        "revenue": 363056751000,
+        "netProfit": 37883383000,
+        "netProfitMargin": 0.10434562336509204,
+        "netProfitExcludingNon": 37140080000,
+        "coreProfit": 48402759000,
+        "cashFlowFromOperating": 57066085000,
+        "fcf": 50410589000,
+        "capex": 6655496000,
+        "fcfOverNetProfit": 1.3306781234400318,
+        "netProfitExcludingNonOvernetProfit": 0.9803791810250948,
+        "cashFlowFromOperatingOverNetProfit": 1.506361905429618,
+        "operatingProfit": 35924402000,
+        "financialProfit": 1958981000,
+        "operatingProfitOverNetProfit": 0.9482891747022698
+      },
+      {
         "year": "2024",
         "revenue": 407149600000,
         "netProfit": 38537237000,
@@ -25687,6 +26705,23 @@ const data = {
     ],
     "costsExpensesData": [
       {
+        "year": "2025Q3",
+        "grossProfitMargin": 25.873999,
+        "netProfitMargin": 10.434562336509204,
+        "grossProfitMinusNetProfit": 15.439436663490797,
+        "devExpenses": 12944475000,
+        "manageExpenses": 10976260000,
+        "devAndManageExpenses": 23920735000,
+        "sellingExpenses": 32835299000,
+        "financialExpenses": -6749427000,
+        "totalOperatingExpenses": 50006607000,
+        "sellingExpensesRatio": 0.09044122966880183,
+        "devExpensesRatio": 0.035654136617335616,
+        "manageExpensesRatio": 0.03023290427672009,
+        "devAndManageExpensesRatio": 0.06588704089405571,
+        "totalOperatingExpensesRatio": 13.773771
+      },
+      {
         "year": "2024",
         "grossProfitMargin": 26.418953,
         "netProfitMargin": 9.465129524872431,
@@ -25858,6 +26893,21 @@ const data = {
       }
     ],
     "balanceData": [
+      {
+        "year": "2025Q3",
+        "currentAssets": 367591398000,
+        "cash": 89819241000,
+        "inventory": 48046649000,
+        "nonCurrentAssets": 225721605000,
+        "totalAssets": 593313003000,
+        "equity": 220559233000,
+        "interestFreeLiabilities": 168393573000,
+        "interestBearingDebt": 88403667000,
+        "interestExpense": -1687308000,
+        "interestFreeLiabilitiesOverTotal": 0.2838191176470811,
+        "interestBearingDebtOverTotal": 0.14900004981013368,
+        "debtRatio": 60.542294
+      },
       {
         "year": "2024",
         "currentAssets": 389063786000,
@@ -26189,9 +27239,36 @@ const data = {
         "advancesToRevenueRatio": 0.040568558674856,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": -7130456000
+      },
+      {
+        "year": "2014",
+        "wcPerYuanRevenue": 0.13244923921692364,
+        "wc": 18763842000,
+        "receivables": 26459336000,
+        "prepayments": 1414470000,
+        "inventory": 15020030000,
+        "accountsPayable": 20137454000,
+        "customerAdvances": 3992540000,
+        "contractLiabilities": 0,
+        "receivablesToRevenueRatio": 0.18676979498041815,
+        "prepaymentsToRevenueRatio": 0.009984387813282694,
+        "inventoryToRevenueRatio": 0.1060226123474803,
+        "accountsPayableToRevenueRatio": 0.1421452206891209,
+        "advancesToRevenueRatio": 0.028182335235136614,
+        "contractLiabilitiesToRevenueRatio": 0,
+        "changeInWC": 1546173090
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
+      {
+        "year": "2025Q3",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.16873258197586857,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 61259503000,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
       {
         "year": "2024",
         "fixedAssetsPerYuanRevenue": 0.08307751008474526,
@@ -26284,6 +27361,15 @@ const data = {
       }
     ],
     "returnData": [
+      {
+        "year": "2025Q3",
+        "roe": 16.79,
+        "roa": 7.376262,
+        "roic": 12.476476,
+        "netProfitMargin": 10.642365,
+        "assetTurnover": 60.90449999999999,
+        "equityMultiplier": 2.534359
+      },
       {
         "year": "2024",
         "roe": 21.29,
@@ -26525,6 +27611,21 @@ const data = {
         "receivablesDays": 25.657731,
         "inventoryDays": 44.655057,
         "fixedAssetsDays": 51.939140224025465
+      },
+      {
+        "year": "2014",
+        "totalAssets": 120292086000,
+        "avgTotalAssets": 108619055385,
+        "avgCurrentAssets": 75876902500,
+        "avgInventory": 15108876920,
+        "equity": 45731454000,
+        "avgEquity": 42406008140,
+        "totalAssetsDays": 274.770533,
+        "currentAssetsDays": 191.943641,
+        "wcDays": 48.34397231417712,
+        "receivablesDays": 21.968924,
+        "inventoryDays": 51.473567,
+        "fixedAssetsDays": 52.05046147449841
       }
     ],
     "primaryBusinessData": [
@@ -27950,6 +29051,23 @@ const data = {
   "000568": {
     "basicRevenueData": [
       {
+        "year": "2025Q3",
+        "revenue": 23127459902.13,
+        "netProfit": 10762394649.32,
+        "netProfitMargin": 0.46535134834797837,
+        "netProfitExcludingNon": 10741597380.5,
+        "coreProfit": 14245575980.68,
+        "cashFlowFromOperating": 9822590732.99,
+        "fcf": 8685426960.789999,
+        "capex": 1137163772.2,
+        "fcfOverNetProfit": 0.8070162118928402,
+        "netProfitExcludingNonOvernetProfit": 0.9980675983832916,
+        "cashFlowFromOperatingOverNetProfit": 0.9126770624054955,
+        "operatingProfit": 10683442936.85,
+        "financialProfit": 78951712.47,
+        "operatingProfitOverNetProfit": 0.9926641128631175
+      },
+      {
         "year": "2024",
         "revenue": 31196248208.33,
         "netProfit": 13472986476.01,
@@ -28122,6 +29240,23 @@ const data = {
     ],
     "costsExpensesData": [
       {
+        "year": "2025Q3",
+        "grossProfitMargin": 87.11341,
+        "netProfitMargin": 46.53513483479784,
+        "grossProfitMinusNetProfit": 40.578275165202164,
+        "devExpenses": 127236495.49,
+        "manageExpenses": 681884971.89,
+        "devAndManageExpenses": 809121467.38,
+        "sellingExpenses": 2419363363.64,
+        "financialExpenses": -385104228,
+        "totalOperatingExpenses": 2843380603.02,
+        "sellingExpensesRatio": 0.10460999062924245,
+        "devExpensesRatio": 0.005501533502962931,
+        "manageExpensesRatio": 0.02948378139128022,
+        "devAndManageExpensesRatio": 0.034985314894243155,
+        "totalOperatingExpensesRatio": 12.294392
+      },
+      {
         "year": "2024",
         "grossProfitMargin": 87.53659,
         "netProfitMargin": 43.18784228807505,
@@ -28293,6 +29428,21 @@ const data = {
       }
     ],
     "balanceData": [
+      {
+        "year": "2025Q3",
+        "currentAssets": 47621953207.69,
+        "cash": 31744503028.23,
+        "inventory": 13747352903.12,
+        "nonCurrentAssets": 17874076325.14,
+        "totalAssets": 65496029532.83,
+        "equity": 49679770305.29,
+        "interestFreeLiabilities": 5233927210.35,
+        "interestBearingDebt": 6812488662.5199995,
+        "interestExpense": 125045963.68,
+        "interestFreeLiabilitiesOverTotal": 0.07991212975324688,
+        "interestBearingDebtOverTotal": 0.10401376558414473,
+        "debtRatio": 23.926677
+      },
       {
         "year": "2024",
         "currentAssets": 50856449197.89,
@@ -28624,9 +29774,36 @@ const data = {
         "advancesToRevenueRatio": 0.23164584384563824,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": 1446618541.8100004
+      },
+      {
+        "year": "2014",
+        "wcPerYuanRevenue": 0.34821241081521187,
+        "wc": 1864135001.1599998,
+        "receivables": 1461617581.32,
+        "prepayments": 124025264.61,
+        "inventory": 2826992567.86,
+        "accountsPayable": 236850161.31,
+        "customerAdvances": 2311650251.32,
+        "contractLiabilities": 0,
+        "receivablesToRevenueRatio": 0.27302388580474507,
+        "prepaymentsToRevenueRatio": 0.023167386677986578,
+        "inventoryToRevenueRatio": 0.5280700683151467,
+        "accountsPayableToRevenueRatio": 0.044242592741623066,
+        "advancesToRevenueRatio": 0.43180633724104334,
+        "contractLiabilitiesToRevenueRatio": 0,
+        "changeInWC": -1410205691.440001
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
+      {
+        "year": "2025Q3",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.14920222164398603,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 3450668398.38,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
       {
         "year": "2024",
         "fixedAssetsPerYuanRevenue": 0.3185854726882248,
@@ -28719,6 +29896,15 @@ const data = {
       }
     ],
     "returnData": [
+      {
+        "year": "2025Q3",
+        "roe": 22,
+        "roa": 21.986912,
+        "roic": 19.191373,
+        "netProfitMargin": 46.674778,
+        "assetTurnover": 34.5622,
+        "equityMultiplier": 1.314521
+      },
       {
         "year": "2024",
         "roe": 30.44,
@@ -28960,6 +30146,21 @@ const data = {
         "receivablesDays": 0.441691,
         "inventoryDays": 293.165174,
         "fixedAssetsDays": 69.3156382718076
+      },
+      {
+        "year": "2014",
+        "totalAssets": 13170818969.48,
+        "avgTotalAssets": 13538751417.21,
+        "avgCurrentAssets": 10452767469.154999,
+        "avgInventory": 2620879685.865,
+        "equity": 9793331960.56,
+        "avgEquity": 10218313173.73,
+        "totalAssetsDays": 910.433019,
+        "currentAssetsDays": 702.911542,
+        "wcDays": 127.09752994755232,
+        "receivablesDays": 0.497573,
+        "inventoryDays": 336.432742,
+        "fixedAssetsDays": 93.94689303720078
       }
     ],
     "primaryBusinessData": [
@@ -30073,6 +31274,23 @@ const data = {
   "000596": {
     "basicRevenueData": [
       {
+        "year": "2025Q3",
+        "revenue": 16424640732.91,
+        "netProfit": 3960203363.47,
+        "netProfitMargin": 0.24111354567013166,
+        "netProfitExcludingNon": 3907907549.27,
+        "coreProfit": 5008865724.759998,
+        "cashFlowFromOperating": 2627053477.01,
+        "fcf": 1263001224.7400002,
+        "capex": 1364052252.27,
+        "fcfOverNetProfit": 0.31892332509746074,
+        "netProfitExcludingNonOvernetProfit": 0.9867946644653679,
+        "cashFlowFromOperatingOverNetProfit": 0.6633632760485638,
+        "operatingProfit": 3980676084.85,
+        "financialProfit": -20472721.38,
+        "operatingProfitOverNetProfit": 1.0051696136538961
+      },
+      {
         "year": "2024",
         "revenue": 23577928065.99,
         "netProfit": 5517251073.1,
@@ -30245,6 +31463,23 @@ const data = {
     ],
     "costsExpensesData": [
       {
+        "year": "2025Q3",
+        "grossProfitMargin": 79.866859,
+        "netProfitMargin": 24.111354567013166,
+        "grossProfitMinusNetProfit": 55.75550443298684,
+        "devExpenses": 62205547.04,
+        "manageExpenses": 971999271.92,
+        "devAndManageExpenses": 1034204818.9599999,
+        "sellingExpenses": 4507564685.02,
+        "financialExpenses": -433059383.91,
+        "totalOperatingExpenses": 5108710120.070001,
+        "sellingExpensesRatio": 0.2744391648085311,
+        "devExpensesRatio": 0.003787330758191803,
+        "manageExpensesRatio": 0.05917933230481006,
+        "devAndManageExpensesRatio": 0.06296666306300186,
+        "totalOperatingExpensesRatio": 31.103938
+      },
+      {
         "year": "2024",
         "grossProfitMargin": 79.904703,
         "netProfitMargin": 23.40006745994939,
@@ -30416,6 +31651,21 @@ const data = {
       }
     ],
     "balanceData": [
+      {
+        "year": "2025Q3",
+        "currentAssets": 26219018464.21,
+        "cash": 14403385449.42,
+        "inventory": 9846548269.21,
+        "nonCurrentAssets": 12005182546.84,
+        "totalAssets": 38224201011.05,
+        "equity": 25461538228.14,
+        "interestFreeLiabilities": 4716456568.61,
+        "interestBearingDebt": 1653899646.81,
+        "interestExpense": 7915316.24,
+        "interestFreeLiabilitiesOverTotal": 0.12338927809757352,
+        "interestBearingDebtOverTotal": 0.043268390262281325,
+        "debtRatio": 30.549301
+      },
       {
         "year": "2024",
         "currentAssets": 28811933319.6,
@@ -30747,9 +31997,36 @@ const data = {
         "advancesToRevenueRatio": 0.11584189719125242,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": 43735400.49000013
+      },
+      {
+        "year": "2014",
+        "wcPerYuanRevenue": 0.2130765030679704,
+        "wc": 990988107.5499998,
+        "receivables": 510231383.92,
+        "prepayments": 35711617.98,
+        "inventory": 1227182774.09,
+        "accountsPayable": 404634196.58,
+        "customerAdvances": 377503471.86,
+        "contractLiabilities": 0,
+        "receivablesToRevenueRatio": 0.10970698660550711,
+        "prepaymentsToRevenueRatio": 0.0076785045351250416,
+        "inventoryToRevenueRatio": 0.2638617074576299,
+        "accountsPayableToRevenueRatio": 0.08700209313524382,
+        "advancesToRevenueRatio": 0.08116860239504776,
+        "contractLiabilitiesToRevenueRatio": 0,
+        "changeInWC": 255147169.76999998
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
+      {
+        "year": "2025Q3",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.1323912161824645,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 2174478161.99,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
       {
         "year": "2024",
         "fixedAssetsPerYuanRevenue": 0.37912175104410173,
@@ -30842,6 +32119,15 @@ const data = {
       }
     ],
     "returnData": [
+      {
+        "year": "2025Q3",
+        "roe": 15.48,
+        "roa": 13.902123,
+        "roic": 15.686758,
+        "netProfitMargin": 24.862014,
+        "assetTurnover": 41.7151,
+        "equityMultiplier": 1.43987
+      },
       {
         "year": "2024",
         "roe": 23.89,
@@ -31083,6 +32369,21 @@ const data = {
         "receivablesDays": 0.318171,
         "inventoryDays": 312.878286,
         "fixedAssetsDays": 122.27312829702689
+      },
+      {
+        "year": "2014",
+        "totalAssets": 6413518166.03,
+        "avgTotalAssets": 6115226364.15,
+        "avgCurrentAssets": 3850019937.43,
+        "avgInventory": 1151107955.695,
+        "equity": 4181050977.96,
+        "avgEquity": 3961903617.505,
+        "totalAssetsDays": 473.349754,
+        "currentAssetsDays": 298.011207,
+        "wcDays": 77.7729236198092,
+        "receivablesDays": 0.414598,
+        "inventoryDays": 284.015185,
+        "fixedAssetsDays": 140.67252800084472
       }
     ],
     "primaryBusinessData": [
@@ -32184,6 +33485,23 @@ const data = {
   "000651": {
     "basicRevenueData": [
       {
+        "year": "2025Q3",
+        "revenue": 137180093143.85,
+        "netProfit": 21461336806.54,
+        "netProfitMargin": 0.156446437049982,
+        "netProfitExcludingNon": 20584848884.47,
+        "coreProfit": 25704507440.46001,
+        "cashFlowFromOperating": 45728383685.2,
+        "fcf": 44424391097.07,
+        "capex": 1303992588.13,
+        "fcfOverNetProfit": 2.0699731567295645,
+        "netProfitExcludingNonOvernetProfit": 0.9591596772386096,
+        "cashFlowFromOperatingOverNetProfit": 2.130733238912918,
+        "operatingProfit": 20694037960.030003,
+        "financialProfit": 767298846.5099999,
+        "operatingProfitOverNetProfit": 0.9642473880622303
+      },
+      {
         "year": "2024",
         "revenue": 189163654064.64,
         "netProfit": 32184570372.28,
@@ -32356,6 +33674,23 @@ const data = {
     ],
     "costsExpensesData": [
       {
+        "year": "2025Q3",
+        "grossProfitMargin": 28.438569,
+        "netProfitMargin": 15.6446437049982,
+        "grossProfitMinusNetProfit": 12.7939252950018,
+        "devExpenses": 5621838955.1,
+        "manageExpenses": 4304378951.12,
+        "devAndManageExpenses": 9926217906.220001,
+        "sellingExpenses": 7589438377.83,
+        "financialExpenses": -3296878904.09,
+        "totalOperatingExpenses": 14218777379.960003,
+        "sellingExpensesRatio": 0.055324633508387774,
+        "devExpensesRatio": 0.04098144873837357,
+        "manageExpensesRatio": 0.03137757711395002,
+        "devAndManageExpensesRatio": 0.0723590258523236,
+        "totalOperatingExpensesRatio": 10.365044
+      },
+      {
         "year": "2024",
         "grossProfitMargin": 29.42824,
         "netProfitMargin": 17.014140761566203,
@@ -32527,6 +33862,21 @@ const data = {
       }
     ],
     "balanceData": [
+      {
+        "year": "2025Q3",
+        "currentAssets": 259917655163.96997,
+        "cash": 116235166802.51,
+        "inventory": 25341875464.64,
+        "nonCurrentAssets": 139304276337.61,
+        "totalAssets": 399221931501.58,
+        "equity": 144424252622.96,
+        "interestFreeLiabilities": 79315707357.39,
+        "interestBearingDebt": 107128863995.28001,
+        "interestExpense": 1566330200.64,
+        "interestFreeLiabilitiesOverTotal": 0.19867572670434838,
+        "interestBearingDebtOverTotal": 0.268344135284201,
+        "debtRatio": 62.799651
+      },
       {
         "year": "2024",
         "currentAssets": 224802908651.88,
@@ -32858,9 +34208,36 @@ const data = {
         "advancesToRevenueRatio": 0.07795373009426038,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": -34452806501.54001
+      },
+      {
+        "year": "2014",
+        "wcPerYuanRevenue": 0.21865518136655696,
+        "wc": 30119829598.320007,
+        "receivables": 53141918984.15,
+        "prepayments": 1591487357.94,
+        "inventory": 8599098095.97,
+        "accountsPayable": 26784952481.63,
+        "customerAdvances": 6427722358.11,
+        "contractLiabilities": 0,
+        "receivablesToRevenueRatio": 0.3857842520561374,
+        "prepaymentsToRevenueRatio": 0.011553417185081382,
+        "inventoryToRevenueRatio": 0.06242523210914874,
+        "accountsPayableToRevenueRatio": 0.19444561011368022,
+        "advancesToRevenueRatio": 0.04666210987013045,
+        "contractLiabilitiesToRevenueRatio": 0,
+        "changeInWC": 6772860237.1300125
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
+      {
+        "year": "2025Q3",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.08824576546252849,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 12105562325.7,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
       {
         "year": "2024",
         "fixedAssetsPerYuanRevenue": 0.21434508510078124,
@@ -32953,6 +34330,15 @@ const data = {
       }
     ],
     "returnData": [
+      {
+        "year": "2025Q3",
+        "roe": 15.16,
+        "roa": 6.954059,
+        "roic": 10.331675,
+        "netProfitMargin": 15.728891,
+        "assetTurnover": 35.8821,
+        "equityMultiplier": 2.688146
+      },
       {
         "year": "2024",
         "roe": 25.42,
@@ -33194,6 +34580,21 @@ const data = {
         "receivablesDays": 10.203072,
         "inventoryDays": 49.277154,
         "fixedAssetsDays": 65.24980035900813
+      },
+      {
+        "year": "2014",
+        "totalAssets": 156230948479.88,
+        "avgTotalAssets": 144975113733.64,
+        "avgCurrentAssets": 111946588316.435,
+        "avgInventory": 10860914260.875,
+        "equity": 45131451010.18,
+        "avgEquity": 40252602566.479996,
+        "totalAssetsDays": 372.778787,
+        "currentAssetsDays": 287.851565,
+        "wcDays": 79.8091411987933,
+        "receivablesDays": 5.894083,
+        "inventoryDays": 44.419843,
+        "fixedAssetsDays": 42.94105251741106
       }
     ],
     "primaryBusinessData": [
@@ -34583,6 +35984,23 @@ const data = {
   "000690": {
     "basicRevenueData": [
       {
+        "year": "2025Q2",
+        "revenue": 4356718521.52,
+        "netProfit": 558584609.82,
+        "netProfitMargin": 0.1282122329135731,
+        "netProfitExcludingNon": 544663614.79,
+        "coreProfit": 595148093.7500006,
+        "cashFlowFromOperating": 1281895527.42,
+        "fcf": 773307853.51,
+        "capex": 508587673.91,
+        "fcfOverNetProfit": 1.3844059430122735,
+        "netProfitExcludingNonOvernetProfit": 0.9750780906146232,
+        "cashFlowFromOperatingOverNetProfit": 2.2948994742856983,
+        "operatingProfit": 466163854.25000006,
+        "financialProfit": 92420755.57000001,
+        "operatingProfitOverNetProfit": 0.8345447512422838
+      },
+      {
         "year": "2024",
         "revenue": 7903721308.59,
         "netProfit": 705541276.56,
@@ -34755,6 +36173,23 @@ const data = {
     ],
     "costsExpensesData": [
       {
+        "year": "2025Q2",
+        "grossProfitMargin": 17.778929,
+        "netProfitMargin": 12.82122329135731,
+        "grossProfitMinusNetProfit": 4.957705708642692,
+        "devExpenses": 0,
+        "manageExpenses": 94663957.98,
+        "devAndManageExpenses": 94663957.98,
+        "sellingExpenses": 3951393.1,
+        "financialExpenses": 16175994.6,
+        "totalOperatingExpenses": 114791345.67999999,
+        "sellingExpensesRatio": 0.000906965432924368,
+        "devExpensesRatio": 0,
+        "manageExpensesRatio": 0.021728270374229506,
+        "devAndManageExpensesRatio": 0.021728270374229506,
+        "totalOperatingExpensesRatio": 2.634812
+      },
+      {
         "year": "2024",
         "grossProfitMargin": 14.918351,
         "netProfitMargin": 8.92669729881792,
@@ -34926,6 +36361,21 @@ const data = {
       }
     ],
     "balanceData": [
+      {
+        "year": "2025Q2",
+        "currentAssets": 6591960693.91,
+        "cash": 3982326260.11,
+        "inventory": 499602616.73,
+        "nonCurrentAssets": 15100738116.45,
+        "totalAssets": 21692698810.36,
+        "equity": 12411785026.85,
+        "interestFreeLiabilities": 1004056644.76,
+        "interestBearingDebt": 7543046914.349999,
+        "interestExpense": 51367187.65,
+        "interestFreeLiabilitiesOverTotal": 0.046285464687339066,
+        "interestBearingDebtOverTotal": 0.34772284353791844,
+        "debtRatio": 42.783582
+      },
       {
         "year": "2024",
         "currentAssets": 6259967178.77,
@@ -35257,9 +36707,36 @@ const data = {
         "advancesToRevenueRatio": 0,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": -32115622.089999974
+      },
+      {
+        "year": "2014",
+        "wcPerYuanRevenue": 0.07990286166514193,
+        "wc": 375312266.31,
+        "receivables": 348892517.5,
+        "prepayments": 0,
+        "inventory": 128114736.55,
+        "accountsPayable": 101694987.74,
+        "customerAdvances": 0,
+        "contractLiabilities": 0,
+        "receivablesToRevenueRatio": 0.07427817597301596,
+        "prepaymentsToRevenueRatio": 0,
+        "inventoryToRevenueRatio": 0.027275245151101527,
+        "accountsPayableToRevenueRatio": 0.02165055945897556,
+        "advancesToRevenueRatio": 0,
+        "contractLiabilitiesToRevenueRatio": 0,
+        "changeInWC": -216084964.75999993
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
+      {
+        "year": "2025Q2",
+        "fixedAssetsPerYuanRevenue": 2.490790174033093,
+        "longTermOperatingAssetsPerYuanRevenue": 2.644045526629765,
+        "fixedAssets": 10851671684.43,
+        "longTermOperatingAssets": 11519362117.61,
+        "depreciation": 313562909.19,
+        "depreciationOverRevenue": 0.07197226711828106
+      },
       {
         "year": "2024",
         "fixedAssetsPerYuanRevenue": 1.3586283089194178,
@@ -35352,6 +36829,15 @@ const data = {
       }
     ],
     "returnData": [
+      {
+        "year": "2025Q2",
+        "roe": 4.5,
+        "roa": 3.590827,
+        "roic": 3.110668,
+        "netProfitMargin": 12.821223,
+        "assetTurnover": 20.315,
+        "equityMultiplier": 1.74775
+      },
       {
         "year": "2024",
         "roe": 5.85,
@@ -35593,6 +37079,21 @@ const data = {
         "receivablesDays": 31.14547,
         "inventoryDays": 17.650563,
         "fixedAssetsDays": 504.6030640025395
+      },
+      {
+        "year": "2014",
+        "totalAssets": 9555576986.61,
+        "avgTotalAssets": 9715927571.23,
+        "avgCurrentAssets": 2951077107.815,
+        "avgInventory": 307906838.405,
+        "equity": 5013856525.51,
+        "avgEquity": 4799701917.3,
+        "totalAssetsDays": 744.657116,
+        "currentAssetsDays": 226.179183,
+        "wcDays": 29.164544507776803,
+        "receivablesDays": 32.290488,
+        "inventoryDays": 35.860359,
+        "fixedAssetsDays": 385.702894905471
       }
     ],
     "primaryBusinessData": [
@@ -36550,6 +38051,23 @@ const data = {
   "000792": {
     "basicRevenueData": [
       {
+        "year": "2025Q3",
+        "revenue": 11110592457.36,
+        "netProfit": 4502770625.75,
+        "netProfitMargin": 0.4052682737694357,
+        "netProfitExcludingNon": 4494028356.19,
+        "coreProfit": 5297265929.460001,
+        "cashFlowFromOperating": 8859232596.02,
+        "fcf": 7548092991.34,
+        "capex": 1311139604.68,
+        "fcfOverNetProfit": 1.6763218957178745,
+        "netProfitExcludingNonOvernetProfit": 0.998058468821395,
+        "cashFlowFromOperatingOverNetProfit": 1.9675069712316005,
+        "operatingProfit": 4325365746.41,
+        "financialProfit": 177404879.34,
+        "operatingProfitOverNetProfit": 0.9606009512619909
+      },
+      {
         "year": "2024",
         "revenue": 15134119500.89,
         "netProfit": 4663116528.38,
@@ -36722,6 +38240,23 @@ const data = {
     ],
     "costsExpensesData": [
       {
+        "year": "2025Q3",
+        "grossProfitMargin": 59.181231,
+        "netProfitMargin": 40.52682737694357,
+        "grossProfitMinusNetProfit": 18.654403623056425,
+        "devExpenses": 46262589.22,
+        "manageExpenses": 500838610.38,
+        "devAndManageExpenses": 547101199.6,
+        "sellingExpenses": 70895726.45,
+        "financialExpenses": -149015815.19,
+        "totalOperatingExpenses": 468981110.8600001,
+        "sellingExpensesRatio": 0.006380913234112595,
+        "devExpensesRatio": 0.004163827392422645,
+        "manageExpensesRatio": 0.045077579103194355,
+        "devAndManageExpensesRatio": 0.04924140649561701,
+        "totalOperatingExpensesRatio": 4.221027
+      },
+      {
         "year": "2024",
         "grossProfitMargin": 51.857906,
         "netProfitMargin": 30.8119446797402,
@@ -36893,6 +38428,21 @@ const data = {
       }
     ],
     "balanceData": [
+      {
+        "year": "2025Q3",
+        "currentAssets": 34525149712.51,
+        "cash": 21363453570.72,
+        "inventory": 1144742931.06,
+        "nonCurrentAssets": 16448704851.27,
+        "totalAssets": 50973854563.78,
+        "equity": 41059227351.67,
+        "interestFreeLiabilities": 3126603605.54,
+        "interestBearingDebt": 1106937870.97,
+        "interestExpense": 7992359.3,
+        "interestFreeLiabilitiesOverTotal": 0.061337398011129425,
+        "interestBearingDebtOverTotal": 0.021715796861800328,
+        "debtRatio": 13.97442
+      },
       {
         "year": "2024",
         "currentAssets": 27761401669.79,
@@ -37224,9 +38774,36 @@ const data = {
         "advancesToRevenueRatio": 0.048078573184517075,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": -823547629.7299998
+      },
+      {
+        "year": "2014",
+        "wcPerYuanRevenue": -0.131038720196694,
+        "wc": -1372547143.1599996,
+        "receivables": 2300367911.45,
+        "prepayments": 359810307.13,
+        "inventory": 2649889750.76,
+        "accountsPayable": 5528853635.82,
+        "customerAdvances": 1153761476.68,
+        "contractLiabilities": 0,
+        "receivablesToRevenueRatio": 0.21961888056096512,
+        "prepaymentsToRevenueRatio": 0.03435152110793353,
+        "inventoryToRevenueRatio": 0.25298814931958136,
+        "accountsPayableToRevenueRatio": 0.5278462806929145,
+        "advancesToRevenueRatio": 0.11015099049225946,
+        "contractLiabilitiesToRevenueRatio": 0,
+        "changeInWC": -1109206916.3299994
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
+      {
+        "year": "2025Q3",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.09078833688943364,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 1008712211.0600001,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
       {
         "year": "2024",
         "fixedAssetsPerYuanRevenue": 0.7076265626467542,
@@ -37319,6 +38896,15 @@ const data = {
       }
     ],
     "returnData": [
+      {
+        "year": "2025Q3",
+        "roe": 12.46,
+        "roa": 11.64683,
+        "roic": 11.168301,
+        "netProfitMargin": 43.526181,
+        "assetTurnover": 22.966,
+        "equityMultiplier": 1.162444
+      },
       {
         "year": "2024",
         "roe": 13.62,
@@ -37560,6 +39146,21 @@ const data = {
         "receivablesDays": 12.048923,
         "inventoryDays": 191.375312,
         "fixedAssetsDays": 2065.2061614268323
+      },
+      {
+        "year": "2014",
+        "totalAssets": 67899306162.33,
+        "avgTotalAssets": 61753668705.03,
+        "avgCurrentAssets": 10381547920.795,
+        "avgInventory": 2516843961.5200005,
+        "equity": 19279852573.35,
+        "avgEquity": 18642644667.269997,
+        "totalAssetsDays": 2122.450825,
+        "currentAssetsDays": 356.809974,
+        "wcDays": -47.8291328717933,
+        "receivablesDays": 9.118449,
+        "inventoryDays": 178.457594,
+        "fixedAssetsDays": 1851.7495403769155
       }
     ],
     "primaryBusinessData": [
@@ -39069,6 +40670,23 @@ const data = {
   "000858": {
     "basicRevenueData": [
       {
+        "year": "2025Q3",
+        "revenue": 60945321083.57,
+        "netProfit": 21511276550.29,
+        "netProfitMargin": 0.35296026286895943,
+        "netProfitExcludingNon": 21494962886.91,
+        "coreProfit": 27618632830.659996,
+        "cashFlowFromOperating": 28247488416.94,
+        "fcf": 26758959595.92,
+        "capex": 1488528821.02,
+        "fcfOverNetProfit": 1.2439503315092313,
+        "netProfitExcludingNonOvernetProfit": 0.9992416227209081,
+        "cashFlowFromOperatingOverNetProfit": 1.313147936660188,
+        "operatingProfit": 21459883228.670002,
+        "financialProfit": 51393321.62,
+        "operatingProfitOverNetProfit": 0.9976108660264839
+      },
+      {
         "year": "2024",
         "revenue": 89175178322.7,
         "netProfit": 31853172533.98,
@@ -39241,6 +40859,23 @@ const data = {
     ],
     "costsExpensesData": [
       {
+        "year": "2025Q3",
+        "grossProfitMargin": 74.925515,
+        "netProfitMargin": 35.296026286895945,
+        "grossProfitMinusNetProfit": 39.62948871310406,
+        "devExpenses": 318925867.64,
+        "manageExpenses": 2298633729.54,
+        "devAndManageExpenses": 2617559597.18,
+        "sellingExpenses": 6630015165.78,
+        "financialExpenses": -2033395809.3,
+        "totalOperatingExpenses": 7214178953.659999,
+        "sellingExpensesRatio": 0.10878628659103674,
+        "devExpensesRatio": 0.005232983631387872,
+        "manageExpensesRatio": 0.03771632815566016,
+        "devAndManageExpensesRatio": 0.04294931178704803,
+        "totalOperatingExpensesRatio": 11.837133
+      },
+      {
         "year": "2024",
         "grossProfitMargin": 77.054799,
         "netProfitMargin": 35.71977441829417,
@@ -39412,6 +41047,21 @@ const data = {
       }
     ],
     "balanceData": [
+      {
+        "year": "2025Q3",
+        "currentAssets": 157724237825.82,
+        "cash": 136305976701.21,
+        "inventory": 17540752483.71,
+        "nonCurrentAssets": 23349185376.95,
+        "totalAssets": 181073423202.77,
+        "equity": 142495742798.41,
+        "interestFreeLiabilities": 18692440592.4,
+        "interestBearingDebt": 1234744396.79,
+        "interestExpense": 21402505.61,
+        "interestFreeLiabilitiesOverTotal": 0.10323127636167675,
+        "interestBearingDebtOverTotal": 0.0068190260887005276,
+        "debtRatio": 19.259003
+      },
       {
         "year": "2024",
         "currentAssets": 165783297845.86,
@@ -39743,9 +41393,36 @@ const data = {
         "advancesToRevenueRatio": 0.09205907945169348,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": 376231362.3100014
+      },
+      {
+        "year": "2014",
+        "wcPerYuanRevenue": 0.6842380040679948,
+        "wc": 14376861031.18,
+        "receivables": 7492370645.34,
+        "prepayments": 298155704.17,
+        "inventory": 8091488733.56,
+        "accountsPayable": 647043070,
+        "customerAdvances": 858110981.89,
+        "contractLiabilities": 0,
+        "receivablesToRevenueRatio": 0.3565844258344554,
+        "prepaymentsToRevenueRatio": 0.014190125610891016,
+        "inventoryToRevenueRatio": 0.38509825538289605,
+        "accountsPayableToRevenueRatio": 0.03079472339634141,
+        "advancesToRevenueRatio": 0.04084007936390615,
+        "contractLiabilitiesToRevenueRatio": 0,
+        "changeInWC": 4985378679.650002
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
+      {
+        "year": "2025Q3",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.05442948401258446,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 3317222379.56,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
       {
         "year": "2024",
         "fixedAssetsPerYuanRevenue": 0.14670370378950873,
@@ -39838,6 +41515,15 @@ const data = {
       }
     ],
     "returnData": [
+      {
+        "year": "2025Q3",
+        "roe": 15.37,
+        "roa": 15.952082,
+        "roic": 15.542468,
+        "netProfitMargin": 36.445544,
+        "assetTurnover": 33.0035,
+        "equityMultiplier": 1.238528
+      },
       {
         "year": "2024",
         "roe": 23.35,
@@ -40079,6 +41765,21 @@ const data = {
         "receivablesDays": 1.910595,
         "inventoryDays": 453.033247,
         "fixedAssetsDays": 99.49999872807588
+      },
+      {
+        "year": "2014",
+        "totalAssets": 46408870652.85,
+        "avgTotalAssets": 45269186395.575,
+        "avgCurrentAssets": 37721150520.185,
+        "avgInventory": 7488537364.475,
+        "equity": 40333080446.08,
+        "avgEquity": 38676182499.085,
+        "totalAssetsDays": 775.618764,
+        "currentAssetsDays": 646.294631,
+        "wcDays": 249.74687148481812,
+        "receivablesDays": 1.699821,
+        "inventoryDays": 467.058163,
+        "fixedAssetsDays": 105.29677927353582
       }
     ],
     "primaryBusinessData": [
@@ -41624,6 +43325,23 @@ const data = {
   "002594": {
     "basicRevenueData": [
       {
+        "year": "2025Q3",
+        "revenue": 566265546000,
+        "netProfit": 23333173000,
+        "netProfitMargin": 0.041205355269840135,
+        "netProfitExcludingNon": 20490492000,
+        "coreProfit": 55372774000,
+        "cashFlowFromOperating": 40845498000,
+        "fcf": -74087786000,
+        "capex": 114933284000,
+        "fcfOverNetProfit": -3.17521264681833,
+        "netProfitExcludingNonOvernetProfit": 0.8781699771394144,
+        "cashFlowFromOperatingOverNetProfit": 1.7505333715221671,
+        "operatingProfit": 20736454000,
+        "financialProfit": 2596719000,
+        "operatingProfitOverNetProfit": 0.8887112781446398
+      },
+      {
         "year": "2024",
         "revenue": 777102455000,
         "netProfit": 40254346000,
@@ -41796,6 +43514,23 @@ const data = {
     ],
     "costsExpensesData": [
       {
+        "year": "2025Q3",
+        "grossProfitMargin": 17.873574,
+        "netProfitMargin": 4.120535526984013,
+        "grossProfitMinusNetProfit": 13.753038473015987,
+        "devExpenses": 43748447000,
+        "manageExpenses": 15268112000,
+        "devAndManageExpenses": 59016559000,
+        "sellingExpenses": 18508189000,
+        "financialExpenses": -2935816000,
+        "totalOperatingExpenses": 74588932000,
+        "sellingExpensesRatio": 0.032684646153626304,
+        "devExpensesRatio": 0.07725782949189001,
+        "manageExpensesRatio": 0.02696281295560228,
+        "devAndManageExpensesRatio": 0.1042206424474923,
+        "totalOperatingExpensesRatio": 13.172076
+      },
+      {
         "year": "2024",
         "grossProfitMargin": 19.438342,
         "netProfitMargin": 5.1800564701600385,
@@ -41967,6 +43702,21 @@ const data = {
       }
     ],
     "balanceData": [
+      {
+        "year": "2025Q3",
+        "currentAssets": 430193707000,
+        "cash": 119725097000,
+        "inventory": 152973306000,
+        "nonCurrentAssets": 471731384000,
+        "totalAssets": 901925091000,
+        "equity": 245515455000,
+        "interestFreeLiabilities": 286364756000,
+        "interestBearingDebt": 99207070000,
+        "interestExpense": 1731556000,
+        "interestFreeLiabilitiesOverTotal": 0.3175039245027501,
+        "interestBearingDebtOverTotal": 0.10999480000052465,
+        "debtRatio": 71.350348
+      },
       {
         "year": "2024",
         "currentAssets": 370572244000,
@@ -42298,9 +44048,36 @@ const data = {
         "advancesToRevenueRatio": 0.030471696622808582,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": 4824743000
+      },
+      {
+        "year": "2014",
+        "wcPerYuanRevenue": 0.31705083992374855,
+        "wc": 18451052000,
+        "receivables": 23104284000,
+        "prepayments": 338611000,
+        "inventory": 9978317000,
+        "accountsPayable": 11323422000,
+        "customerAdvances": 3646738000,
+        "contractLiabilities": 0,
+        "receivablesToRevenueRatio": 0.39700894279831983,
+        "prepaymentsToRevenueRatio": 0.005818470510918316,
+        "inventoryToRevenueRatio": 0.17146088937776657,
+        "accountsPayableToRevenueRatio": 0.1945742961382935,
+        "advancesToRevenueRatio": 0.06266316662496269,
+        "contractLiabilitiesToRevenueRatio": 0,
+        "changeInWC": 7159969000
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
+      {
+        "year": "2025Q3",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.11053946058021337,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 62594688000,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
       {
         "year": "2024",
         "fixedAssetsPerYuanRevenue": 0.36353604364819564,
@@ -42393,6 +44170,15 @@ const data = {
       }
     ],
     "returnData": [
+      {
+        "year": "2025Q3",
+        "roe": 10.83,
+        "roa": 3.606686,
+        "roic": 9.500308,
+        "netProfitMargin": 4.279205,
+        "assetTurnover": 67.2013,
+        "equityMultiplier": 3.490443
+      },
       {
         "year": "2024",
         "roe": 26.05,
@@ -42634,6 +44420,21 @@ const data = {
         "receivablesDays": 79.350904,
         "inventoryDays": 69.627849,
         "fixedAssetsDays": 191.9488820303244
+      },
+      {
+        "year": "2014",
+        "totalAssets": 94008855000,
+        "avgTotalAssets": 86011844000,
+        "avgCurrentAssets": 35298922000,
+        "avgInventory": 9099434500,
+        "equity": 28894437000,
+        "avgEquity": 26875439000,
+        "totalAssetsDays": 532.069708,
+        "currentAssetsDays": 218.359312,
+        "wcDays": 115.72355657216822,
+        "receivablesDays": 66.311967,
+        "inventoryDays": 66.657252,
+        "fixedAssetsDays": 245.1045742449319
       }
     ],
     "primaryBusinessData": [

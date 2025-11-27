@@ -346,7 +346,7 @@ const sleep = (timeout: number) => {
   });
 };
 
-async function main() {
+export async function main() {
   // 检查是否有 -f 参数
   const forceUpdate = process.argv.includes("-f");
 
@@ -382,5 +382,3 @@ async function main() {
 
   console.log("数据更新完成！");
 }
-
-main();

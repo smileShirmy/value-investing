@@ -115,8 +115,10 @@ const calculateColumnGrowth = (data: any[], column: string) => {
 };
 
 const tableData = computed(() => {
+  const hasQuarter = fixedAssetInvestmentAnalysisData.some((v) => v.year.includes("Q"));
+
   // 获取原始数据并确保有足够的数据点
-  const originalData = fixedAssetInvestmentAnalysisData.slice(0, 10);
+  const originalData = fixedAssetInvestmentAnalysisData.slice(0, hasQuarter ? 11 : 10);
   if (originalData.length < 2) return originalData.reverse();
 
   // 按年份升序排序
@@ -127,7 +129,10 @@ const tableData = computed(() => {
   // 计算所有数值列的增速
   const growthData = numericColumns.reduce((acc, column) => {
     try {
-      acc[column] = calculateColumnGrowth(sortedData, column);
+      acc[column] = calculateColumnGrowth(
+        sortedData.filter((v) => !v.year.includes("Q")),
+        column
+      );
     } catch (e) {
       console.error(`Error calculating growth for ${column}:`, e);
       acc[column] = {

@@ -1,12 +1,12 @@
-import type { StockItem } from "../types";
+export interface SinaResponseDataReportDate {
+  date_value: string;
+  date_description: string;
+  date_type: 1 | 2 | 3 | 4;
+}
 
 export interface SinaResponseData {
   report_count: number;
-  report_date: {
-    date_value: string;
-    date_description: string;
-    date_type: 1 | 2 | 3 | 4;
-  }[];
+  report_date: SinaResponseDataReportDate[];
   report_list: {
     [date_value: string]: {
       rType: string;

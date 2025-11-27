@@ -5,6 +5,7 @@ import type {
   DynamicData,
   ReportDateItem,
   SinaFinanceData,
+  SinaResponseDataReportDate,
   StockData,
 } from "./types";
 import type {
@@ -45,12 +46,21 @@ function getVal(dateValue: string, data: StockData) {
   };
 }
 
+function formatYear(date: SinaResponseDataReportDate) {
+  const year = date.date_value.substring(0, 4);
+  return date.date_type < 4 ? `${year}Q${date.date_type}` : year;
+}
+
 // 营收基本数据
 function generateBasicRevenueData(data: StockData) {
   const arr: BasicRevenueData[] = [];
 
-  for (const date of data.gjzb.report_date) {
-    if (date.date_type === 4) {
+  const { report_date } = data.gjzb;
+  for (let i = 0; i < report_date.length; i += 1) {
+    const date = report_date[i];
+    if (!date) continue;
+
+    if (date.date_type === 4 || i === 0) {
       const val = getVal(date.date_value, data);
 
       const revenue = val("BIZINCO");
@@ -79,7 +89,7 @@ function generateBasicRevenueData(data: StockData) {
       const operatingProfit = netProfit - financialProfit;
 
       arr.push({
-        year: date.date_value.substring(0, 4),
+        year: formatYear(date),
         revenue,
         netProfit,
         netProfitMargin: netProfit / revenue, // 净利润率
@@ -104,8 +114,12 @@ function generateBasicRevenueData(data: StockData) {
 function generateCostsExpensesData(data: StockData) {
   const arr: CostsExpensesData[] = [];
 
-  for (const date of data.gjzb.report_date) {
-    if (date.date_type === 4) {
+  const { report_date } = data.gjzb;
+  for (let i = 0; i < report_date.length; i += 1) {
+    const date = report_date[i];
+    if (!date) continue;
+
+    if (date.date_type === 4 || i === 0) {
       const val = getVal(date.date_value, data);
 
       const revenue = val("BIZINCO");
@@ -121,7 +135,7 @@ function generateCostsExpensesData(data: StockData) {
         devAndManageExpenses + sellingExpenses + financialExpenses;
 
       arr.push({
-        year: date.date_value.substring(0, 4),
+        year: formatYear(date),
         grossProfitMargin, // 毛利率
         netProfitMargin, // 净利率
         grossProfitMinusNetProfit: grossProfitMargin - netProfitMargin, // 毛利率-净利润率
@@ -146,8 +160,12 @@ function generateCostsExpensesData(data: StockData) {
 function generateBalanceData(data: StockData) {
   const arr: BalanceData[] = [];
 
-  for (const date of data.gjzb.report_date) {
-    if (date.date_type === 4) {
+  const { report_date } = data.gjzb;
+  for (let i = 0; i < report_date.length; i += 1) {
+    const date = report_date[i];
+    if (!date) continue;
+
+    if (date.date_type === 4 || i === 0) {
       const val = getVal(date.date_value, data);
 
       const currentAssets = val("TOTCURRASSET");
@@ -183,7 +201,7 @@ function generateBalanceData(data: StockData) {
       const debtRatio = val("ASSLIABRT");
 
       arr.push({
-        year: date.date_value.substring(0, 4),
+        year: formatYear(date),
         currentAssets, // 流动资产
         cash, // 现金
         inventory, // 存货
@@ -207,8 +225,12 @@ function generateWorkingCapitalData(data: StockData) {
   const arr: WorkingCapitalData[] = [];
   let prevWc = 0;
 
-  for (const date of data.gjzb.report_date.slice().reverse()) {
-    if (date.date_type === 4) {
+  const { report_date } = data.gjzb;
+  for (let i = report_date.length - 1; i > 0; i -= 1) {
+    const date = report_date[i];
+    if (!date) continue;
+
+    if (date.date_type === 4 || i === 0) {
       const val = getVal(date.date_value, data);
 
       const revenue = val("BIZINCO");
@@ -233,7 +255,7 @@ function generateWorkingCapitalData(data: StockData) {
         contractLiabilities;
 
       arr.unshift({
-        year: date.date_value.substring(0, 4),
+        year: formatYear(date),
         wcPerYuanRevenue: wc / revenue, // 1元收入需要的WC
         wc, // WC
         receivables, // 应收
@@ -261,8 +283,12 @@ function generateWorkingCapitalData(data: StockData) {
 function generateFixedAssetInvestmentAnalysisData(data: StockData) {
   const arr: FixedAssetInvestmentAnalysisData[] = [];
 
-  for (const date of data.gjzb.report_date) {
-    if (date.date_type === 4) {
+  const { report_date } = data.gjzb;
+  for (let i = 0; i < report_date.length; i += 1) {
+    const date = report_date[i];
+    if (!date) continue;
+
+    if (date.date_type === 4 || i === 0) {
       const val = getVal(date.date_value, data);
 
       const revenue = val("BIZINCO");
@@ -295,7 +321,7 @@ function generateFixedAssetInvestmentAnalysisData(data: StockData) {
       }
 
       arr.push({
-        year: date.date_value.substring(0, 4),
+        year: formatYear(date),
         fixedAssetsPerYuanRevenue: fixedAssets / revenue, // 1 元收入需要的固定资产
         longTermOperatingAssetsPerYuanRevenue:
           longTermOperatingAssets / revenue, // 1 元收入需要的长期资产
@@ -313,8 +339,12 @@ function generateFixedAssetInvestmentAnalysisData(data: StockData) {
 function generateReturnData(data: StockData) {
   const arr: ReturnData[] = [];
 
-  for (const date of data.gjzb.report_date) {
-    if (date.date_type === 4) {
+  const { report_date } = data.gjzb;
+  for (let i = 0; i < report_date.length; i += 1) {
+    const date = report_date[i];
+    if (!date) continue;
+
+    if (date.date_type === 4 || i === 0) {
       const val = getVal(date.date_value, data);
 
       const roe = val("ROEWEIGHTED");
@@ -325,7 +355,7 @@ function generateReturnData(data: StockData) {
       const equityMultiplier = val("EMCONMS");
 
       arr.push({
-        year: date.date_value.substring(0, 4),
+        year: formatYear(date),
         roe, // ROE
         roa, // ROA
         roic, // ROIC
@@ -347,8 +377,12 @@ function generateTurnoverRateData(data: StockData) {
   let prevEquity = 0;
   let prevFixedAssets = 0;
 
-  for (const date of data.gjzb.report_date.slice().reverse()) {
-    if (date.date_type === 4) {
+  const { report_date } = data.gjzb;
+  for (let i = report_date.length - 1; i > 0; i -= 1) {
+    const date = report_date[i];
+    if (!date) continue;
+
+    if (date.date_type === 4 || i === 0) {
       const val = getVal(date.date_value, data);
 
       const revenue = val("BIZINCO");
@@ -405,7 +439,7 @@ function generateTurnoverRateData(data: StockData) {
       const fixedAssetsDays = 365 / (revenue / fixedAssets);
 
       arr.unshift({
-        year: date.date_value.substring(0, 4),
+        year: formatYear(date),
         totalAssets, // 总资产
         avgTotalAssets, // 平均总资产
         avgCurrentAssets, // 平均流动资产
@@ -512,7 +546,7 @@ function generateVauationData(data: StockData): ValuationData {
       }
 
       historyData.push({
-        year: date.date_value.substring(0, 4),
+        year: formatYear(date),
         profit: val("PARENETP"),
         profit_tb: val("PARENETP", { key: "item_tongbi" }) ?? 0,
         basicEps: val("EPSBASIC"),
@@ -639,16 +673,16 @@ function generateRecentYearData(data: StockData): RecentYearData {
     const recentYearData = generateRecentYearData(stockData.data);
 
     data[stockData.code] = {
-      basicRevenueData: basicRevenueData.slice(0, 10),
-      costsExpensesData: costsExpensesData.slice(0, 10),
-      balanceData: balanceData.slice(0, 10),
-      workingCapitalData: workingCapitalData.slice(0, 10),
+      basicRevenueData: basicRevenueData.slice(0, 11),
+      costsExpensesData: costsExpensesData.slice(0, 11),
+      balanceData: balanceData.slice(0, 11),
+      workingCapitalData: workingCapitalData.slice(0, 11),
       fixedAssetInvestmentAnalysisData: fixedAssetInvestmentAnalysisData.slice(
         0,
-        10
+        11
       ),
-      returnData: returnData.slice(0, 10),
-      turnoverRateData: turnoverRateData.slice(0, 10),
+      returnData: returnData.slice(0, 11),
+      turnoverRateData: turnoverRateData.slice(0, 11),
       primaryBusinessData: primaryBusinessData,
       valuationData,
       dynamicData,

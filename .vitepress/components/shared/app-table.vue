@@ -261,7 +261,7 @@ function updateChart() {
       },
       axisLabel: {
         interval: 0,
-        rotate: years.length > 10 ? 30 : 0,
+        rotate: years.length > 11 ? 30 : 0,
       },
     },
     yAxis: [

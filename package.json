@@ -3,7 +3,7 @@
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview",
-    "fetch-data": "tsx fetch-data/fetch-stock-data.ts",
+    "fetch-data": "tsx fetch-data/start-fetch.ts",
     "handle-data": "tsx fetch-data/handle-stock-data.ts",
     "update-data": "pnpm run fetch-data & pnpm run handle-data"
   },
