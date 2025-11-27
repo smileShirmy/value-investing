@@ -95,6 +95,16 @@ export default defineConfig({
             { text: "爱玛科技", link: "/company/motorcycle/aima.md" },
           ],
         },
+        {
+          text: "中药",
+          items: [
+            {
+              text: "中药",
+              link: "/company/chinese-medicine/chinese-medicine.md",
+            },
+            { text: "东阿阿胶", link: "/company/chinese-medicine/donge.md" },
+          ],
+        },
       ],
     },
 
