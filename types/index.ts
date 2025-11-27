@@ -168,19 +168,19 @@ export const stockData: StockItem[] = [
     profitValuationConfig: {
       specialOffer: {
         type: ProfitValuationGrowthType.RATE,
-        data: [0.05],
+        data: [-0.12, 0.05],
       },
       conservative: {
         type: ProfitValuationGrowthType.RATE,
-        data: [0.1],
+        data: [-0.12, 0.1],
       },
       neutral: {
         type: ProfitValuationGrowthType.RATE,
-        data: [0.12],
+        data: [-0.12, 0.12],
       },
       optimistic: {
         type: ProfitValuationGrowthType.RATE,
-        data: [0.15],
+        data: [-0.12, 0.15],
       },
       backYearsNum: 10,
     },
