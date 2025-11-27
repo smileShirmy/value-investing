@@ -105,6 +105,13 @@ export default defineConfig({
             { text: "东阿阿胶", link: "/company/chinese-medicine/donge.md" },
           ],
         },
+        {
+          text: "港口",
+          items: [
+            { text: "港口", link: "/company/port/port.md" },
+            { text: "青岛港", link: "/company/port/qingdao.md" },
+          ],
+        },
       ],
     },
 

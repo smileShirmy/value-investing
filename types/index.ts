@@ -21,6 +21,7 @@ export enum ProfitValuationGrowthType {
 export interface ProfitValuationGrowth {
   type: ProfitValuationGrowthType;
   data: number[];
+  discount?: number;
 }
 
 export interface ProfitValuationConfig {
@@ -45,6 +46,25 @@ export const stockData: StockItem[] = [
   {
     name: "贵州茅台",
     code: "600519",
+    profitValuationConfig: {
+      specialOffer: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.06, 0],
+      },
+      conservative: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.06, 0.03],
+      },
+      neutral: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.06, 0.03, 0.06],
+      },
+      optimistic: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.06, 0.09],
+      },
+      backYearsNum: 10,
+    },
   },
   {
     name: "五粮液",
@@ -79,19 +99,19 @@ export const stockData: StockItem[] = [
     profitValuationConfig: {
       specialOffer: {
         type: ProfitValuationGrowthType.RATE,
-        data: [-0.1, 0],
+        data: [-0.05, -0.08, -0.05, 0],
       },
       conservative: {
         type: ProfitValuationGrowthType.RATE,
-        data: [-0.05, 0],
+        data: [-0.05, -0.05, 0],
       },
       neutral: {
         type: ProfitValuationGrowthType.RATE,
-        data: [0],
+        data: [-0.05, -0.03, 0],
       },
       optimistic: {
         type: ProfitValuationGrowthType.RATE,
-        data: [0.05],
+        data: [-0.05, 0.05],
       },
       backYearsNum: 8,
     },
@@ -102,19 +122,19 @@ export const stockData: StockItem[] = [
     profitValuationConfig: {
       specialOffer: {
         type: ProfitValuationGrowthType.RATE,
-        data: [0],
+        data: [0.1, 0],
       },
       conservative: {
         type: ProfitValuationGrowthType.RATE,
-        data: [0.05],
+        data: [0.1, 0.05],
       },
       neutral: {
         type: ProfitValuationGrowthType.RATE,
-        data: [0.07],
+        data: [0.1, 0.07],
       },
       optimistic: {
         type: ProfitValuationGrowthType.RATE,
-        data: [0.09],
+        data: [0.1, 0.09],
       },
       backYearsNum: 8.5,
     },
@@ -221,19 +241,19 @@ export const stockData: StockItem[] = [
     profitValuationConfig: {
       specialOffer: {
         type: ProfitValuationGrowthType.RATE,
-        data: [-0.2, 0],
+        data: [-0.2, -0.1, 0],
       },
       conservative: {
         type: ProfitValuationGrowthType.RATE,
-        data: [-0.2, 0.05],
+        data: [-0.2, -0.1, 0.05],
       },
       neutral: {
         type: ProfitValuationGrowthType.RATE,
-        data: [-0.2, 0.09],
+        data: [-0.2, -0.05, 0.05],
       },
       optimistic: {
         type: ProfitValuationGrowthType.RATE,
-        data: [-0.2, 0.12],
+        data: [-0.2, 0, 0.06],
       },
       backYearsNum: 8,
     },
@@ -268,6 +288,29 @@ export const stockData: StockItem[] = [
   {
     name: "九号公司",
     code: "689009",
+  },
+  {
+    name: "青岛港",
+    code: "601298",
+    profitValuationConfig: {
+      specialOffer: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0],
+      },
+      conservative: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.03],
+      },
+      neutral: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.05],
+      },
+      optimistic: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.08],
+      },
+      backYearsNum: 10,
+    },
   },
 ];
 
@@ -425,15 +468,17 @@ export interface ValuationHistoryData {
 
 export interface ValuationData {
   historyData: ValuationHistoryData[];
-  cash: number;
+  cash: number; // 货币资金
   interestBearingDebt: number; // 有息负债
   interestBearingDebtOverTotal: number; // 有息/总资产
   debtRatio: number; // 资产负债率
-  roe: number;
-  roic: number;
-  roa: number;
-  grossProfitMargin: number;
-  netProfitMargin: number;
+  roe: number; // ROE
+  roic: number; // ROIC
+  roa: number; // ROA
+  grossProfitMargin: number; // 毛利率
+  netProfitMargin: number; // 净利率
+  tradingFinancialAssets: number; // 交易性金融资产
+  longTermEquityInvestment: number; // 长期股权投资
 }
 
 export interface RecentYearData {

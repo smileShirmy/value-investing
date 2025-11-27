@@ -191,7 +191,7 @@ function generateBalanceData(data: StockData) {
         val("SHORTTERMBORR") +
         val("DUENONCLIAB") +
         val("LONGBORR") +
-        val("NOTESPAYA") +
+        // val("NOTESPAYA") +
         val("LONGPAYA") +
         val("BDSPAYA") +
         val("LEASELIAB");
@@ -562,11 +562,13 @@ function generateVauationData(data: StockData): ValuationData {
 
   const lastVal = getVal(lastDateValue, data);
   const cash = lastVal("CURFDS");
+  const tradingFinancialAssets = lastVal("TRADFINASSET");
+  const longTermEquityInvestment = lastVal("EQUIINVE");
 
   const totalAssets = lastVal("TOTASSET");
   /**
    * 短期借款（几乎总是有息负债）
-   * 一年内到期的非流动负债（通常，其大部分构成源自长期借款、应付债券等有息负债的到期部分，因此整体上常被视为有息流动负债。）
+   * 一年内到期的非流动负债（通常，其大部分构成源自长期借款、应付债券等有息负债的到期部分，因此整体上常被视为有息流动负债）
    * 长期借款（几乎总是有息负债）
    * 应付票据 （快速分析时，可保守地将所有应付票据计入，因为银承占比较高）
    * 长期应付款（长期应付款实务中更常见的是有息性质）
@@ -578,7 +580,7 @@ function generateVauationData(data: StockData): ValuationData {
     lastVal("SHORTTERMBORR") +
     lastVal("DUENONCLIAB") +
     lastVal("LONGBORR") +
-    lastVal("NOTESPAYA") +
+    // lastVal("NOTESPAYA") +
     lastVal("LONGPAYA") +
     lastVal("BDSPAYA") +
     lastVal("LEASELIAB");
@@ -599,7 +601,7 @@ function generateVauationData(data: StockData): ValuationData {
   return {
     historyData: historyData.slice(-10),
     cash,
-    interestBearingDebt,
+    interestBearingDebt, // 有息负债
     debtRatio,
     interestBearingDebtOverTotal: interestBearingDebt / totalAssets, // 有息/总资产
     roe,
@@ -607,6 +609,8 @@ function generateVauationData(data: StockData): ValuationData {
     roa,
     grossProfitMargin,
     netProfitMargin,
+    tradingFinancialAssets,
+    longTermEquityInvestment,
   };
 }
 

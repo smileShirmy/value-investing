@@ -23,9 +23,10 @@ export interface ProfitValuationFutureData {
 }
 
 export class ProfitValuation {
-  growth = ref<ProfitValuationGrowth>({
+  growth = ref<Required<ProfitValuationGrowth>>({
     type: ProfitValuationGrowthType.RATE,
     data: [],
+    discount: 1,
   });
 
   // 上一年利润
@@ -95,7 +96,11 @@ export class ProfitValuation {
     growth?: ProfitValuationGrowth
   ) {
     if (growth) {
-      this.growth.value = growth;
+      this.growth.value = {
+        type: growth.type,
+        data: growth.data,
+        discount: typeof growth.discount === "number" ? growth.discount : 1,
+      };
     }
 
     if (stockItem.profitValuationConfig) {

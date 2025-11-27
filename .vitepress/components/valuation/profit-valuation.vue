@@ -69,7 +69,7 @@ const expectDividendRate = (row: ProfitValuationFutureData) => {
       <table class="valuation-table">
         <caption>
           {{
-            caption
+            `${caption}（${stockItem.name}）`
           }}
         </caption>
         <thead>
@@ -160,57 +160,118 @@ const expectDividendRate = (row: ProfitValuationFutureData) => {
               {{ profitValuation.backYearsNum }}年利润合计
             </td>
             <td class="sum-eps-td">￥{{ profitValuation.sumEps }}</td>
-            <td>当前股价</td>
+            <td colspan="2">当前股价</td>
             <td>￥{{ profitValuation.price }}</td>
-            <td>有息负债率：</td>
+            <td>有息负债率</td>
             <td>
               {{
                 formatPercent(valuationData.interestBearingDebtOverTotal * 100)
               }}
             </td>
-            <td></td>
           </tr>
           <tr class="bold-tr">
             <td class="anchor-td">人民币锚点</td>
             <td class="anchor-td">￥{{ profitValuation.anchor }}</td>
-            <td class="batting-edge-td">击球区边缘</td>
+            <td colspan="2" class="batting-edge-td">击球区边缘</td>
             <td class="batting-edge-td">{{ profitValuation.battingEdge }}</td>
-            <td>资产负债率：</td>
+            <td>资产负债率</td>
             <td>{{ formatPercent(valuationData.debtRatio) }}</td>
-            <td></td>
           </tr>
           <tr class="bold-tr">
             <td class="could-fall-another-td">还可以跌</td>
             <td class="could-fall-another-td">
               {{ profitValuation.couldFallAnother }}
             </td>
-            <td>每股现金</td>
+            <td colspan="2">每股现金</td>
             <td>￥{{ profitValuation.cashPerShare }}</td>
             <td>毛利率</td>
             <td>{{ formatPercent(valuationData.grossProfitMargin) }}</td>
-            <td></td>
           </tr>
           <tr class="bold-tr">
             <td class="long-term-average-return-td">长期平均收益率</td>
             <td class="long-term-average-return-td">
               {{ profitValuation.longTermAverageReturnYieldWithPrice }}
             </td>
-            <td class="long-term-average-return-td">预期锚点收益率</td>
+            <td colspan="2" class="long-term-average-return-td">
+              预期锚点收益率
+            </td>
             <td class="long-term-average-return-td">
               {{ profitValuation.longTermAverageReturnYieldWithAnchor }}
             </td>
             <td>净利率</td>
             <td>{{ formatPercent(valuationData.netProfitMargin) }}</td>
-            <td></td>
           </tr>
           <tr class="bold-tr">
             <td>ROE</td>
             <td>{{ formatPercent(valuationData.roe) }}</td>
-            <td>ROIC</td>
+            <td colspan="2">ROIC</td>
             <td>{{ formatPercent(valuationData.roic) }}</td>
             <td>ROA</td>
             <td>{{ formatPercent(valuationData.roa) }}</td>
-            <td></td>
+          </tr>
+          <tr class="bold-tr">
+            <td>{{ historyData[historyData.length - 1].year }}年度总分红</td>
+            <td>
+              ￥{{ formatNum(historyData[historyData.length - 1].dps, 2) }}
+            </td>
+            <td colspan="2">可交易金融资产</td>
+            <td>
+              {{
+                numToAHundredMillion(valuationData.tradingFinancialAssets, 2)
+              }}亿
+            </td>
+            <td>估值折扣比例</td>
+            <td>
+              {{
+                formatPercent(profitValuation.growth.value.discount * 100, 0)
+              }}
+            </td>
+          </tr>
+          <tr class="bold-tr">
+            <td>去有息负债现金</td>
+            <td>
+              {{
+                numToAHundredMillion(
+                  valuationData.cash - valuationData.interestBearingDebt,
+                  2
+                )
+              }}亿
+            </td>
+            <td colspan="2">长期股权投资</td>
+            <td>
+              {{
+                numToAHundredMillion(valuationData.longTermEquityInvestment, 2)
+              }}亿
+            </td>
+            <td>当前货币资金</td>
+            <td>{{ numToAHundredMillion(valuationData.cash, 2) }}亿</td>
+          </tr>
+          <tr class="bold-tr">
+            <td>去有息每股现金</td>
+            <td>
+              ￥{{
+                formatNum(
+                  (valuationData.cash - valuationData.interestBearingDebt) /
+                    dynamicData.totalSharesOutstanding,
+                  2
+                )
+              }}
+            </td>
+            <td colspan="2">合计每股金融资产</td>
+            <td>
+              ￥{{
+                formatNum(
+                  (valuationData.tradingFinancialAssets +
+                    valuationData.longTermEquityInvestment) /
+                    dynamicData.totalSharesOutstanding,
+                  2
+                )
+              }}
+            </td>
+            <td>有息负债</td>
+            <td>
+              {{ numToAHundredMillion(valuationData.interestBearingDebt, 2) }}亿
+            </td>
           </tr>
         </tbody>
       </table>

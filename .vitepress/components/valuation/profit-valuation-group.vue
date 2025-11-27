@@ -38,7 +38,7 @@ const stockItem = getStockItem(props.code);
         v-if="stockItem.profitValuationConfig?.optimistic"
         class="valuation-item"
         :code="props.code"
-        caption="乐观估算"
+        caption="激进估算"
         :growth="stockItem.profitValuationConfig?.optimistic"
       />
     </template>
