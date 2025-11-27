@@ -98,7 +98,7 @@ const expectDividendRate = (row: ProfitValuationFutureData) => {
             <td>净利润</td>
             <td>增长率</td>
             <td>每股收益</td>
-            <td>动态PE</td>
+            <td>当前股价PE</td>
             <td class="dividend-rate-td">当前股息率</td>
             <td class="dividend-rate-td">
               {{ formatPercent(dividendRate * 100, 2) }}

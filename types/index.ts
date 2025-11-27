@@ -49,6 +49,25 @@ export const stockData: StockItem[] = [
   {
     name: "五粮液",
     code: "000858",
+    profitValuationConfig: {
+      specialOffer: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [-0.15, -0.05, 0],
+      },
+      conservative: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [-0.15, -0.05, 0.03],
+      },
+      neutral: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [-0.15, -0.05, 0.05],
+      },
+      optimistic: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [-0.15, 0, 0.05],
+      },
+      backYearsNum: 8,
+    },
   },
   {
     name: "泸州老窖",
