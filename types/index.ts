@@ -190,10 +190,6 @@ export const stockData: StockItem[] = [
     code: "600938",
   },
   {
-    name: "长江电力",
-    code: "600900",
-  },
-  {
     name: "中远海控",
     code: "601919",
     profitValuationConfig: {
@@ -203,10 +199,6 @@ export const stockData: StockItem[] = [
       },
       backYearsNum: 7,
     },
-  },
-  {
-    name: "国投电力",
-    code: "600886",
   },
   {
     name: "中国神华",
@@ -311,6 +303,14 @@ export const stockData: StockItem[] = [
       },
       backYearsNum: 10,
     },
+  },
+  {
+    name: "长江电力",
+    code: "600900",
+  },
+  {
+    name: "国投电力",
+    code: "600886",
   },
 ];
 

@@ -112,24 +112,16 @@ export default defineConfig({
             { text: "青岛港", link: "/company/port/qingdao.md" },
           ],
         },
+        {
+          text: "电力",
+          items: [
+            { text: "电力", link: "/company/electricity/electricity.md" },
+            { text: "长江电力", link: "/company/electricity/yangtze.md" },
+            { text: "国投电力", link: "/company/electricity/guotou.md" },
+          ],
+        },
       ],
     },
-
-    // sidebar: [
-    //   {
-    //     text: 'Examples',
-    //     items: [
-    //       { text: 'Markdown Examples', link: '/markdown-examples' },
-    //       { text: 'Runtime API Examples', link: '/api-examples' }
-    //     ]
-    //   },
-    //   {
-    //     text: 'Company',
-    //     items: [
-    //       { text: '盐湖股份', link: '/company/yanhugufen.md'}
-    //     ]
-    //   }
-    // ],
 
     socialLinks: [
       { icon: "github", link: "https://github.com/vuejs/vitepress" },
