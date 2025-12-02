@@ -87,8 +87,8 @@ const basicStocks = ref<BasicItem[]>([
     hkCode: "200596",
     industry: "白酒",
     name: "古井贡B",
-    costBasis: 87.741, // 11.0769
-    sharesHeld: 400,
+    costBasis: 96.3421, // 96.342
+    sharesHeld: 500,
     dividendTaxRatio: 0,
   },
   {
@@ -97,7 +97,7 @@ const basicStocks = ref<BasicItem[]>([
     name: "中国海洋石油H",
     industry: "能源",
     // costBasis: 18.436, // 16.8898
-    costBasis: 16.4654,
+    costBasis: 18.1417,
     sharesHeld: 1000,
     dividendTaxRatio: 0.28,
   },
@@ -115,7 +115,7 @@ const basicStocks = ref<BasicItem[]>([
     name: "中远海控H",
     industry: "航运",
     // costBasis: 12.091, // 11.0769
-    costBasis: 11.1144,
+    costBasis: 12.2459,
     sharesHeld: 1000,
     dividendTaxRatio: 0.2,
   },
@@ -169,9 +169,22 @@ const useCurrentValue = async () => {
   }
 };
 
+const calHkPrice = async () => {
+  const exchangeRate = await getExchangeRate();
+
+  for (let i = 0; i < basicStocks.value.length; i += 1) {
+    const item = basicStocks.value[i];
+    if (item.hkCode) {
+      item.costBasis = item.costBasis / exchangeRate;
+    }
+  }
+};
+
 onBeforeMount(() => {
   if (props.currentValue) {
     useCurrentValue();
+  } else {
+    calHkPrice();
   }
 });
 
