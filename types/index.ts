@@ -312,6 +312,29 @@ export const stockData: StockItem[] = [
     name: "国投电力",
     code: "600886",
   },
+  {
+    name: "顺丰控股",
+    code: "002352",
+    profitValuationConfig: {
+      specialOffer: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0],
+      },
+      conservative: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.03],
+      },
+      neutral: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.07],
+      },
+      optimistic: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.1],
+      },
+      backYearsNum: 10,
+    },
+  },
 ];
 
 (function validate() {

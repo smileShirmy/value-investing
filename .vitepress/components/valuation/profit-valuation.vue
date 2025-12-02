@@ -69,7 +69,7 @@ const expectDividendRate = (row: ProfitValuationFutureData) => {
       <table class="valuation-table">
         <caption>
           {{
-            `${caption}（${stockItem.name}）`
+            `${caption}（${stockItem.name} ${stockItem.code}）`
           }}
         </caption>
         <thead>

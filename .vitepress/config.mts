@@ -120,6 +120,13 @@ export default defineConfig({
             { text: "国投电力", link: "/company/electricity/guotou.md" },
           ],
         },
+        {
+          text: "物流",
+          items: [
+            { text: "物流", link: "/company/logistics/logistics.md" },
+            { text: "顺丰控股", link: "/company/logistics/shunfeng.md" },
+          ],
+        },
       ],
     },
 
