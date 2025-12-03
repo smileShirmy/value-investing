@@ -127,6 +127,10 @@ export default defineConfig({
             { text: "顺丰控股", link: "/company/logistics/shunfeng.md" },
           ],
         },
+        {
+          text: "塑料包装",
+          items: [{ text: "永新股份", link: "/company/packaging/yongxin.md" }],
+        },
       ],
     },
 

@@ -335,6 +335,29 @@ export const stockData: StockItem[] = [
       backYearsNum: 10,
     },
   },
+  {
+    name: "永新股份",
+    code: "002014",
+    profitValuationConfig: {
+      specialOffer: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0],
+      },
+      conservative: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0, 0.03],
+      },
+      neutral: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0, 0.05],
+      },
+      optimistic: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0, 0.07],
+      },
+      backYearsNum: 10,
+    },
+  },
 ];
 
 (function validate() {
