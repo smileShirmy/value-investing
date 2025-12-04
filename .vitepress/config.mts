@@ -23,6 +23,48 @@ export default defineConfig({
           text: "理念",
           items: [{ text: "基础", link: "/philosophy/basic.md" }],
         },
+        {
+          text: "投资风格",
+          items: [
+            { text: "主题股投资", link: "/philosophy/investment-style/thematic.md" },
+            { text: "成长股投资", link: "/philosophy/investment-style/growth.md" },
+            { text: "价值股投资", link: "/philosophy/investment-style/value.md" },
+            { text: "周期股投资", link: "/philosophy/investment-style/cyclical.md" },
+          ],
+        },
+        {
+          text: "周期",
+          items: [
+            { text: "人口周期", link: "/philosophy/cycles/population.md" },
+            { text: "技术生命周期", link: "/philosophy/cycles/technology.md" },
+            { text: "经济周期", link: "/philosophy/cycles/economic.md" },
+            { text: "资本周期", link: "/philosophy/cycles/capital.md" },
+            { text: "库存周期", link: "/philosophy/cycles/inventory.md" },
+            { text: "政治周期", link: "/philosophy/cycles/political.md" },
+          ],
+        },
+        {
+          text: "生意模式",
+          items: [
+            { text: "竞争优势", link: "/philosophy/business-model/competitive-advantage.md" },
+            { text: "财务分析", link: "/philosophy/business-model/financial-analysis.md" },
+          ],
+        },
+        {
+          text: "估值思维",
+          items: [
+            { text: "绝对估值", link: "/philosophy/valuation/absolute.md" },
+            { text: "相对估值", link: "/philosophy/valuation/relative.md" },
+          ],
+        },
+        {
+          text: "公司治理",
+          items: [
+            { text: "管理层", link: "/philosophy/governance/management.md" },
+            { text: "组织和规则", link: "/philosophy/governance/organization.md" },
+            { text: "行为判断", link: "/philosophy/governance/behavior.md" },
+          ],
+        },
       ],
       "/company/": [
         {

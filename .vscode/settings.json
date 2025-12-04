@@ -10,5 +10,8 @@
   },
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "cSpell.words": ["FCFF"]
+  "cSpell.words": [
+    "FCFF"
+  ],
+  "codingcopilot.enableCompletionLanguage": {}
 }
