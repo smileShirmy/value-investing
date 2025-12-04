@@ -202,6 +202,20 @@ const expectDividendRate = (row: ProfitValuationFutureData) => {
             <td>{{ formatPercent(valuationData.netProfitMargin) }}</td>
           </tr>
           <tr class="bold-tr">
+            <td class="conservative-sell">5.5%收益率对应</td>
+            <td class="conservative-sell">
+              ￥{{ profitValuation.sellPrice(0.055) }}
+            </td>
+            <td colspan="2" class="neutral-sell">5%收益率对应</td>
+            <td class="neutral-sell">
+              ￥{{ profitValuation.sellPrice(0.05) }}
+            </td>
+            <td class="optimistic-sell">4.5%收益率对应</td>
+            <td class="optimistic-sell">
+              ￥{{ profitValuation.sellPrice(0.045) }}
+            </td>
+          </tr>
+          <tr class="bold-tr">
             <td>ROE</td>
             <td>{{ formatPercent(valuationData.roe) }}</td>
             <td colspan="2">ROIC</td>
@@ -332,6 +346,18 @@ const expectDividendRate = (row: ProfitValuationFutureData) => {
 
   .dividend-rate-td {
     background: #ffcac8;
+  }
+
+  .conservative-sell {
+    background: #00a3ff;
+  }
+
+  .neutral-sell {
+    background: #f8bc00;
+  }
+
+  .optimistic-sell {
+    background: #ee1e05;
   }
 }
 </style>

@@ -76,10 +76,7 @@ export class ProfitValuation {
 
   // 当前股价长期平均收益率
   longTermAverageReturnYieldWithPrice = computed(() => {
-    const result =
-      (this.anchor.value + (this.anchor.value - this.price)) /
-      this.backYearsNum.value /
-      this.anchor.value;
+    const result = this.anchor.value / this.price / this.backYearsNum.value;
     return formatPercent(result * 100);
   });
 
@@ -126,6 +123,10 @@ export class ProfitValuation {
     );
 
     this.initTable();
+  }
+
+  sellPrice(rate: number) {
+    return formatNum(this.anchor.value / rate / this.backYearsNum.value, 2);
   }
 
   initTable() {
