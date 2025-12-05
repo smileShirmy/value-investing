@@ -26,10 +26,22 @@ export default defineConfig({
         {
           text: "投资风格",
           items: [
-            { text: "主题股投资", link: "/philosophy/investment-style/thematic.md" },
-            { text: "成长股投资", link: "/philosophy/investment-style/growth.md" },
-            { text: "价值股投资", link: "/philosophy/investment-style/value.md" },
-            { text: "周期股投资", link: "/philosophy/investment-style/cyclical.md" },
+            {
+              text: "主题股投资",
+              link: "/philosophy/investment-style/thematic.md",
+            },
+            {
+              text: "成长股投资",
+              link: "/philosophy/investment-style/growth.md",
+            },
+            {
+              text: "价值股投资",
+              link: "/philosophy/investment-style/value.md",
+            },
+            {
+              text: "周期股投资",
+              link: "/philosophy/investment-style/cyclical.md",
+            },
           ],
         },
         {
@@ -46,8 +58,14 @@ export default defineConfig({
         {
           text: "生意模式",
           items: [
-            { text: "竞争优势", link: "/philosophy/business-model/competitive-advantage.md" },
-            { text: "财务分析", link: "/philosophy/business-model/financial-analysis.md" },
+            {
+              text: "竞争优势",
+              link: "/philosophy/business-model/competitive-advantage.md",
+            },
+            {
+              text: "财务分析",
+              link: "/philosophy/business-model/financial-analysis.md",
+            },
           ],
         },
         {
@@ -61,7 +79,10 @@ export default defineConfig({
           text: "公司治理",
           items: [
             { text: "管理层", link: "/philosophy/governance/management.md" },
-            { text: "组织和规则", link: "/philosophy/governance/organization.md" },
+            {
+              text: "组织和规则",
+              link: "/philosophy/governance/organization.md",
+            },
             { text: "行为判断", link: "/philosophy/governance/behavior.md" },
           ],
         },
@@ -172,6 +193,25 @@ export default defineConfig({
         {
           text: "塑料包装",
           items: [{ text: "永新股份", link: "/company/packaging/yongxin.md" }],
+        },
+        {
+          text: "煤炭",
+          items: [
+            { text: "煤炭", link: "/company/coal/coal.md" },
+            { text: "中国神华", link: "/company/coal/shenhua.md" },
+            { text: "陕西煤业", link: "/company/coal/shanxi.md" },
+            { text: "中煤能源", link: "/company/coal/zhongmei.md" },
+            { text: "兖矿能源", link: "/company/coal/yankuang.md" },
+          ],
+        },
+        {
+          text: "运营商",
+          items: [
+            { text: "运营商", link: "/company/operator/operator.md" },
+            { text: "中国移动", link: "/company/operator/mobile.md" },
+            { text: "中国电信", link: "/company/operator/telecom.md" },
+            { text: "中国联通", link: "/company/operator/unicom.md" },
+          ],
         },
       ],
     },

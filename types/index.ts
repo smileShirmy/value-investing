@@ -38,11 +38,7 @@ export interface StockItem {
   profitValuationConfig?: ProfitValuationConfig;
 }
 
-export const stockData: StockItem[] = [
-  {
-    name: "科沃斯",
-    code: "603486",
-  },
+const chineseSpiritsStockData: StockItem[] = [
   {
     name: "贵州茅台",
     code: "600519",
@@ -93,6 +89,55 @@ export const stockData: StockItem[] = [
     name: "泸州老窖",
     code: "000568",
   },
+  {
+    name: "古井贡酒",
+    code: "000596",
+    profitValuationConfig: {
+      specialOffer: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [-0.2, -0.1, 0],
+      },
+      conservative: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [-0.2, -0.1, 0.05],
+      },
+      neutral: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [-0.2, -0.05, 0.05],
+      },
+      optimistic: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [-0.2, 0, 0.06],
+      },
+      backYearsNum: 8,
+    },
+  },
+  {
+    name: "山西汾酒",
+    code: "600809",
+    profitValuationConfig: {
+      specialOffer: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0, 0],
+      },
+      conservative: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0, 0.05],
+      },
+      neutral: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0, 0.09],
+      },
+      optimistic: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0, 0.12],
+      },
+      backYearsNum: 8,
+    },
+  },
+];
+
+const homeApplianceStockData: StockItem[] = [
   {
     name: "格力电器",
     code: "000651",
@@ -162,6 +207,9 @@ export const stockData: StockItem[] = [
       backYearsNum: 9,
     },
   },
+];
+
+export const carStockData: StockItem[] = [
   {
     name: "比亚迪",
     code: "002594",
@@ -185,6 +233,64 @@ export const stockData: StockItem[] = [
       backYearsNum: 10,
     },
   },
+];
+
+const electricityStockData: StockItem[] = [
+  {
+    name: "长江电力",
+    code: "600900",
+  },
+  {
+    name: "国投电力",
+    code: "600886",
+  },
+];
+
+const coalStockData: StockItem[] = [
+  {
+    name: "中国神华",
+    code: "601088",
+  },
+  {
+    name: "陕西煤业",
+    code: "601225",
+  },
+  {
+    name: "中煤能源",
+    code: "601898",
+  },
+  {
+    name: "兖矿能源",
+    code: "600188",
+  },
+];
+
+const operatorStockData: StockItem[] = [
+  {
+    name: "中国移动",
+    code: "600941",
+  },
+  {
+    name: "中国电信",
+    code: "601728",
+  },
+  {
+    name: "中国联通",
+    code: "600050",
+  },
+];
+
+export const stockData: StockItem[] = [
+  ...chineseSpiritsStockData,
+  ...homeApplianceStockData,
+  ...carStockData,
+  ...electricityStockData,
+  ...coalStockData,
+  ...operatorStockData,
+  {
+    name: "科沃斯",
+    code: "603486",
+  },
   {
     name: "中国海洋石油",
     code: "600938",
@@ -199,10 +305,6 @@ export const stockData: StockItem[] = [
       },
       backYearsNum: 7,
     },
-  },
-  {
-    name: "中国神华",
-    code: "601088",
   },
   {
     name: "盐湖股份",
@@ -225,52 +327,6 @@ export const stockData: StockItem[] = [
         data: [0.35, 0.12],
       },
       backYearsNum: 10,
-    },
-  },
-  {
-    name: "古井贡酒",
-    code: "000596",
-    profitValuationConfig: {
-      specialOffer: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [-0.2, -0.1, 0],
-      },
-      conservative: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [-0.2, -0.1, 0.05],
-      },
-      neutral: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [-0.2, -0.05, 0.05],
-      },
-      optimistic: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [-0.2, 0, 0.06],
-      },
-      backYearsNum: 8,
-    },
-  },
-  {
-    name: "山西汾酒",
-    code: "600809",
-    profitValuationConfig: {
-      specialOffer: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [0, 0],
-      },
-      conservative: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [0, 0.05],
-      },
-      neutral: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [0, 0.09],
-      },
-      optimistic: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [0, 0.12],
-      },
-      backYearsNum: 8,
     },
   },
   {
@@ -303,14 +359,6 @@ export const stockData: StockItem[] = [
       },
       backYearsNum: 10,
     },
-  },
-  {
-    name: "长江电力",
-    code: "600900",
-  },
-  {
-    name: "国投电力",
-    code: "600886",
   },
   {
     name: "顺丰控股",
