@@ -1,4 +1,5 @@
-const data = {
+import type { ServiceData } from "../../types";
+const data: ServiceData = {
   "600050": {
     "basicRevenueData": [
       {
@@ -18990,12 +18991,12 @@ const data = {
         "cashFlowFromOperating": 231379000000,
         "fcf": 231379000000,
         "capex": 0,
-        "fcfOverNetProfit": null,
-        "netProfitExcludingNonOvernetProfit": null,
-        "cashFlowFromOperatingOverNetProfit": null,
+        "fcfOverNetProfit": 0,
+        "netProfitExcludingNonOvernetProfit": 0,
+        "cashFlowFromOperatingOverNetProfit": 0,
         "operatingProfit": 0,
         "financialProfit": 0,
-        "operatingProfitOverNetProfit": null
+        "operatingProfitOverNetProfit": 0
       },
       {
         "year": "2009",
@@ -21798,7 +21799,7 @@ const data = {
           "basicEps": 0,
           "totalSharesOutstanding": 0,
           "dps": 0,
-          "dividendRatio": null,
+          "dividendRatio": 0,
           "totalDividend": 0,
           "totalDividendA": 0
         },
@@ -25017,12 +25018,12 @@ const data = {
         "cashFlowFromOperating": -888587629.23,
         "fcf": -3547816661.41,
         "capex": 2659229032.18,
-        "fcfOverNetProfit": 1.1871397931841918,
-        "netProfitExcludingNonOvernetProfit": 0.8554172365489678,
-        "cashFlowFromOperatingOverNetProfit": 0.29733152388176004,
+        "fcfOverNetProfit": 0,
+        "netProfitExcludingNonOvernetProfit": 0,
+        "cashFlowFromOperatingOverNetProfit": 0,
         "operatingProfit": -3420894055.01,
         "financialProfit": 432352451.25,
-        "operatingProfitOverNetProfit": 1.1446700459869927
+        "operatingProfitOverNetProfit": 0
       }
     ],
     "costsExpensesData": [
@@ -33216,12 +33217,12 @@ const data = {
         "cashFlowFromOperating": 7284642000,
         "fcf": -4156305000,
         "capex": 11440947000,
-        "fcfOverNetProfit": 1.649269132955225,
-        "netProfitExcludingNonOvernetProfit": 1.1227039997396917,
-        "cashFlowFromOperatingOverNetProfit": -2.890628862710801,
+        "fcfOverNetProfit": 0,
+        "netProfitExcludingNonOvernetProfit": 0,
+        "cashFlowFromOperatingOverNetProfit": 0,
         "operatingProfit": -2964749000,
         "financialProfit": 444660000,
-        "operatingProfitOverNetProfit": 1.176446149322504
+        "operatingProfitOverNetProfit": 0
       }
     ],
     "costsExpensesData": [
@@ -36516,12 +36517,12 @@ const data = {
         "cashFlowFromOperating": 1519532177.96,
         "fcf": -3932124798.1400003,
         "capex": 5451656976.1,
-        "fcfOverNetProfit": 0.39694360630548553,
-        "netProfitExcludingNonOvernetProfit": 0.7161703062618532,
-        "cashFlowFromOperatingOverNetProfit": -0.15339507609269828,
+        "fcfOverNetProfit": 0,
+        "netProfitExcludingNonOvernetProfit": 0,
+        "cashFlowFromOperatingOverNetProfit": 0,
         "operatingProfit": -8944620459.15,
         "financialProfit": -961383153.6500001,
-        "operatingProfitOverNetProfit": 0.9029494444754944
+        "operatingProfitOverNetProfit": 0
       },
       {
         "year": "2015",
@@ -44523,12 +44524,12 @@ const data = {
         "cashFlowFromOperating": 251275237.65,
         "fcf": -128569935.98999998,
         "capex": 379845173.64,
-        "fcfOverNetProfit": 0.2826651086703355,
-        "netProfitExcludingNonOvernetProfit": -0.241555120814907,
-        "cashFlowFromOperatingOverNetProfit": -0.5524366315467872,
+        "fcfOverNetProfit": 0,
+        "netProfitExcludingNonOvernetProfit": 0,
+        "cashFlowFromOperatingOverNetProfit": 0,
         "operatingProfit": 134542932.3400001,
         "financialProfit": -589391911.0300001,
-        "operatingProfitOverNetProfit": -0.2957969318244796
+        "operatingProfitOverNetProfit": 0
       },
       {
         "year": "2018",
@@ -44540,12 +44541,12 @@ const data = {
         "cashFlowFromOperating": 376606825.34,
         "fcf": 279277366.15999997,
         "capex": 97329459.18,
-        "fcfOverNetProfit": -0.154813510945241,
-        "netProfitExcludingNonOvernetProfit": -0.29890298512571906,
-        "cashFlowFromOperatingOverNetProfit": -0.20876673852410899,
+        "fcfOverNetProfit": 0,
+        "netProfitExcludingNonOvernetProfit": 0,
+        "cashFlowFromOperatingOverNetProfit": 0,
         "operatingProfit": 542804532.9399998,
         "financialProfit": -2346764435.7599998,
-        "operatingProfitOverNetProfit": -0.3008961186395955
+        "operatingProfitOverNetProfit": 0
       },
       {
         "year": "2017",
@@ -44557,12 +44558,12 @@ const data = {
         "cashFlowFromOperating": 137476372.99,
         "fcf": 124237195.94000001,
         "capex": 13239177.05,
-        "fcfOverNetProfit": -0.19810833136210765,
-        "netProfitExcludingNonOvernetProfit": 0.09799455882954547,
-        "cashFlowFromOperatingOverNetProfit": -0.21921949098011512,
+        "fcfOverNetProfit": 0,
+        "netProfitExcludingNonOvernetProfit": 0,
+        "cashFlowFromOperatingOverNetProfit": 0,
         "operatingProfit": -38783963.50999999,
         "financialProfit": -588333508.46,
-        "operatingProfitOverNetProfit": 0.061844814159244685
+        "operatingProfitOverNetProfit": 0
       },
       {
         "year": "2016",
@@ -44574,12 +44575,12 @@ const data = {
         "cashFlowFromOperating": -45138491.43,
         "fcf": -80548372.97,
         "capex": 35409881.54,
-        "fcfOverNetProfit": 0.5110802148318438,
-        "netProfitExcludingNonOvernetProfit": -0.28172985556607655,
-        "cashFlowFromOperatingOverNetProfit": 0.2864041698995195,
+        "fcfOverNetProfit": 0,
+        "netProfitExcludingNonOvernetProfit": 0,
+        "cashFlowFromOperatingOverNetProfit": 0,
         "operatingProfit": 53136968.94999999,
         "financialProfit": -210741138.76999998,
-        "operatingProfitOverNetProfit": -0.3371545880460385
+        "operatingProfitOverNetProfit": 0
       }
     ],
     "costsExpensesData": [
@@ -58017,12 +58018,12 @@ const data = {
         "cashFlowFromOperating": 2788553555.43,
         "fcf": 2315903245.17,
         "capex": 472650310.26,
-        "fcfOverNetProfit": -0.05049944216885088,
-        "netProfitExcludingNonOvernetProfit": 0.02883300690683584,
-        "cashFlowFromOperatingOverNetProfit": -0.060805821357551484,
+        "fcfOverNetProfit": 0,
+        "netProfitExcludingNonOvernetProfit": 0,
+        "cashFlowFromOperatingOverNetProfit": 0,
         "operatingProfit": -61141805438.74,
         "financialProfit": 15281828660.65,
-        "operatingProfitOverNetProfit": 1.3332280069524813
+        "operatingProfitOverNetProfit": 0
       },
       {
         "year": "2018",
@@ -58034,12 +58035,12 @@ const data = {
         "cashFlowFromOperating": 7147480014.27,
         "fcf": 6375085045.88,
         "capex": 772394968.39,
-        "fcfOverNetProfit": -1.8496668013046218,
-        "netProfitExcludingNonOvernetProfit": 1.0754796243438405,
-        "cashFlowFromOperatingOverNetProfit": -2.0737694321313307,
+        "fcfOverNetProfit": 0,
+        "netProfitExcludingNonOvernetProfit": 0,
+        "cashFlowFromOperatingOverNetProfit": 0,
         "operatingProfit": -3330340926.85,
         "financialProfit": -116271750.3,
-        "operatingProfitOverNetProfit": 0.9662649211874468
+        "operatingProfitOverNetProfit": 0
       },
       {
         "year": "2017",
@@ -58051,12 +58052,12 @@ const data = {
         "cashFlowFromOperating": 1518326402.18,
         "fcf": -928361632.05,
         "capex": 2446688034.23,
-        "fcfOverNetProfit": 0.22320474237222052,
-        "netProfitExcludingNonOvernetProfit": 1.0287511982001813,
-        "cashFlowFromOperatingOverNetProfit": -0.36504918098260547,
+        "fcfOverNetProfit": 0,
+        "netProfitExcludingNonOvernetProfit": 0,
+        "cashFlowFromOperatingOverNetProfit": 0,
         "operatingProfit": -4203136909.56,
         "financialProfit": 43898973.2,
-        "operatingProfitOverNetProfit": 1.01055457126322
+        "operatingProfitOverNetProfit": 0
       },
       {
         "year": "2016",

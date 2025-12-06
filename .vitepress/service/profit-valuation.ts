@@ -1,5 +1,6 @@
 import {
   ProfitValuationGrowthType,
+  type ValuationHistoryData,
   type ProfitValuationGrowth,
   type StockItem,
   type ValuationData,
@@ -9,8 +10,12 @@ import {
   formatNum,
   formatPercent,
   numToAHundredMillion,
+  presentValue,
 } from "../../fetch-data/helper";
 import { type DynamicData } from "../../fetch-data/types";
+
+// 财务自由的一个普遍定义，是总投资资产，每年提取4%足够生活开支了，就达到了基础的财务自由。就不需要为了生活而被迫去做不想做的事情，或者至少有了更多的选择权。
+const DISCOUNT_RATE = 0.04;
 
 export interface ProfitValuationFutureData {
   year: number;
@@ -40,16 +45,47 @@ export class ProfitValuation {
 
   price = 0;
 
+  lastData: ValuationHistoryData;
+
   tableData = ref<ProfitValuationFutureData[]>([]);
 
   totalSharesOutstanding: number;
 
-  backYearsNum = ref<number>(8);
+  backYearsNum = ref<number>(10);
+
+  calBackYearsNum = computed(() => this.backYearsNum.value - 1);
+
+  // 折现后 n 年利润
+  sumPresentEps = computed(() => {
+    const lastYearEps = this.prevYearProfit / this.totalSharesOutstanding;
+
+    const rest = this.calBackYearsNum.value % 1;
+    const years = Math.floor(this.calBackYearsNum.value);
+    let sum = 0;
+    for (let i = 0; i < years; i += 1) {
+      sum += presentValue(this.tableData.value[i].eps, DISCOUNT_RATE, i);
+    }
+    if (rest > 0) {
+      sum += presentValue(
+        rest * this.tableData.value[years].eps,
+        DISCOUNT_RATE,
+        years
+      );
+    }
+    return formatNum(lastYearEps + sum, 2);
+  });
+
+  // 折线后每股利润/年
+  presetEps = computed(() => {
+    return formatNum(this.sumPresentEps.value / this.backYearsNum.value, 2);
+  });
 
   // 合计未来 n 年 eps
   sumEps = computed(() => {
-    const rest = this.backYearsNum.value % 1;
-    const years = Math.floor(this.backYearsNum.value);
+    const lastYearEps = this.prevYearProfit / this.totalSharesOutstanding;
+
+    const rest = this.calBackYearsNum.value % 1;
+    const years = Math.floor(this.calBackYearsNum.value);
     let sum = 0;
     for (let i = 0; i < years; i += 1) {
       sum += this.tableData.value[i].eps;
@@ -57,12 +93,17 @@ export class ProfitValuation {
     if (rest > 0) {
       sum += rest * this.tableData.value[years].eps;
     }
-    return formatNum(sum, 2);
+    return formatNum(lastYearEps + sum, 2);
   });
 
   // 锚点
   anchor = computed(() => {
     return this.sumEps.value;
+  });
+
+  // 折现后锚点
+  presentAnchor = computed(() => {
+    return this.sumPresentEps.value;
   });
 
   // 击球区边缘
@@ -86,6 +127,12 @@ export class ProfitValuation {
     return formatPercent(result * 100);
   });
 
+  longTermAverageReturnYieldWithPresent = computed(() => {
+    const result =
+      this.presentAnchor.value / this.price / this.backYearsNum.value;
+    return formatPercent(result * 100);
+  });
+
   constructor(
     valuationData: ValuationData,
     stockItem: StockItem,
@@ -104,11 +151,11 @@ export class ProfitValuation {
       this.backYearsNum.value = stockItem.profitValuationConfig.backYearsNum;
     }
 
-    const lastData =
+    this.lastData =
       valuationData.historyData[valuationData.historyData.length - 1];
 
-    this.prevYearProfit = numToAHundredMillion(lastData.profit, 8);
-    this.prevYear = Number(lastData.year);
+    this.prevYearProfit = numToAHundredMillion(this.lastData.profit, 8);
+    this.prevYear = Number(this.lastData.year);
 
     this.totalSharesOutstanding = numToAHundredMillion(
       dynamicData.totalSharesOutstanding,

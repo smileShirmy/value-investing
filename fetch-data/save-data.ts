@@ -214,7 +214,7 @@ export async function saveDataToTsFileAsync(
       exportName: "data",
       exportType: "const" as const,
       exportDefault: false,
-      typeAnnotation: "",
+      typeAnnotation: ": ServiceData",
       encoding: "utf8" as BufferEncoding,
       createDir: true,
       pretty: true,
@@ -235,7 +235,8 @@ export async function saveDataToTsFileAsync(
       : JSON.stringify(data);
 
     // 构建TypeScript内容
-    let tsContent = "";
+    let tsContent = `import type { ServiceData } from "../../types";
+`;
 
     // 添加类型注解
     if (opts.typeAnnotation) {

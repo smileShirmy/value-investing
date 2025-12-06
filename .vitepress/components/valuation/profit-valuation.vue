@@ -14,7 +14,7 @@ import { computed } from "vue";
 
 const props = withDefaults(
   defineProps<{
-    code: keyof typeof data;
+    code: string;
     caption?: string;
     growth?: ProfitValuationGrowth;
   }>(),
@@ -107,7 +107,7 @@ const expectDividendRate = (row: ProfitValuationFutureData) => {
           <tr
             v-for="(row, index) in profitValuation.tableData.value.slice(
               0,
-              Math.ceil(profitValuation.backYearsNum.value)
+              Math.ceil(profitValuation.calBackYearsNum.value)
             )"
             :key="index"
           >
@@ -173,7 +173,7 @@ const expectDividendRate = (row: ProfitValuationFutureData) => {
             <td class="anchor-td">人民币锚点</td>
             <td class="anchor-td">￥{{ profitValuation.anchor }}</td>
             <td colspan="2" class="batting-edge-td">击球区边缘</td>
-            <td class="batting-edge-td">{{ profitValuation.battingEdge }}</td>
+            <td class="batting-edge-td">￥{{ profitValuation.battingEdge }}</td>
             <td>资产负债率</td>
             <td>{{ formatPercent(valuationData.debtRatio) }}</td>
           </tr>
@@ -188,6 +188,14 @@ const expectDividendRate = (row: ProfitValuationFutureData) => {
             <td>{{ formatPercent(valuationData.grossProfitMargin) }}</td>
           </tr>
           <tr class="bold-tr">
+            <td>折现{{ profitValuation.backYearsNum }}年每股利润</td>
+            <td>{{ profitValuation.sumPresentEps }}</td>
+            <td colspan="2">折线后每股利润/年</td>
+            <td>{{ profitValuation.presetEps }}</td>
+            <td>净利率</td>
+            <td>{{ formatPercent(valuationData.netProfitMargin) }}</td>
+          </tr>
+          <tr class="bold-tr">
             <td class="long-term-average-return-td">长期平均收益率</td>
             <td class="long-term-average-return-td">
               {{ profitValuation.longTermAverageReturnYieldWithPrice }}
@@ -198,8 +206,10 @@ const expectDividendRate = (row: ProfitValuationFutureData) => {
             <td class="long-term-average-return-td">
               {{ profitValuation.longTermAverageReturnYieldWithAnchor }}
             </td>
-            <td>净利率</td>
-            <td>{{ formatPercent(valuationData.netProfitMargin) }}</td>
+            <td class="long-term-average-return-td">折现长期收益率</td>
+            <td class="long-term-average-return-td">
+              {{ profitValuation.longTermAverageReturnYieldWithPresent }}
+            </td>
           </tr>
           <tr class="bold-tr">
             <td class="conservative-sell">5.5%收益率对应</td>
@@ -287,6 +297,7 @@ const expectDividendRate = (row: ProfitValuationFutureData) => {
               {{ numToAHundredMillion(valuationData.interestBearingDebt, 2) }}亿
             </td>
           </tr>
+          <!-- TODO: 计算折现率 -->
           <!-- TODO: 继续完善，保持和心智升级同步 -->
         </tbody>
       </table>

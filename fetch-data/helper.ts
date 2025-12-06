@@ -183,6 +183,28 @@ export function formatPercent(value: number, fractionDigits = 2) {
 }
 
 /**
+ * 计算单笔未来现金流的现值
+ * @param futureValue 未来价值
+ * @param discountRate 折现率（小数形式，如0.05表示5%）
+ * @param periods 期数
+ * @returns 现值
+ */
+export function presentValue(
+  futureValue: number,
+  discountRate: number,
+  periods: number
+): number {
+  if (discountRate <= -1) {
+    throw new Error("折现率不能小于或等于-100%");
+  }
+  if (periods < 0) {
+    throw new Error("期数不能为负数");
+  }
+
+  return futureValue / Math.pow(1 + discountRate, periods);
+}
+
+/**
  * 计算年化收益
  */
 export function calAnnualizedGrowthRate(

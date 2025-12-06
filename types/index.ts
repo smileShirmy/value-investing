@@ -1,3 +1,5 @@
+import type { DynamicData } from "../fetch-data/types";
+
 // 基础工具类型
 type Prettify<T> = {
   [K in keyof T]: T[K];
@@ -269,6 +271,17 @@ const operatorStockData: StockItem[] = [
   {
     name: "中国移动",
     code: "600941",
+    profitValuationConfig: {
+      conservative: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.04, 0.02],
+      },
+      optimistic: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.05],
+      },
+      backYearsNum: 10,
+    },
   },
   {
     name: "中国电信",
@@ -423,6 +436,10 @@ export const stockData: StockItem[] = [
 
 export const getStockItem = (code: string) => {
   const item = stockData.find((v) => v.code === code);
+  if (!item) {
+    console.log(`cannot find ${code}.`);
+  }
+
   return item!;
 };
 
@@ -577,4 +594,20 @@ export interface ValuationData {
 
 export interface RecentYearData {
   netProfit: number; // 最新归母净利润
+}
+
+export interface ServiceData {
+  [code: string | number]: {
+    basicRevenueData: BasicRevenueData[];
+    costsExpensesData: CostsExpensesData[];
+    balanceData: BalanceData[];
+    workingCapitalData: WorkingCapitalData[];
+    fixedAssetInvestmentAnalysisData: FixedAssetInvestmentAnalysisData[];
+    returnData: ReturnData[];
+    turnoverRateData: TurnoverRateData[];
+    primaryBusinessData: PrimaryBusinessData[];
+    valuationData: ValuationData;
+    dynamicData: DynamicData;
+    recentYearData: RecentYearData;
+  };
 }

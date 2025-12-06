@@ -7,6 +7,9 @@ export default defineConfig({
   lastUpdated: true,
   title: "Value Investing",
   description: "A VitePress Site",
+  markdown: {
+    breaks: true,
+  },
   themeConfig: {
     outline: {
       level: [2, 3],
@@ -14,45 +17,60 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "Home", link: "/" },
-      { text: "Philosophy", link: "/philosophy/basic.md" },
+      {
+        text: "Value Investing",
+        link: "/value-investing/value-investing/investment-tools.md",
+      },
       { text: "Company", link: "/company/chinese-sprites/wuliangye.md" },
     ],
     sidebar: {
-      "/philosophy/": [
+      "/value-investing/": [
         {
-          text: "理念",
-          items: [{ text: "基础", link: "/philosophy/basic.md" }],
+          text: "价值投资",
+          items: [
+            {
+              text: "投资工具",
+              link: "/value-investing/value-investing/investment-tools.md",
+            },
+            {
+              text: "投资回报率",
+              link: "/value-investing/value-investing/return-on-investment.md",
+            },
+          ],
         },
         {
           text: "投资风格",
           items: [
             {
               text: "主题股投资",
-              link: "/philosophy/investment-style/thematic.md",
+              link: "/value-investing/investment-style/thematic.md",
             },
             {
               text: "成长股投资",
-              link: "/philosophy/investment-style/growth.md",
+              link: "/value-investing/investment-style/growth.md",
             },
             {
               text: "价值股投资",
-              link: "/philosophy/investment-style/value.md",
+              link: "/value-investing/investment-style/value.md",
             },
             {
               text: "周期股投资",
-              link: "/philosophy/investment-style/cyclical.md",
+              link: "/value-investing/investment-style/cyclical.md",
             },
           ],
         },
         {
           text: "周期",
           items: [
-            { text: "人口周期", link: "/philosophy/cycles/population.md" },
-            { text: "技术生命周期", link: "/philosophy/cycles/technology.md" },
-            { text: "经济周期", link: "/philosophy/cycles/economic.md" },
-            { text: "资本周期", link: "/philosophy/cycles/capital.md" },
-            { text: "库存周期", link: "/philosophy/cycles/inventory.md" },
-            { text: "政治周期", link: "/philosophy/cycles/political.md" },
+            { text: "人口周期", link: "/value-investing/cycles/population.md" },
+            {
+              text: "技术生命周期",
+              link: "/value-investing/cycles/technology.md",
+            },
+            { text: "经济周期", link: "/value-investing/cycles/economic.md" },
+            { text: "资本周期", link: "/value-investing/cycles/capital.md" },
+            { text: "库存周期", link: "/value-investing/cycles/inventory.md" },
+            { text: "政治周期", link: "/value-investing/cycles/political.md" },
           ],
         },
         {
@@ -60,30 +78,42 @@ export default defineConfig({
           items: [
             {
               text: "竞争优势",
-              link: "/philosophy/business-model/competitive-advantage.md",
+              link: "/value-investing/business-model/competitive-advantage.md",
             },
             {
               text: "财务分析",
-              link: "/philosophy/business-model/financial-analysis.md",
+              link: "/value-investing/business-model/financial-analysis.md",
             },
           ],
         },
         {
           text: "估值思维",
           items: [
-            { text: "绝对估值", link: "/philosophy/valuation/absolute.md" },
-            { text: "相对估值", link: "/philosophy/valuation/relative.md" },
+            {
+              text: "绝对估值",
+              link: "/value-investing/valuation/absolute.md",
+            },
+            {
+              text: "相对估值",
+              link: "/value-investing/valuation/relative.md",
+            },
           ],
         },
         {
           text: "公司治理",
           items: [
-            { text: "管理层", link: "/philosophy/governance/management.md" },
+            {
+              text: "管理层",
+              link: "/value-investing/governance/management.md",
+            },
             {
               text: "组织和规则",
-              link: "/philosophy/governance/organization.md",
+              link: "/value-investing/governance/organization.md",
             },
-            { text: "行为判断", link: "/philosophy/governance/behavior.md" },
+            {
+              text: "行为判断",
+              link: "/value-investing/governance/behavior.md",
+            },
           ],
         },
       ],

@@ -2,7 +2,6 @@ import formatDate, { amortize, getPayVal } from "./helper";
 import { loadAllStockData } from "./load-all-data";
 import { saveDataToTsFileAsync } from "./save-data";
 import type {
-  DynamicData,
   ReportDateItem,
   SinaFinanceData,
   SinaResponseDataReportDate,
@@ -16,6 +15,7 @@ import type {
   PrimaryBusinessData,
   RecentYearData,
   ReturnData,
+  ServiceData,
   TurnoverRateData,
   ValuationData,
   ValuationHistoryData,
@@ -98,12 +98,15 @@ function generateBasicRevenueData(data: StockData) {
         cashFlowFromOperating, // 经营净现金流
         fcf, // 自由现金流
         capex, // CAPEX
-        fcfOverNetProfit: fcf / netProfit, // 自由现金流/归母净利润
-        netProfitExcludingNonOvernetProfit: netProfitExcludingNon / netProfit, // 扣非净利润/归母净利润
-        cashFlowFromOperatingOverNetProfit: cashFlowFromOperating / netProfit, // 经营现金流/归母净利润
+        fcfOverNetProfit: netProfit > 0 ? fcf / netProfit : 0, // 自由现金流/归母净利润
+        netProfitExcludingNonOvernetProfit:
+          netProfit > 0 ? netProfitExcludingNon / netProfit : 0, // 扣非净利润/归母净利润
+        cashFlowFromOperatingOverNetProfit:
+          netProfit > 0 ? cashFlowFromOperating / netProfit : 0, // 经营现金流/归母净利润
         operatingProfit, // 经营利润
         financialProfit, // 金融利润
-        operatingProfitOverNetProfit: operatingProfit / netProfit, // 经营利润/归母净利润
+        operatingProfitOverNetProfit:
+          netProfit > 0 ? operatingProfit / netProfit : 0, // 经营利润/归母净利润
       });
     }
   }
@@ -545,6 +548,8 @@ function generateVauationData(data: StockData): ValuationData {
         }
       }
 
+      const PARENETP = val("PARENETP");
+
       historyData.push({
         year: formatYear(date),
         profit: val("PARENETP"),
@@ -552,7 +557,7 @@ function generateVauationData(data: StockData): ValuationData {
         basicEps: val("EPSBASIC"),
         totalSharesOutstanding: val("PAIDINCAPI"),
         dps,
-        dividendRatio: totalDividend / val("PARENETP"),
+        dividendRatio: PARENETP > 0 ? totalDividend / val("PARENETP") : 0,
         totalDividend,
         totalDividendA,
       });
@@ -645,22 +650,7 @@ function generateRecentYearData(data: StockData): RecentYearData {
 
 (async () => {
   const allStockData = await loadAllStockData();
-  const data: Record<
-    string,
-    {
-      basicRevenueData: BasicRevenueData[];
-      costsExpensesData: CostsExpensesData[];
-      balanceData: BalanceData[];
-      workingCapitalData: WorkingCapitalData[];
-      fixedAssetInvestmentAnalysisData: FixedAssetInvestmentAnalysisData[];
-      returnData: ReturnData[];
-      turnoverRateData: TurnoverRateData[];
-      primaryBusinessData: PrimaryBusinessData[];
-      valuationData: ValuationData;
-      dynamicData: DynamicData;
-      recentYearData: RecentYearData;
-    }
-  > = {};
+  const data: ServiceData = {};
 
   for (const stockData of allStockData) {
     const basicRevenueData = generateBasicRevenueData(stockData.data);
