@@ -214,15 +214,15 @@ const expectDividendRate = (row: ProfitValuationFutureData) => {
           <tr class="bold-tr">
             <td class="conservative-sell">5.5%收益率对应</td>
             <td class="conservative-sell">
-              ￥{{ profitValuation.sellPrice(0.055) }}
+              ￥{{ formatNum(profitValuation.sellPrice(0.055), 2) }}
             </td>
             <td colspan="2" class="neutral-sell">5%收益率对应</td>
             <td class="neutral-sell">
-              ￥{{ profitValuation.sellPrice(0.05) }}
+              ￥{{ formatNum(profitValuation.sellPrice(0.05), 2) }}
             </td>
             <td class="optimistic-sell">4.5%收益率对应</td>
             <td class="optimistic-sell">
-              ￥{{ profitValuation.sellPrice(0.045) }}
+              ￥{{ formatNum(profitValuation.sellPrice(0.045), 2) }}
             </td>
           </tr>
           <tr class="bold-tr">
@@ -254,12 +254,7 @@ const expectDividendRate = (row: ProfitValuationFutureData) => {
           <tr class="bold-tr">
             <td>去有息负债现金</td>
             <td>
-              {{
-                numToAHundredMillion(
-                  valuationData.cash - valuationData.interestBearingDebt,
-                  2
-                )
-              }}亿
+              {{ numToAHundredMillion(profitValuation.netDebtCash, 2) }}亿
             </td>
             <td colspan="2">长期股权投资</td>
             <td>
@@ -272,33 +267,44 @@ const expectDividendRate = (row: ProfitValuationFutureData) => {
           </tr>
           <tr class="bold-tr">
             <td>去有息每股现金</td>
-            <td>
-              ￥{{
-                formatNum(
-                  (valuationData.cash - valuationData.interestBearingDebt) /
-                    dynamicData.totalSharesOutstanding,
-                  2
-                )
-              }}
-            </td>
+            <td>￥{{ formatNum(profitValuation.netDebtCashPerShare, 2) }}</td>
             <td colspan="2">合计每股金融资产</td>
             <td>
-              ￥{{
-                formatNum(
-                  (valuationData.tradingFinancialAssets +
-                    valuationData.longTermEquityInvestment) /
-                    dynamicData.totalSharesOutstanding,
-                  2
-                )
-              }}
+              ￥{{ formatNum(profitValuation.totalFinancialAssetsPerShare, 2) }}
             </td>
             <td>有息负债</td>
             <td>
               {{ numToAHundredMillion(valuationData.interestBearingDebt, 2) }}亿
             </td>
           </tr>
-          <!-- TODO: 计算折现率 -->
-          <!-- TODO: 继续完善，保持和心智升级同步 -->
+          <tr class="bold-tr">
+            <td class="anchor-td">加其它资产锚点</td>
+            <td class="anchor-td">
+              ￥{{ formatNum(profitValuation.anchorWithAssets.value, 2) }}
+            </td>
+            <td colspan="2" class="batting-edge-td">击球区边缘</td>
+            <td class="batting-edge-td">
+              ￥{{ profitValuation.anchorWithAssetsEdge }}
+            </td>
+            <td class="could-fall-another-td">还可以跌</td>
+            <td class="could-fall-another-td">
+              {{ profitValuation.couldFallAnotherWithAssets }}
+            </td>
+          </tr>
+          <tr class="bold-tr">
+            <td class="conservative-sell">5.5%收益率对应</td>
+            <td class="conservative-sell">
+              ￥{{ formatNum(profitValuation.sellPriceWithAssets(0.055), 2) }}
+            </td>
+            <td colspan="2" class="neutral-sell">5%收益率对应</td>
+            <td class="neutral-sell">
+              ￥{{ formatNum(profitValuation.sellPriceWithAssets(0.05), 2) }}
+            </td>
+            <td class="optimistic-sell">4.5%收益率对应</td>
+            <td class="optimistic-sell">
+              ￥{{ formatNum(profitValuation.sellPriceWithAssets(0.045), 2) }}
+            </td>
+          </tr>
         </tbody>
       </table>
     </section>

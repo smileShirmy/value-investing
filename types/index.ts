@@ -158,7 +158,7 @@ const homeApplianceStockData: StockItem[] = [
       },
       optimistic: {
         type: ProfitValuationGrowthType.RATE,
-        data: [-0.05, 0.05],
+        data: [-0.05, 0, 0.05],
       },
       backYearsNum: 8,
     },

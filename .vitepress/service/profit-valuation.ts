@@ -43,9 +43,22 @@ export class ProfitValuation {
   // 每股现金
   cashPerShare: number;
 
+  // 去有息负债现金
+  netDebtCash: number;
+
+  // 去有息每股现金
+  netDebtCashPerShare: number;
+
+  // 合计每股金融资产
+  totalFinancialAssetsPerShare: number;
+
   price = 0;
 
+  dynamicData: DynamicData;
+
   lastData: ValuationHistoryData;
+
+  valuationData: ValuationData;
 
   tableData = ref<ProfitValuationFutureData[]>([]);
 
@@ -101,6 +114,22 @@ export class ProfitValuation {
     return this.sumEps.value;
   });
 
+  // 其它资产每股价值
+  otherAssets = computed(() => {
+    // 100% 去有息负债现金 + 75% 可交易金融资产 + 50% 长期股权投资
+    const other =
+      (this.netDebtCash +
+        0.75 * this.valuationData.tradingFinancialAssets +
+        0.5 * this.valuationData.longTermEquityInvestment) /
+      this.dynamicData.totalSharesOutstanding;
+    return other;
+  });
+
+  // 加其它资产锚点
+  anchorWithAssets = computed(() => {
+    return this.anchor.value + this.otherAssets.value;
+  });
+
   // 折现后锚点
   presentAnchor = computed(() => {
     return this.sumPresentEps.value;
@@ -109,9 +138,21 @@ export class ProfitValuation {
   // 击球区边缘
   battingEdge = computed(() => formatNum(this.anchor.value * 1.05, 2));
 
+  // 加其它资产锚点击球区边缘
+  anchorWithAssetsEdge = computed(() =>
+    formatNum(this.anchorWithAssets.value * 1.05, 2)
+  );
+
   // 还可以跌
   couldFallAnother = computed(() => {
     const percent = ((this.price - this.anchor.value) / this.price) * 100;
+    return formatPercent(-percent);
+  });
+
+  // 加其它资产锚点还可以跌
+  couldFallAnotherWithAssets = computed(() => {
+    const percent =
+      ((this.price - this.anchorWithAssets.value) / this.price) * 100;
     return formatPercent(-percent);
   });
 
@@ -151,6 +192,8 @@ export class ProfitValuation {
       this.backYearsNum.value = stockItem.profitValuationConfig.backYearsNum;
     }
 
+    this.valuationData = valuationData;
+
     this.lastData =
       valuationData.historyData[valuationData.historyData.length - 1];
 
@@ -164,16 +207,35 @@ export class ProfitValuation {
 
     this.price = dynamicData.price;
 
+    this.dynamicData = dynamicData;
+
     this.cashPerShare = formatNum(
       valuationData.cash / dynamicData.totalSharesOutstanding,
       2
     );
 
+    // 计算去有息负债现金
+    this.netDebtCash = valuationData.cash - valuationData.interestBearingDebt;
+
+    // 计算去有息每股现金
+    this.netDebtCashPerShare =
+      this.netDebtCash / dynamicData.totalSharesOutstanding;
+
+    // 计算合计每股金融资产
+    this.totalFinancialAssetsPerShare =
+      (valuationData.tradingFinancialAssets +
+        valuationData.longTermEquityInvestment) /
+      dynamicData.totalSharesOutstanding;
+
     this.initTable();
   }
 
   sellPrice(rate: number) {
-    return formatNum(this.anchor.value / rate / this.backYearsNum.value, 2);
+    return this.anchor.value / rate / this.backYearsNum.value;
+  }
+
+  sellPriceWithAssets(rate: number) {
+    return this.sellPrice(rate) + this.otherAssets.value;
   }
 
   initTable() {

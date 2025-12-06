@@ -167,10 +167,10 @@ export default defineConfig({
           text: "汽车",
           items: [{ text: "比亚迪", link: "/company/car/byd.md" }],
         },
-        {
-          text: "分析示例",
-          items: [{ text: "格力", link: "/company/example/gree.md" }],
-        },
+        // {
+        //   text: "分析示例",
+        //   items: [{ text: "格力", link: "/company/example/gree.md" }],
+        // },
         {
           text: "农业化工",
           items: [

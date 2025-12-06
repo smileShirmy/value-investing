@@ -4,7 +4,7 @@ import profitValuation from "./profit-valuation.vue";
 import { data } from "../../service/data";
 
 const props = defineProps<{
-  code: keyof typeof data;
+  code: string;
 }>();
 
 const stockItem = getStockItem(props.code);
@@ -51,10 +51,10 @@ const stockItem = getStockItem(props.code);
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  margin: 0 -16px;
+  margin: 0 -6px;
 
   .valuation-item {
-    margin: 0 16px;
+    margin: 0 6px;
   }
 }
 </style>
