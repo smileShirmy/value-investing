@@ -19,7 +19,7 @@ export default defineConfig({
       { text: "Home", link: "/" },
       {
         text: "Value Investing",
-        link: "/value-investing/value-investing/investment-tools.md",
+        link: "/value-investing/value-investing/information.md",
       },
       { text: "Company", link: "/company/chinese-sprites/wuliangye.md" },
     ],
@@ -28,6 +28,10 @@ export default defineConfig({
         {
           text: "价值投资",
           items: [
+            {
+              text: "网络资料",
+              link: "/value-investing/value-investing/information.md",
+            },
             {
               text: "投资工具",
               link: "/value-investing/value-investing/investment-tools.md",
@@ -169,7 +173,7 @@ export default defineConfig({
         },
         // {
         //   text: "分析示例",
-        //   items: [{ text: "格力", link: "/company/example/gree.md" }],
+        //   items: [{ text: "格力", link: "/company/example/example.md" }],
         // },
         {
           text: "农业化工",
