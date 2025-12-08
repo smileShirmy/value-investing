@@ -16,5 +16,8 @@
 
 ## 文章推荐
 
-- [过去未去，尊重常识（渐悟）](https://mp.weixin.qq.com/s/-CRUADat1k_HxRFczDmOFA)
-- [行业未来分析框架（渐悟）](https://mp.weixin.qq.com/s/8YKudlER0p_zSd7SNYsk_w?scene=1&click_id=35)
+- [过去未去，尊重常识 2025-08-02 渐悟](https://mp.weixin.qq.com/s/-CRUADat1k_HxRFczDmOFA)
+  - 投资中预判未来的核心方法是“过去未去”，即依据已成定局的历史数据（如人口结构）和行业常识进行理性推演，从而在不确定性中把握相对确定的趋势。
+- [行业未来分析框架 2025-08-05 渐悟](https://mp.weixin.qq.com/s/8YKudlER0p_zSd7SNYsk_w)
+- [AI 时代，价值投资者会被替代吗？ 2025-12-08 静逸投资](https://mp.weixin.qq.com/s/P63SokuOPglPoAR9uLWwnQ)
+  - AI 不会让价值投资失效，而是将投资者从繁重研究中解放，逼迫其聚焦于最高维度的判断与决策。未来的超额收益将属于那些善用 AI 拓展认知边界，同时坚守人类独有的担责勇气、反共识洞察与肉身直觉的“进化版”价值投资者。
