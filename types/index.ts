@@ -293,6 +293,42 @@ const operatorStockData: StockItem[] = [
   },
 ];
 
+const oilStockData: StockItem[] = [
+  {
+    name: "中国海油",
+    code: "600938",
+    profitValuationConfig: {
+      neutral: {
+        type: ProfitValuationGrowthType.PROFIT,
+        data: [1200],
+      },
+      backYearsNum: 8,
+    },
+  },
+  {
+    name: "中国石油",
+    code: "601857",
+    profitValuationConfig: {
+      neutral: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0],
+      },
+      backYearsNum: 8,
+    },
+  },
+  {
+    name: "中国石化",
+    code: "600028",
+    profitValuationConfig: {
+      neutral: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0],
+      },
+      backYearsNum: 8,
+    },
+  },
+];
+
 export const stockData: StockItem[] = [
   ...chineseSpiritsStockData,
   ...homeApplianceStockData,
@@ -300,6 +336,7 @@ export const stockData: StockItem[] = [
   ...electricityStockData,
   ...coalStockData,
   ...operatorStockData,
+  ...oilStockData,
   {
     name: "科沃斯",
     code: "603486",

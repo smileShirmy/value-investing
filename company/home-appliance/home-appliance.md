@@ -2,7 +2,7 @@
 
 ## 综合信息
 
-### 优质文章
+### 文章推荐
 
 - [【行业研究】2025 年家电行业研究报告（联合资信）](https://mp.weixin.qq.com/s/hfwXB2XeIecq5Nd1a38ZLQ)
 - [7000 字长文，聊聊家电龙头的投资逻辑（终身黑白）](https://mp.weixin.qq.com/s/Cl1RMyvhGTPb9ia4shbGuw?scene=1&click_id=37)

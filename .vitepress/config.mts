@@ -133,11 +133,8 @@ export default defineConfig({
         },
         {
           text: "白酒",
+          link: "/company/chinese-sprites/chinese-sprites.md",
           items: [
-            {
-              text: "白酒",
-              link: "/company/chinese-sprites/chinese-sprites.md",
-            },
             { text: "贵州茅台", link: "/company/chinese-sprites/moutai.md" },
             { text: "五粮液", link: "/company/chinese-sprites/wuliangye.md" },
             {
@@ -153,11 +150,8 @@ export default defineConfig({
         },
         {
           text: "白色家电",
+          link: "/company/home-appliance/home-appliance.md",
           items: [
-            {
-              text: "白色家电",
-              link: "/company/home-appliance/home-appliance.md",
-            },
             { text: "格力", link: "/company/home-appliance/gree.md" },
             { text: "美的", link: "/company/home-appliance/midea.md" },
             { text: "海尔", link: "/company/home-appliance/haier.md" },
@@ -186,43 +180,36 @@ export default defineConfig({
         },
         {
           text: "摩托车",
+          link: "/company/motorcycle/motorcycle.md",
           items: [
-            { text: "摩托车", link: "/company/motorcycle/motorcycle.md" },
             { text: "九号公司", link: "/company/motorcycle/ninebot.md" },
             { text: "爱玛科技", link: "/company/motorcycle/aima.md" },
           ],
         },
         {
           text: "中药",
+          link: "/company/chinese-medicine/chinese-medicine.md",
           items: [
-            {
-              text: "中药",
-              link: "/company/chinese-medicine/chinese-medicine.md",
-            },
             { text: "东阿阿胶", link: "/company/chinese-medicine/donge.md" },
           ],
         },
         {
           text: "港口",
-          items: [
-            { text: "港口", link: "/company/port/port.md" },
-            { text: "青岛港", link: "/company/port/qingdao.md" },
-          ],
+          link: "/company/port/port.md",
+          items: [{ text: "青岛港", link: "/company/port/qingdao.md" }],
         },
         {
           text: "电力",
+          link: "/company/electricity/electricity.md",
           items: [
-            { text: "电力", link: "/company/electricity/electricity.md" },
             { text: "长江电力", link: "/company/electricity/yangtze.md" },
             { text: "国投电力", link: "/company/electricity/guotou.md" },
           ],
         },
         {
           text: "物流",
-          items: [
-            { text: "物流", link: "/company/logistics/logistics.md" },
-            { text: "顺丰控股", link: "/company/logistics/shunfeng.md" },
-          ],
+          link: "/company/logistics/logistics.md",
+          items: [{ text: "顺丰控股", link: "/company/logistics/shunfeng.md" }],
         },
         {
           text: "塑料包装",
@@ -230,8 +217,8 @@ export default defineConfig({
         },
         {
           text: "煤炭",
+          link: "/company/coal/coal.md",
           items: [
-            { text: "煤炭", link: "/company/coal/coal.md" },
             { text: "中国神华", link: "/company/coal/shenhua.md" },
             { text: "陕西煤业", link: "/company/coal/shanxi.md" },
             { text: "中煤能源", link: "/company/coal/zhongmei.md" },
@@ -239,9 +226,18 @@ export default defineConfig({
           ],
         },
         {
-          text: "运营商",
+          text: "石油",
+          link: "/company/oil/oil.md",
           items: [
-            { text: "运营商", link: "/company/operator/operator.md" },
+            { text: "中国海油", link: "/company/oil/cnooc.md" },
+            { text: "中国石油", link: "/company/oil/cnpc.md" },
+            { text: "中国石化", link: "/company/oil/sinopec.md" },
+          ],
+        },
+        {
+          text: "运营商",
+          link: "/company/operator/operator.md",
+          items: [
             { text: "中国移动", link: "/company/operator/mobile.md" },
             { text: "中国电信", link: "/company/operator/telecom.md" },
             { text: "中国联通", link: "/company/operator/unicom.md" },
