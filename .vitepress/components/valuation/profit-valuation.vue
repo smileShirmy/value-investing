@@ -292,6 +292,22 @@ const expectDividendRate = (row: ProfitValuationFutureData) => {
             </td>
           </tr>
           <tr class="bold-tr">
+            <td class="long-term-average-return-td">长期平均收益率</td>
+            <td class="long-term-average-return-td">
+              {{ profitValuation.longTermWithAssets }}
+            </td>
+            <td colspan="2" class="long-term-average-return-td">
+              预期锚点收益率
+            </td>
+            <td class="long-term-average-return-td">
+              {{ profitValuation.longTermAverageReturnYieldWithAnchor }}
+            </td>
+            <td class="long-term-average-return-td">折现长期收益率</td>
+            <td class="long-term-average-return-td">
+              {{ profitValuation.longTermPresentWithAssets }}
+            </td>
+          </tr>
+          <tr class="bold-tr">
             <td class="conservative-sell">5.5%收益率对应</td>
             <td class="conservative-sell">
               ￥{{ formatNum(profitValuation.sellPriceWithAssets(0.055), 2) }}

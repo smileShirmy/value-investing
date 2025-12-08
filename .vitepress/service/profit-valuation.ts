@@ -158,7 +158,16 @@ export class ProfitValuation {
 
   // 当前股价长期平均收益率
   longTermAverageReturnYieldWithPrice = computed(() => {
-    const result = this.anchor.value / this.price / this.backYearsNum.value;
+    const result = this.sumEps.value / this.price / this.backYearsNum.value;
+    return formatPercent(result * 100);
+  });
+
+  // 当前股价长期平均收益率
+  longTermWithAssets = computed(() => {
+    const result =
+      this.sumEps.value /
+      (this.price - this.otherAssets.value) /
+      this.backYearsNum.value;
     return formatPercent(result * 100);
   });
 
@@ -171,6 +180,14 @@ export class ProfitValuation {
   longTermAverageReturnYieldWithPresent = computed(() => {
     const result =
       this.presentAnchor.value / this.price / this.backYearsNum.value;
+    return formatPercent(result * 100);
+  });
+
+  longTermPresentWithAssets = computed(() => {
+    const result =
+      this.presentAnchor.value /
+      (this.price - this.otherAssets.value) /
+      this.backYearsNum.value;
     return formatPercent(result * 100);
   });
 
