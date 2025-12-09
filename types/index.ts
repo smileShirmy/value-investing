@@ -342,10 +342,6 @@ export const stockData: StockItem[] = [
     code: "603486",
   },
   {
-    name: "中国海洋石油",
-    code: "600938",
-  },
-  {
     name: "中远海控",
     code: "601919",
     profitValuationConfig: {
