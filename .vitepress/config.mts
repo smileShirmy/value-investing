@@ -7,6 +7,7 @@ export default defineConfig({
   lastUpdated: true,
   title: "Value Investing",
   description: "A VitePress Site",
+  outDir: "docs",
   markdown: {
     breaks: true,
   },
