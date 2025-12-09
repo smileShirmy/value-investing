@@ -17,7 +17,7 @@ const props = withDefaults(
 );
 
 interface BasicItem {
-  code: keyof typeof data;
+  code: string;
   hkCode?: string;
   name: string;
   industry: string; // 行业
@@ -333,7 +333,7 @@ const portfolio = computed<portfolio>(() => {
             <td>{{ i + 1 }}</td>
             <td class="bold-td">{{ item.name }}</td>
             <td class="bold-td cost-basis">
-              {{ formatNum(item.costBasis, 3) }}
+              ￥{{ formatNum(item.costBasis, 3) }}
             </td>
             <td class="bold-td">{{ item.sharesHeld }}</td>
             <td>{{ formatNum(item.shareholdingValue, 2) }}</td>
