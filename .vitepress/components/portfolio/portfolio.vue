@@ -62,8 +62,8 @@ const basicStocks = ref<BasicItem[]>([
     code: "000858",
     name: "五粮液",
     industry: "白酒",
-    costBasis: 122.819,
-    sharesHeld: 400,
+    costBasis: 120.487,
+    sharesHeld: 500,
     dividendTaxRatio: 0,
   },
   {
