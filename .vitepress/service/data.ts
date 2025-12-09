@@ -2887,10 +2887,10 @@ const data: ServiceData = {
       "longTermEquityInvestment": 251740000000
     },
     "dynamicData": {
-      "price": 5.96,
-      "marketValue": 721686054763,
-      "PB": 0.87,
-      "PE": 18.05,
+      "price": 5.93,
+      "marketValue": 718053406836,
+      "PB": 0.86,
+      "PE": 17.96,
       "totalSharesOutstanding": 121088264222
     },
     "recentYearData": {
@@ -5208,10 +5208,10 @@ const data: ServiceData = {
       "longTermEquityInvestment": 57846977312
     },
     "dynamicData": {
-      "price": 5.36,
-      "marketValue": 167577319753,
-      "PB": 0.99,
-      "PE": 14.33,
+      "price": 5.28,
+      "marketValue": 165076165727,
+      "PB": 0.98,
+      "PE": 14.11,
       "totalSharesOutstanding": 31264425327
     },
     "recentYearData": {
@@ -8105,10 +8105,10 @@ const data: ServiceData = {
       "longTermEquityInvestment": 26013285000
     },
     "dynamicData": {
-      "price": 13.51,
-      "marketValue": 135606362149,
-      "PB": 2.6,
-      "PE": 14.28,
+      "price": 13.43,
+      "marketValue": 134803363706,
+      "PB": 2.58,
+      "PE": 14.2,
       "totalSharesOutstanding": 10037480544
     },
     "recentYearData": {
@@ -10318,10 +10318,10 @@ const data: ServiceData = {
       "longTermEquityInvestment": 0
     },
     "dynamicData": {
-      "price": 1428.89,
-      "marketValue": 1789356387511,
-      "PB": 6.96,
-      "PE": 20.77,
+      "price": 1401.06,
+      "marketValue": 1754505707428,
+      "PB": 6.83,
+      "PE": 20.36,
       "totalSharesOutstanding": 1252270215
     },
     "recentYearData": {
@@ -12927,10 +12927,10 @@ const data: ServiceData = {
       "longTermEquityInvestment": 21544391559.88
     },
     "dynamicData": {
-      "price": 27.31,
-      "marketValue": 256140234652,
-      "PB": 2.17,
-      "PE": 11.06,
+      "price": 26.71,
+      "marketValue": 250512840262,
+      "PB": 2.12,
+      "PE": 10.81,
       "totalSharesOutstanding": 9378990650
     },
     "recentYearData": {
@@ -15224,10 +15224,10 @@ const data: ServiceData = {
       "longTermEquityInvestment": 110722629.52
     },
     "dynamicData": {
-      "price": 181.01,
-      "marketValue": 220825723824,
-      "PB": 5.69,
-      "PE": 14.52,
+      "price": 179.28,
+      "marketValue": 218715185720,
+      "PB": 5.64,
+      "PE": 14.38,
       "totalSharesOutstanding": 1219964222
     },
     "recentYearData": {
@@ -18097,10 +18097,10 @@ const data: ServiceData = {
       "longTermEquityInvestment": 10145649153.04
     },
     "dynamicData": {
-      "price": 13.71,
-      "marketValue": 109741616332,
-      "PB": 1.66,
-      "PE": 12.63,
+      "price": 13.69,
+      "marketValue": 109581526447,
+      "PB": 1.65,
+      "PE": 12.61,
       "totalSharesOutstanding": 8004494262
     },
     "recentYearData": {
@@ -20070,10 +20070,10 @@ const data: ServiceData = {
       "longTermEquityInvestment": 76123371667.62
     },
     "dynamicData": {
-      "price": 28,
-      "marketValue": 685110096048,
-      "PB": 3.1,
-      "PE": 18.23,
+      "price": 27.95,
+      "marketValue": 683886685162,
+      "PB": 3.09,
+      "PE": 18.19,
       "totalSharesOutstanding": 24468217716
     },
     "recentYearData": {
@@ -21713,10 +21713,10 @@ const data: ServiceData = {
       "longTermEquityInvestment": 47425000000
     },
     "dynamicData": {
-      "price": 28.6,
-      "marketValue": 1359356683942,
-      "PB": 1.73,
-      "PE": 10,
+      "price": 28.22,
+      "marketValue": 1341295301428,
+      "PB": 1.71,
+      "PE": 9.87,
       "totalSharesOutstanding": 47529953984
     },
     "recentYearData": {
@@ -24802,10 +24802,10 @@ const data: ServiceData = {
       "longTermEquityInvestment": 199175000000
     },
     "dynamicData": {
-      "price": 104.86,
-      "marketValue": 2269231906157,
+      "price": 104.92,
+      "marketValue": 2270530341351,
       "PB": 1.66,
-      "PE": 14.75,
+      "PE": 14.76,
       "totalSharesOutstanding": 21640586555
     },
     "recentYearData": {
@@ -27723,10 +27723,10 @@ const data: ServiceData = {
       "longTermEquityInvestment": 61213000000
     },
     "dynamicData": {
-      "price": 40.94,
-      "marketValue": 813417206958,
-      "PB": 2.05,
-      "PE": 15.62,
+      "price": 40.48,
+      "marketValue": 804277687778,
+      "PB": 2.03,
+      "PE": 15.45,
       "totalSharesOutstanding": 19868519955
     },
     "recentYearData": {
@@ -30908,10 +30908,10 @@ const data: ServiceData = {
       "longTermEquityInvestment": 27531430859.43
     },
     "dynamicData": {
-      "price": 22.1,
-      "marketValue": 214259500000,
-      "PB": 2.27,
-      "PE": 12.64,
+      "price": 21.99,
+      "marketValue": 213193050000,
+      "PB": 2.26,
+      "PE": 12.58,
       "totalSharesOutstanding": 9695000000
     },
     "recentYearData": {
@@ -35922,10 +35922,10 @@ const data: ServiceData = {
       "longTermEquityInvestment": 44610184313.59
     },
     "dynamicData": {
-      "price": 6.89,
-      "marketValue": 630484185636,
-      "PB": 1.38,
-      "PE": 15.37,
+      "price": 6.83,
+      "marketValue": 624993757314,
+      "PB": 1.36,
+      "PE": 15.23,
       "totalSharesOutstanding": 91507138699
     },
     "recentYearData": {
@@ -38735,10 +38735,10 @@ const data: ServiceData = {
       "longTermEquityInvestment": 303028000000
     },
     "dynamicData": {
-      "price": 9.85,
-      "marketValue": 1802756631507,
-      "PB": 1.16,
-      "PE": 10.71,
+      "price": 9.73,
+      "marketValue": 1780794114169,
+      "PB": 1.14,
+      "PE": 10.58,
       "totalSharesOutstanding": 183020977818
     },
     "recentYearData": {
@@ -42052,10 +42052,10 @@ const data: ServiceData = {
       "longTermEquityInvestment": 34464223000
     },
     "dynamicData": {
-      "price": 13.25,
-      "marketValue": 175677290050,
+      "price": 13.29,
+      "marketValue": 176207636586,
       "PB": 1.12,
-      "PE": 10.55,
+      "PE": 10.59,
       "totalSharesOutstanding": 13258663400
     },
     "recentYearData": {
@@ -44745,10 +44745,10 @@ const data: ServiceData = {
       "longTermEquityInvestment": 76678875064.64
     },
     "dynamicData": {
-      "price": 14.92,
-      "marketValue": 231107185466,
+      "price": 14.95,
+      "marketValue": 231571878198,
       "PB": 1,
-      "PE": 6.4,
+      "PE": 6.42,
       "totalSharesOutstanding": 15489757739
     },
     "recentYearData": {
@@ -47006,10 +47006,10 @@ const data: ServiceData = {
       "longTermEquityInvestment": 281537457.87
     },
     "dynamicData": {
-      "price": 80.43,
-      "marketValue": 46578723022,
-      "PB": 5.42,
-      "PE": 24.64,
+      "price": 78.51,
+      "marketValue": 45466810201,
+      "PB": 5.29,
+      "PE": 24.05,
       "totalSharesOutstanding": 579121261
     },
     "recentYearData": {
@@ -50110,10 +50110,10 @@ const data: ServiceData = {
       "longTermEquityInvestment": 158353797.37
     },
     "dynamicData": {
-      "price": 29.81,
-      "marketValue": 25908704368,
-      "PB": 2.72,
-      "PE": 10.19,
+      "price": 29.65,
+      "marketValue": 25769643895,
+      "PB": 2.71,
+      "PE": 10.13,
       "totalSharesOutstanding": 869127956
     },
     "recentYearData": {
@@ -52059,10 +52059,10 @@ const data: ServiceData = {
       "longTermEquityInvestment": 133703770.8
     },
     "dynamicData": {
-      "price": 58.61,
-      "marketValue": 42058332506,
-      "PB": 5.89,
-      "PE": 17.65,
+      "price": 57.59,
+      "marketValue": 41326384048,
+      "PB": 5.79,
+      "PE": 17.34,
       "totalSharesOutstanding": 717596528
     },
     "recentYearData": {
@@ -54596,11 +54596,11 @@ const data: ServiceData = {
       "longTermEquityInvestment": 5123891000
     },
     "dynamicData": {
-      "price": 81.85,
-      "marketValue": 629499376212,
-      "PB": 2.85,
-      "PE": 12.46,
-      "totalSharesOutstanding": 7690890363
+      "price": 80.23,
+      "marketValue": 617064685648,
+      "PB": 2.8,
+      "PE": 12.22,
+      "totalSharesOutstanding": 7691196381
     },
     "recentYearData": {
       "netProfit": 44721506000
@@ -56821,10 +56821,10 @@ const data: ServiceData = {
       "longTermEquityInvestment": 2888775482.32
     },
     "dynamicData": {
-      "price": 126.64,
-      "marketValue": 186406730194,
-      "PB": 3.75,
-      "PE": 12.99,
+      "price": 122.13,
+      "marketValue": 179768271941,
+      "PB": 3.62,
+      "PE": 12.53,
       "totalSharesOutstanding": 1471941963
     },
     "recentYearData": {
@@ -59034,10 +59034,10 @@ const data: ServiceData = {
       "longTermEquityInvestment": 11709217.24
     },
     "dynamicData": {
-      "price": 154.8,
-      "marketValue": 81827280000,
-      "PB": 3.21,
-      "PE": 15.5,
+      "price": 150.17,
+      "marketValue": 79379862000,
+      "PB": 3.12,
+      "PE": 15.03,
       "totalSharesOutstanding": 528600000
     },
     "recentYearData": {
@@ -61535,10 +61535,10 @@ const data: ServiceData = {
       "longTermEquityInvestment": 4758298527.49
     },
     "dynamicData": {
-      "price": 40.77,
-      "marketValue": 228369312061,
-      "PB": 1.58,
-      "PE": 7.98,
+      "price": 40.36,
+      "marketValue": 226072735707,
+      "PB": 1.57,
+      "PE": 7.9,
       "totalSharesOutstanding": 5601405741
     },
     "recentYearData": {
@@ -66225,10 +66225,10 @@ const data: ServiceData = {
       "longTermEquityInvestment": 391959070.11
     },
     "dynamicData": {
-      "price": 25.5,
-      "marketValue": 134935099796,
-      "PB": 3.29,
-      "PE": 22.48,
+      "price": 25.15,
+      "marketValue": 133083049406,
+      "PB": 3.24,
+      "PE": 22.17,
       "totalSharesOutstanding": 5291572541
     },
     "recentYearData": {
@@ -68882,10 +68882,10 @@ const data: ServiceData = {
       "longTermEquityInvestment": 2173006025.05
     },
     "dynamicData": {
-      "price": 114.49,
-      "marketValue": 444405300492,
-      "PB": 3.12,
-      "PE": 15.49,
+      "price": 110.88,
+      "marketValue": 430392695594,
+      "PB": 3.02,
+      "PE": 15.01,
       "totalSharesOutstanding": 3881608005
     },
     "recentYearData": {
@@ -71407,10 +71407,10 @@ const data: ServiceData = {
       "longTermEquityInvestment": 0
     },
     "dynamicData": {
-      "price": 11.69,
-      "marketValue": 7160029914,
-      "PB": 3.05,
-      "PE": 17.37,
+      "price": 11.75,
+      "marketValue": 7196779426,
+      "PB": 3.07,
+      "PE": 17.46,
       "totalSharesOutstanding": 612491866
     },
     "recentYearData": {
@@ -74628,10 +74628,10 @@ const data: ServiceData = {
       "longTermEquityInvestment": 7216771000
     },
     "dynamicData": {
-      "price": 38.17,
-      "marketValue": 192355058712,
-      "PB": 1.96,
-      "PE": 17.36,
+      "price": 37.52,
+      "marketValue": 189079428946,
+      "PB": 1.92,
+      "PE": 17.07,
       "totalSharesOutstanding": 5039430409
     },
     "recentYearData": {
@@ -77141,10 +77141,10 @@ const data: ServiceData = {
       "longTermEquityInvestment": 21380099000
     },
     "dynamicData": {
-      "price": 97,
-      "marketValue": 884368163805,
-      "PB": 4.02,
-      "PE": 28.43,
+      "price": 96.03,
+      "marketValue": 875524482167,
+      "PB": 3.98,
+      "PE": 28.14,
       "totalSharesOutstanding": 9117197565
     },
     "recentYearData": {

@@ -8,7 +8,7 @@ export default defineConfig({
   title: "Value Investing",
   description: "A VitePress Site",
   outDir: "docs",
-  base: "./",
+  base: process.env.NODE_ENV === "production" ? "/value-investing/" : "/",
   markdown: {
     breaks: true,
   },
