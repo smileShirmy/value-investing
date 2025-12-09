@@ -8,6 +8,7 @@ export default defineConfig({
   title: "Value Investing",
   description: "A VitePress Site",
   outDir: "docs",
+  base: "./",
   markdown: {
     breaks: true,
   },
