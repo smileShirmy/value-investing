@@ -96,6 +96,10 @@ export default defineConfig({
           text: "估值思维",
           items: [
             {
+              text: "估值方法",
+              link: "/value-investing/valuation/valuation.md",
+            },
+            {
               text: "绝对估值",
               link: "/value-investing/valuation/absolute.md",
             },
