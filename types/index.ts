@@ -105,11 +105,11 @@ const chineseSpiritsStockData: StockItem[] = [
       },
       neutral: {
         type: ProfitValuationGrowthType.RATE,
-        data: [-0.2, -0.05, 0.05],
+        data: [-0.2, -0.1, 0.05],
       },
       optimistic: {
         type: ProfitValuationGrowthType.RATE,
-        data: [-0.2, 0, 0.06],
+        data: [-0.2, -0.1, 0.07],
       },
       backYearsNum: 8,
     },

@@ -18,12 +18,12 @@ export default defineConfig({
     },
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: "Home", link: "/" },
+      { text: "首页", link: "/" },
       {
-        text: "Value Investing",
+        text: "投资框架",
         link: "/value-investing/value-investing/information.md",
       },
-      { text: "Company", link: "/company/chinese-sprites/wuliangye.md" },
+      { text: "行业与企业", link: "/company/chinese-sprites/wuliangye.md" },
     ],
     sidebar: {
       "/value-investing/": [
@@ -41,6 +41,10 @@ export default defineConfig({
             {
               text: "投资回报率",
               link: "/value-investing/value-investing/return-on-investment.md",
+            },
+            {
+              text: "研究方法",
+              link: "",
             },
           ],
         },
@@ -82,6 +86,10 @@ export default defineConfig({
         {
           text: "生意模式",
           items: [
+            {
+              text: "生意模式",
+              link: "/value-investing/business-model/business-model.md",
+            },
             {
               text: "竞争优势",
               link: "/value-investing/business-model/competitive-advantage.md",
@@ -138,38 +146,68 @@ export default defineConfig({
           ],
         },
         {
-          text: "白酒",
-          link: "/company/chinese-sprites/chinese-sprites.md",
+          text: "消费品",
           items: [
-            { text: "贵州茅台", link: "/company/chinese-sprites/moutai.md" },
-            { text: "五粮液", link: "/company/chinese-sprites/wuliangye.md" },
             {
-              text: "泸州老窖",
-              link: "/company/chinese-sprites/luzhoulaojiao.md",
+              text: "消费品行业概述",
+              link: "/company/consumer/consumer.md",
             },
-            { text: "古井贡", link: "/company/chinese-sprites/gujinggong.md" },
             {
-              text: "山西汾酒",
-              link: "/company/chinese-sprites/shanxifenjiu.md",
+              text: "制造业概述",
+              link: "/company/manufacturing/manufacturing.md",
             },
-          ],
-        },
-        {
-          text: "白色家电",
-          link: "/company/home-appliance/home-appliance.md",
-          items: [
-            { text: "格力", link: "/company/home-appliance/gree.md" },
-            { text: "美的", link: "/company/home-appliance/midea.md" },
-            { text: "海尔", link: "/company/home-appliance/haier.md" },
+            {
+              text: "白酒",
+              link: "/company/chinese-sprites/chinese-sprites.md",
+              items: [
+                {
+                  text: "贵州茅台",
+                  link: "/company/chinese-sprites/moutai.md",
+                },
+                {
+                  text: "五粮液",
+                  link: "/company/chinese-sprites/wuliangye.md",
+                },
+                {
+                  text: "泸州老窖",
+                  link: "/company/chinese-sprites/luzhoulaojiao.md",
+                },
+                {
+                  text: "古井贡",
+                  link: "/company/chinese-sprites/gujinggong.md",
+                },
+                {
+                  text: "山西汾酒",
+                  link: "/company/chinese-sprites/shanxifenjiu.md",
+                },
+              ],
+            },
+            {
+              text: "白色家电",
+              link: "/company/home-appliance/home-appliance.md",
+              items: [
+                { text: "格力", link: "/company/home-appliance/gree.md" },
+                { text: "美的", link: "/company/home-appliance/midea.md" },
+                { text: "海尔", link: "/company/home-appliance/haier.md" },
+              ],
+            },
+            {
+              text: "汽车",
+              items: [{ text: "比亚迪", link: "/company/car/byd.md" }],
+            },
+            {
+              text: "摩托车",
+              link: "/company/motorcycle/motorcycle.md",
+              items: [
+                { text: "九号公司", link: "/company/motorcycle/ninebot.md" },
+                { text: "爱玛科技", link: "/company/motorcycle/aima.md" },
+              ],
+            },
           ],
         },
         {
           text: "航运",
           items: [{ text: "中远海控", link: "/company/shipping/cosco.md" }],
-        },
-        {
-          text: "汽车",
-          items: [{ text: "比亚迪", link: "/company/car/byd.md" }],
         },
         // {
         //   text: "分析示例",
@@ -182,14 +220,6 @@ export default defineConfig({
               text: "盐湖股份",
               link: "/company/agricultural-chemicals/yanhu.md",
             },
-          ],
-        },
-        {
-          text: "摩托车",
-          link: "/company/motorcycle/motorcycle.md",
-          items: [
-            { text: "九号公司", link: "/company/motorcycle/ninebot.md" },
-            { text: "爱玛科技", link: "/company/motorcycle/aima.md" },
           ],
         },
         {
