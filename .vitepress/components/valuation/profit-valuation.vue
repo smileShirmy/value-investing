@@ -38,18 +38,6 @@ const historyData = computed(() => {
   return valuationData.historyData;
 });
 
-/**
- * A 和 H 可能略有不同？
- */
-const dividendRate = computed(() => {
-  const { totalDividend } = historyData.value[historyData.value.length - 1];
-  return (
-    numToAHundredMillion(totalDividend, 8) /
-    profitValuation.totalSharesOutstanding /
-    profitValuation.price
-  );
-});
-
 const expectDps = (row: ProfitValuationFutureData) => {
   const lastData = historyData.value[historyData.value.length - 1];
   const ratio = row.profit / numToAHundredMillion(lastData.profit, 8);
@@ -59,7 +47,7 @@ const expectDps = (row: ProfitValuationFutureData) => {
 const expectDividendRate = (row: ProfitValuationFutureData) => {
   const lastData = historyData.value[historyData.value.length - 1];
   const ratio = row.profit / numToAHundredMillion(lastData.profit, 8);
-  return formatPercent(dividendRate.value * ratio * 100);
+  return formatPercent(profitValuation.dividendRate.value * ratio * 100);
 };
 </script>
 
@@ -101,7 +89,7 @@ const expectDividendRate = (row: ProfitValuationFutureData) => {
             <td>当前股价PE</td>
             <td class="dividend-rate-td">当前股息率</td>
             <td class="dividend-rate-td">
-              {{ formatPercent(dividendRate * 100, 2) }}
+              {{ formatPercent(profitValuation.dividendRate.value * 100, 2) }}
             </td>
           </tr>
           <tr
@@ -161,7 +149,7 @@ const expectDividendRate = (row: ProfitValuationFutureData) => {
             </td>
             <td class="sum-eps-td">￥{{ profitValuation.sumEps }}</td>
             <td colspan="2">当前股价</td>
-            <td>￥{{ profitValuation.price }}</td>
+            <td class="color-red">￥{{ profitValuation.price }}</td>
             <td>有息负债率</td>
             <td>
               {{
@@ -278,17 +266,29 @@ const expectDividendRate = (row: ProfitValuationFutureData) => {
             </td>
           </tr>
           <tr class="bold-tr">
+            <td>少数股东权益</td>
+            <td>
+              {{ numToAHundredMillion(valuationData.minorityInterest, 2) }}亿
+            </td>
+            <td colspan="2">每股少数股东权益</td>
+            <td>
+              ￥{{ formatNum(profitValuation.minorityInterestPerShare, 2) }}
+            </td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="bold-tr">
             <td class="anchor-td">加其它资产锚点</td>
             <td class="anchor-td">
               ￥{{ formatNum(profitValuation.anchorWithAssets.value, 2) }}
             </td>
-            <td colspan="2" class="batting-edge-td">击球区边缘</td>
-            <td class="batting-edge-td">
-              ￥{{ profitValuation.anchorWithAssetsEdge }}
-            </td>
-            <td class="could-fall-another-td">还可以跌</td>
+            <td colspan="2" class="could-fall-another-td">还可以跌</td>
             <td class="could-fall-another-td">
               {{ profitValuation.couldFallAnotherWithAssets }}
+            </td>
+            <td class="batting-edge-td">击球区边缘</td>
+            <td class="batting-edge-td">
+              ￥{{ profitValuation.anchorWithAssetsEdge }}
             </td>
           </tr>
           <tr class="bold-tr">
@@ -321,6 +321,174 @@ const expectDividendRate = (row: ProfitValuationFutureData) => {
               ￥{{ formatNum(profitValuation.sellPriceWithAssets(0.045), 2) }}
             </td>
           </tr>
+          <tr class="align-left">
+            <td colspan="7">
+              <div>
+                其它资产 = 100%现金 + 75%金融资产 + 50%长期股权投资 -
+                每股少数股东权益
+              </div>
+              <div>务必根据不同行业、不同公司给予不同折扣</div>
+              <div>持续思考迭代，警惕路径依赖</div>
+            </td>
+          </tr>
+          <template v-if="profitValuation.hkMarketValuation.value">
+            <tr class="bold-tr">
+              <td colspan="7" class="yellow">
+                {{ stockItem.hkMarketConfig ? "港股" : "B股" }}部分
+              </td>
+            </tr>
+            <tr class="bold-tr">
+              <td>当前股价</td>
+              <td class="color-red">
+                HK${{ profitValuation.hkMarketValuation.value.price }}
+              </td>
+              <td colspan="2">港币汇率</td>
+              <td class="pink">
+                {{
+                  formatNum(
+                    profitValuation.hkMarketValuation.value.exchangeRate,
+                    4
+                  )
+                }}
+              </td>
+              <td>扣税后到手分红</td>
+              <td>
+                HK${{
+                  formatNum(profitValuation.hkMarketValuation.value.dps, 2)
+                }}
+              </td>
+            </tr>
+            <tr class="bold-tr">
+              <td class="orange">港币锚点</td>
+              <td class="orange">
+                HK${{
+                  formatNum(profitValuation.hkMarketValuation.value.anchor, 2)
+                }}
+              </td>
+              <td colspan="2" class="green">还可以跌</td>
+              <td class="green">
+                {{ profitValuation.hkMarketValuation.value.couldFallAnother }}
+              </td>
+              <td>到点税后股息率</td>
+              <td>
+                {{
+                  formatPercent(
+                    profitValuation.hkMarketValuation.value.anchorDividendRate *
+                      100
+                  )
+                }}
+              </td>
+            </tr>
+            <tr class="bold-tr">
+              <td class="yellow">长期平均收益率</td>
+              <td class="yellow">
+                {{
+                  profitValuation.hkMarketValuation.value
+                    .longTermAverageReturnYieldWithPrice
+                }}
+              </td>
+              <td colspan="2" class="yellow">折现后长期收益率</td>
+              <td class="yellow">
+                {{
+                  profitValuation.hkMarketValuation.value
+                    .longTermAverageReturnYieldWithPresent
+                }}
+              </td>
+              <td>港股打折</td>
+              <td>
+                {{
+                  formatPercent(
+                    profitValuation.hkMarketValuation.value.discount * 100,
+                    0
+                  )
+                }}
+              </td>
+            </tr>
+            <tr class="bold-tr">
+              <td class="baby-blue">击球区边缘</td>
+              <td class="baby-blue">
+                HK${{ profitValuation.hkMarketValuation.value.battingEdge }}
+              </td>
+              <td colspan="2" class="baby-blue">边缘还可以跌</td>
+              <td class="baby-blue">
+                {{
+                  profitValuation.hkMarketValuation.value
+                    .battingEdgeCouldFallAnother
+                }}
+              </td>
+              <td>当前税后股息率</td>
+              <td class="pink">
+                {{
+                  formatPercent(
+                    profitValuation.hkMarketValuation.value.dividendRate * 100
+                  )
+                }}
+              </td>
+            </tr>
+            <tr class="bold-tr">
+              <td></td>
+              <td></td>
+              <td colspan="2"></td>
+              <td></td>
+              <td class="pink">A股股息多</td>
+              <td class="pink">
+                {{
+                  formatPercent(
+                    profitValuation.hkMarketValuation.value.dividendCompare *
+                      100
+                  )
+                }}
+              </td>
+            </tr>
+            <tr class="bold-tr">
+              <td class="anchor-td">加其它资产锚点</td>
+              <td class="anchor-td">
+                HK${{
+                  formatNum(
+                    profitValuation.hkMarketValuation.value.anchorWithAssets,
+                    2
+                  )
+                }}
+              </td>
+              <td colspan="2" class="could-fall-another-td">还可以跌</td>
+              <td class="could-fall-another-td">
+                {{
+                  profitValuation.hkMarketValuation.value
+                    .couldFallAnotherWithAssets
+                }}
+              </td>
+              <td class="batting-edge-td">击球区边缘</td>
+              <td class="batting-edge-td">
+                HK${{
+                  profitValuation.hkMarketValuation.value.anchorWithAssetsEdge
+                }}
+              </td>
+            </tr>
+            <tr class="bold-tr">
+              <td class="long-term-average-return-td">长期平均收益率</td>
+              <td class="long-term-average-return-td">
+                {{ profitValuation.hkMarketValuation.value.longTermWithAssets }}
+              </td>
+              <td colspan="2" class="long-term-average-return-td">
+                折现长期收益率
+              </td>
+              <td class="long-term-average-return-td">
+                {{
+                  profitValuation.hkMarketValuation.value
+                    .longTermPresentWithAssets
+                }}
+              </td>
+              <td>到点税后股息率</td>
+              <td>
+                {{
+                  formatPercent(
+                    profitValuation.hkMarketValuation.value
+                      .anchorWithAssetsDividendRate * 100
+                  )
+                }}
+              </td>
+            </tr>
+          </template>
         </tbody>
       </table>
     </section>
@@ -391,6 +559,34 @@ const expectDividendRate = (row: ProfitValuationFutureData) => {
 
   .optimistic-sell {
     background: #ee1e05;
+  }
+
+  .yellow {
+    background: #ffff00;
+  }
+
+  .green {
+    background: #00b24f;
+  }
+
+  .orange {
+    background-color: #f88920;
+  }
+
+  .red {
+    background: #ff0000;
+  }
+
+  .pink {
+    background-color: #ffcac8;
+  }
+
+  .baby-blue {
+    background-color: #8ddefa;
+  }
+
+  .color-red {
+    color: #ff0000;
   }
 }
 </style>

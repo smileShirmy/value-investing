@@ -592,6 +592,7 @@ function generateVauationData(data: StockData): ValuationData {
   // lastVal("OTHERNONCLIABI");
 
   const debtRatio = lastVal("ASSLIABRT");
+  const minorityInterest = lastVal("MINYSHARRIGH");
 
   const lastYearDateValue = data.gjzb.report_date.find(
     (v) => v.date_type === 4
@@ -616,6 +617,7 @@ function generateVauationData(data: StockData): ValuationData {
     netProfitMargin,
     tradingFinancialAssets,
     longTermEquityInvestment,
+    minorityInterest,
   };
 }
 

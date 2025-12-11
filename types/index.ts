@@ -34,10 +34,22 @@ export interface ProfitValuationConfig {
   backYearsNum: number;
 }
 
+// 港股部分设置
+export interface HKMarketConfig {
+  code: string;
+  dividendTaxRate: number; // 股息税率
+  discount?: number; // 估值打折
+}
+
+// B股部分设置
+export type BMarketConfig = Omit<HKMarketConfig, "dividendTaxRate">;
+
 export interface StockItem {
   code: string;
   name: string;
   profitValuationConfig?: ProfitValuationConfig;
+  hkMarketConfig?: HKMarketConfig;
+  bMarketConfig?: BMarketConfig;
 }
 
 const chineseSpiritsStockData: StockItem[] = [
@@ -112,6 +124,9 @@ const chineseSpiritsStockData: StockItem[] = [
         data: [-0.2, -0.1, 0.07],
       },
       backYearsNum: 8,
+    },
+    bMarketConfig: {
+      code: "200596",
     },
   },
   {
@@ -303,6 +318,10 @@ const oilStockData: StockItem[] = [
         data: [1200],
       },
       backYearsNum: 8,
+    },
+    hkMarketConfig: {
+      code: "00883",
+      dividendTaxRate: 0.72,
     },
   },
   {
@@ -623,6 +642,7 @@ export interface ValuationData {
   netProfitMargin: number; // 净利率
   tradingFinancialAssets: number; // 交易性金融资产
   longTermEquityInvestment: number; // 长期股权投资
+  minorityInterest: number; // 少数股东权益
 }
 
 export interface RecentYearData {

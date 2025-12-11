@@ -2884,7 +2884,8 @@ const data: ServiceData = {
       "grossProfitMargin": 15.469748,
       "netProfitMargin": 1.871713,
       "tradingFinancialAssets": 3000000,
-      "longTermEquityInvestment": 251740000000
+      "longTermEquityInvestment": 251740000000,
+      "minorityInterest": 157394000000
     },
     "dynamicData": {
       "price": 5.93,
@@ -5205,7 +5206,8 @@ const data: ServiceData = {
       "grossProfitMargin": 23.420419,
       "netProfitMargin": 5.28777,
       "tradingFinancialAssets": 2748866560,
-      "longTermEquityInvestment": 57846977312
+      "longTermEquityInvestment": 57846977312,
+      "minorityInterest": 207725601241
     },
     "dynamicData": {
       "price": 5.28,
@@ -8102,7 +8104,8 @@ const data: ServiceData = {
       "grossProfitMargin": 35.80436,
       "netProfitMargin": 15.045733,
       "tradingFinancialAssets": 307514000,
-      "longTermEquityInvestment": 26013285000
+      "longTermEquityInvestment": 26013285000,
+      "minorityInterest": 65876370000
     },
     "dynamicData": {
       "price": 13.43,
@@ -10315,7 +10318,8 @@ const data: ServiceData = {
       "grossProfitMargin": 91.931216,
       "netProfitMargin": 52.273359,
       "tradingFinancialAssets": 0,
-      "longTermEquityInvestment": 0
+      "longTermEquityInvestment": 0,
+      "minorityInterest": 8635060486.62
     },
     "dynamicData": {
       "price": 1401.01,
@@ -12924,7 +12928,8 @@ const data: ServiceData = {
       "grossProfitMargin": 27.796985,
       "netProfitMargin": 6.845069,
       "tradingFinancialAssets": 4198851454.6,
-      "longTermEquityInvestment": 21544391559.88
+      "longTermEquityInvestment": 21544391559.88,
+      "minorityInterest": 7280152844.7
     },
     "dynamicData": {
       "price": 26.71,
@@ -15221,7 +15226,8 @@ const data: ServiceData = {
       "grossProfitMargin": 76.202608,
       "netProfitMargin": 34.025984,
       "tradingFinancialAssets": 0,
-      "longTermEquityInvestment": 110722629.52
+      "longTermEquityInvestment": 110722629.52,
+      "minorityInterest": 498059833.9
     },
     "dynamicData": {
       "price": 179.28,
@@ -18094,7 +18100,8 @@ const data: ServiceData = {
       "grossProfitMargin": 37.477097,
       "netProfitMargin": 20.797154,
       "tradingFinancialAssets": 19355026.95,
-      "longTermEquityInvestment": 10145649153.04
+      "longTermEquityInvestment": 10145649153.04,
+      "minorityInterest": 49993520059.26
     },
     "dynamicData": {
       "price": 13.72,
@@ -20067,7 +20074,8 @@ const data: ServiceData = {
       "grossProfitMargin": 59.13412,
       "netProfitMargin": 38.974399,
       "tradingFinancialAssets": 0,
-      "longTermEquityInvestment": 76123371667.62
+      "longTermEquityInvestment": 76123371667.62,
+      "minorityInterest": 11885963196.14
     },
     "dynamicData": {
       "price": 27.97,
@@ -21710,7 +21718,8 @@ const data: ServiceData = {
       "grossProfitMargin": 53.628961,
       "netProfitMargin": 32.813324,
       "tradingFinancialAssets": 30013000000,
-      "longTermEquityInvestment": 47425000000
+      "longTermEquityInvestment": 47425000000,
+      "minorityInterest": 2007000000
     },
     "dynamicData": {
       "price": 28.22,
@@ -24799,7 +24808,8 @@ const data: ServiceData = {
       "grossProfitMargin": 29.016035,
       "netProfitMargin": 13.310093,
       "tradingFinancialAssets": 144264000000,
-      "longTermEquityInvestment": 199175000000
+      "longTermEquityInvestment": 199175000000,
+      "minorityInterest": 3165000000
     },
     "dynamicData": {
       "price": 104.92,
@@ -27720,7 +27730,8 @@ const data: ServiceData = {
       "grossProfitMargin": 34.040044,
       "netProfitMargin": 20.35168,
       "tradingFinancialAssets": 0,
-      "longTermEquityInvestment": 61213000000
+      "longTermEquityInvestment": 61213000000,
+      "minorityInterest": 70179000000
     },
     "dynamicData": {
       "price": 40.48,
@@ -30905,7 +30916,8 @@ const data: ServiceData = {
       "grossProfitMargin": 32.688412,
       "netProfitMargin": 19.852445,
       "tradingFinancialAssets": 2787554191.97,
-      "longTermEquityInvestment": 27531430859.43
+      "longTermEquityInvestment": 27531430859.43,
+      "minorityInterest": 43382010503.43
     },
     "dynamicData": {
       "price": 22,
@@ -34030,7 +34042,8 @@ const data: ServiceData = {
       "grossProfitMargin": 35.446644,
       "netProfitMargin": 30.263792,
       "tradingFinancialAssets": 6554763,
-      "longTermEquityInvestment": 15316331948
+      "longTermEquityInvestment": 15316331948,
+      "minorityInterest": 4632920976
     },
     "dynamicData": {
       "price": 8.55,
@@ -35919,7 +35932,8 @@ const data: ServiceData = {
       "grossProfitMargin": 28.662991,
       "netProfitMargin": 6.298124,
       "tradingFinancialAssets": 28994825427.77,
-      "longTermEquityInvestment": 44610184313.59
+      "longTermEquityInvestment": 44610184313.59,
+      "minorityInterest": 7111494496.37
     },
     "dynamicData": {
       "price": 6.82,
@@ -38732,7 +38746,8 @@ const data: ServiceData = {
       "grossProfitMargin": 22.55828,
       "netProfitMargin": 6.254192,
       "tradingFinancialAssets": 6721000000,
-      "longTermEquityInvestment": 303028000000
+      "longTermEquityInvestment": 303028000000,
+      "minorityInterest": 197733000000
     },
     "dynamicData": {
       "price": 9.72,
@@ -42049,7 +42064,8 @@ const data: ServiceData = {
       "grossProfitMargin": 24.878729,
       "netProfitMargin": 13.17539,
       "tradingFinancialAssets": 0,
-      "longTermEquityInvestment": 34464223000
+      "longTermEquityInvestment": 34464223000,
+      "minorityInterest": 41373718000
     },
     "dynamicData": {
       "price": 13.3,
@@ -44742,7 +44758,8 @@ const data: ServiceData = {
       "grossProfitMargin": 29.541147,
       "netProfitMargin": 23.687531,
       "tradingFinancialAssets": 83523686.56,
-      "longTermEquityInvestment": 76678875064.64
+      "longTermEquityInvestment": 76678875064.64,
+      "minorityInterest": 50462172470.91
     },
     "dynamicData": {
       "price": 14.95,
@@ -47003,7 +47020,8 @@ const data: ServiceData = {
       "grossProfitMargin": 46.523946,
       "netProfitMargin": 4.870385,
       "tradingFinancialAssets": 100000000,
-      "longTermEquityInvestment": 281537457.87
+      "longTermEquityInvestment": 281537457.87,
+      "minorityInterest": -147727.3
     },
     "dynamicData": {
       "price": 78.39,
@@ -50107,7 +50125,8 @@ const data: ServiceData = {
       "grossProfitMargin": 17.821786,
       "netProfitMargin": 9.314665,
       "tradingFinancialAssets": 5322835424.88,
-      "longTermEquityInvestment": 158353797.37
+      "longTermEquityInvestment": 158353797.37,
+      "minorityInterest": 120661696.3
     },
     "dynamicData": {
       "price": 29.65,
@@ -52056,7 +52075,8 @@ const data: ServiceData = {
       "grossProfitMargin": 28.235711,
       "netProfitMargin": 7.645048,
       "tradingFinancialAssets": 2327276238.4,
-      "longTermEquityInvestment": 133703770.8
+      "longTermEquityInvestment": 133703770.8,
+      "minorityInterest": 105834551.35
     },
     "dynamicData": {
       "price": 57.58,
@@ -54593,7 +54613,8 @@ const data: ServiceData = {
       "grossProfitMargin": 26.418953,
       "netProfitMargin": 9.519158,
       "tradingFinancialAssets": 3291728000,
-      "longTermEquityInvestment": 5123891000
+      "longTermEquityInvestment": 5123891000,
+      "minorityInterest": 13548467000
     },
     "dynamicData": {
       "price": 80.2,
@@ -56818,7 +56839,8 @@ const data: ServiceData = {
       "grossProfitMargin": 87.53659,
       "netProfitMargin": 43.267313,
       "tradingFinancialAssets": 709720591.06,
-      "longTermEquityInvestment": 2888775482.32
+      "longTermEquityInvestment": 2888775482.32,
+      "minorityInterest": 145235184.27
     },
     "dynamicData": {
       "price": 122.12,
@@ -59031,7 +59053,8 @@ const data: ServiceData = {
       "grossProfitMargin": 79.904703,
       "netProfitMargin": 24.203193,
       "tradingFinancialAssets": 50405625.78,
-      "longTermEquityInvestment": 11709217.24
+      "longTermEquityInvestment": 11709217.24,
+      "minorityInterest": 1085436221.68
     },
     "dynamicData": {
       "price": 150.2,
@@ -61532,7 +61555,8 @@ const data: ServiceData = {
       "grossProfitMargin": 29.42824,
       "netProfitMargin": 17.112732,
       "tradingFinancialAssets": 29690090532.12,
-      "longTermEquityInvestment": 4758298527.49
+      "longTermEquityInvestment": 4758298527.49,
+      "minorityInterest": 4087695897.39
     },
     "dynamicData": {
       "price": 40.35,
@@ -63601,7 +63625,8 @@ const data: ServiceData = {
       "grossProfitMargin": 14.918351,
       "netProfitMargin": 8.926697,
       "tradingFinancialAssets": 439415205.44,
-      "longTermEquityInvestment": 2319833069.74
+      "longTermEquityInvestment": 2319833069.74,
+      "minorityInterest": 0
     },
     "dynamicData": {
       "price": 4.73,
@@ -66222,7 +66247,8 @@ const data: ServiceData = {
       "grossProfitMargin": 51.857906,
       "netProfitMargin": 32.469406,
       "tradingFinancialAssets": 7147871.87,
-      "longTermEquityInvestment": 391959070.11
+      "longTermEquityInvestment": 391959070.11,
+      "minorityInterest": 2791326629.32
     },
     "dynamicData": {
       "price": 25.13,
@@ -68879,7 +68905,8 @@ const data: ServiceData = {
       "grossProfitMargin": 77.054799,
       "netProfitMargin": 37.222757,
       "tradingFinancialAssets": 0,
-      "longTermEquityInvestment": 2173006025.05
+      "longTermEquityInvestment": 2173006025.05,
+      "minorityInterest": 3704743408.7
     },
     "dynamicData": {
       "price": 110.88,
@@ -71404,7 +71431,8 @@ const data: ServiceData = {
       "grossProfitMargin": 23.780962,
       "netProfitMargin": 13.367435,
       "tradingFinancialAssets": 969894021.64,
-      "longTermEquityInvestment": 0
+      "longTermEquityInvestment": 0,
+      "minorityInterest": 45772981.88
     },
     "dynamicData": {
       "price": 11.74,
@@ -74625,7 +74653,8 @@ const data: ServiceData = {
       "grossProfitMargin": 13.92668,
       "netProfitMargin": 3.59287,
       "tradingFinancialAssets": 25647106000,
-      "longTermEquityInvestment": 7216771000
+      "longTermEquityInvestment": 7216771000,
+      "minorityInterest": 10701259000
     },
     "dynamicData": {
       "price": 37.51,
@@ -77138,7 +77167,8 @@ const data: ServiceData = {
       "grossProfitMargin": 19.438342,
       "netProfitMargin": 5.351667,
       "tradingFinancialAssets": 55523908000,
-      "longTermEquityInvestment": 21380099000
+      "longTermEquityInvestment": 21380099000,
+      "minorityInterest": 12882940000
     },
     "dynamicData": {
       "price": 96.03,

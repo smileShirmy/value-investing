@@ -44,7 +44,11 @@ export default defineConfig({
             },
             {
               text: "研究方法",
-              link: "",
+              link: "/value-investing/value-investing/research-methods.md",
+            },
+            {
+              text: "宏观",
+              link: "/value-investing/value-investing/macro-level.md",
             },
           ],
         },

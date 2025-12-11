@@ -21,6 +21,12 @@
   tr {
     transition: all ease-in-out 0.1s;
 
+    &.align-left {
+      td {
+        text-align: left;
+      }
+    }
+
     &.bold-tr {
       td {
         font-weight: bold;

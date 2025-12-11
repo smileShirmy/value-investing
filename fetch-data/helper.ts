@@ -122,6 +122,8 @@ export function toEastMoneySecId(stockCode: string) {
   } else if (/^[A-Za-z]+$/.test(code)) {
     // 美股（纯字母代码如AAPL）
     return code.toUpperCase(); // 或返回 `US.${code}` 根据接口要求
+  } else if (/CNHHKD$/.test(code)) {
+    return code;
   }
 
   // 默认返回沪市格式（可根据需求调整）

@@ -13,6 +13,10 @@ import {
   presentValue,
 } from "../../fetch-data/helper";
 import { type DynamicData } from "../../fetch-data/types";
+import {
+  getDynamicData,
+  getExchangeRate,
+} from "../../fetch-data/fetch-stock-data";
 
 // 财务自由的一个普遍定义，是总投资资产，每年提取4%足够生活开支了，就达到了基础的财务自由。就不需要为了生活而被迫去做不想做的事情，或者至少有了更多的选择权。
 const DISCOUNT_RATE = 0.04;
@@ -52,9 +56,16 @@ export class ProfitValuation {
   // 合计每股金融资产
   totalFinancialAssetsPerShare: number;
 
+  // 每股少数股东权益
+  minorityInterestPerShare: number;
+
   price = 0;
 
+  hkMarketValuation = ref<HKMarketValuation | null>(null);
+
   dynamicData: DynamicData;
+
+  stockItem: StockItem;
 
   lastData: ValuationHistoryData;
 
@@ -122,7 +133,9 @@ export class ProfitValuation {
         0.75 * this.valuationData.tradingFinancialAssets +
         0.5 * this.valuationData.longTermEquityInvestment) /
       this.dynamicData.totalSharesOutstanding;
-    return other;
+
+    // 减去少数股东权益
+    return other - this.minorityInterestPerShare;
   });
 
   // 加其它资产锚点
@@ -162,7 +175,7 @@ export class ProfitValuation {
     return formatPercent(result * 100);
   });
 
-  // 当前股价长期平均收益率
+  // 当前股价长期平均收益率（加其它资产）
   longTermWithAssets = computed(() => {
     const result =
       this.sumEps.value /
@@ -177,18 +190,33 @@ export class ProfitValuation {
     return formatPercent(result * 100);
   });
 
+  // 折现后长期平均收益率
   longTermAverageReturnYieldWithPresent = computed(() => {
     const result =
       this.presentAnchor.value / this.price / this.backYearsNum.value;
     return formatPercent(result * 100);
   });
 
+  // 折现后长期平均收益率（加其它资产）
   longTermPresentWithAssets = computed(() => {
     const result =
       this.presentAnchor.value /
       (this.price - this.otherAssets.value) /
       this.backYearsNum.value;
     return formatPercent(result * 100);
+  });
+
+  /**
+   * A 和 H 可能略有不同？
+   */
+  dividendRate = computed(() => {
+    const { totalDividend } =
+      this.valuationData.historyData[this.valuationData.historyData.length - 1];
+    return (
+      numToAHundredMillion(totalDividend, 8) /
+      this.totalSharesOutstanding /
+      this.price
+    );
   });
 
   constructor(
@@ -209,6 +237,7 @@ export class ProfitValuation {
       this.backYearsNum.value = stockItem.profitValuationConfig.backYearsNum;
     }
 
+    this.stockItem = stockItem;
     this.valuationData = valuationData;
 
     this.lastData =
@@ -244,7 +273,18 @@ export class ProfitValuation {
         valuationData.longTermEquityInvestment) /
       dynamicData.totalSharesOutstanding;
 
+    // 计算每股少数股东权益
+    this.minorityInterestPerShare =
+      valuationData.minorityInterest / dynamicData.totalSharesOutstanding;
+
+    this.init();
     this.initTable();
+  }
+
+  async init() {
+    if (this.stockItem.bMarketConfig || this.stockItem.hkMarketConfig) {
+      this.hkMarketValuation.value = await HKMarketValuation.create(this);
+    }
   }
 
   sellPrice(rate: number) {
@@ -411,5 +451,164 @@ export class ProfitValuation {
 
       //
     }
+  }
+}
+
+export class HKMarketValuation {
+  exchangeRate: number;
+
+  profitValuation: ProfitValuation;
+
+  price: number;
+
+  discount = 1;
+
+  dividendTaxRate = 1;
+
+  CHN: number;
+
+  // 锚点
+  anchor = computed(() => {
+    return (
+      (this.profitValuation.anchor.value / this.exchangeRate) * this.discount
+    );
+  });
+
+  // 加其它资产锚点
+  anchorWithAssets = computed(() => {
+    return (
+      (this.profitValuation.anchorWithAssets.value / this.exchangeRate) *
+      this.discount
+    );
+  });
+
+  // 还可以跌
+  couldFallAnother = computed(() => {
+    const percent = ((this.price - this.anchor.value) / this.price) * 100;
+    return formatPercent(-percent);
+  });
+
+  // 边缘还可以跌
+  battingEdgeCouldFallAnother = computed(() => {
+    const percent = ((this.price - this.battingEdge.value) / this.price) * 100;
+    return formatPercent(-percent);
+  });
+
+  // 加其它资产锚点还可以跌
+  couldFallAnotherWithAssets = computed(() => {
+    const percent =
+      ((this.price - this.anchorWithAssets.value) / this.price) * 100;
+    return formatPercent(-percent);
+  });
+
+  // 当前股价长期平均收益率
+  longTermAverageReturnYieldWithPrice = computed(() => {
+    const result =
+      (this.profitValuation.sumEps.value * this.discount) /
+      this.CHN /
+      this.profitValuation.backYearsNum.value;
+    return formatPercent(result * 100);
+  });
+
+  // 当前股价长期平均收益率（加其它资产）
+  longTermWithAssets = computed(() => {
+    const result =
+      (this.profitValuation.sumEps.value * this.discount) /
+      (this.CHN - this.profitValuation.otherAssets.value) /
+      this.profitValuation.backYearsNum.value;
+    return formatPercent(result * 100);
+  });
+
+  // 击球区边缘
+  battingEdge = computed(() => formatNum(this.anchor.value * 1.05, 2));
+
+  // 加其它资产锚点击球区边缘
+  anchorWithAssetsEdge = computed(() =>
+    formatNum(this.anchorWithAssets.value * 1.05, 2)
+  );
+
+  // 折现后长期平均收益率
+  longTermAverageReturnYieldWithPresent = computed(() => {
+    const result =
+      (this.profitValuation.sumPresentEps.value * this.discount) /
+      this.CHN /
+      this.profitValuation.backYearsNum.value;
+    return formatPercent(result * 100);
+  });
+
+  // 折现后长期平均收益率（加其它资产）
+  longTermPresentWithAssets = computed(() => {
+    const result =
+      (this.profitValuation.sumPresentEps.value * this.discount) /
+      (this.CHN - this.profitValuation.otherAssets.value) /
+      this.profitValuation.backYearsNum.value;
+    return formatPercent(result * 100);
+  });
+
+  dps = computed(() => {
+    const { totalDividend } =
+      this.profitValuation.valuationData.historyData[
+        this.profitValuation.valuationData.historyData.length - 1
+      ];
+    return (
+      (numToAHundredMillion(totalDividend, 8) /
+        this.profitValuation.totalSharesOutstanding /
+        this.exchangeRate) *
+      this.dividendTaxRate
+    );
+  });
+
+  dividendRate = computed(() => {
+    const { totalDividend } =
+      this.profitValuation.valuationData.historyData[
+        this.profitValuation.valuationData.historyData.length - 1
+      ];
+    return (
+      (numToAHundredMillion(totalDividend, 8) /
+        this.profitValuation.totalSharesOutstanding /
+        this.CHN) *
+      this.dividendTaxRate
+    );
+  });
+
+  anchorDividendRate = computed(() => {
+    return this.dps.value / this.anchor.value;
+  });
+
+  anchorWithAssetsDividendRate = computed(() => {
+    return this.dps.value / this.anchorWithAssets.value;
+  });
+
+  dividendCompare = computed(() => {
+    return this.profitValuation.dividendRate.value - this.dividendRate.value;
+  });
+
+  constructor(
+    profitValuation: ProfitValuation,
+    exchangeRate: number,
+    price: number
+  ) {
+    this.profitValuation = profitValuation;
+    this.exchangeRate = 1 / exchangeRate;
+    this.price = price;
+    this.CHN = price / exchangeRate; // 港币换算人民币
+    if (profitValuation.stockItem.hkMarketConfig) {
+      this.discount = profitValuation.stockItem.hkMarketConfig.discount ?? 0.8;
+      this.dividendTaxRate =
+        profitValuation.stockItem.hkMarketConfig.dividendTaxRate ?? 1;
+    } else if (profitValuation.stockItem.bMarketConfig) {
+      this.discount = profitValuation.stockItem.bMarketConfig?.discount ?? 1;
+    }
+  }
+
+  static async create(profitValuation: ProfitValuation) {
+    const config =
+      profitValuation.stockItem.hkMarketConfig ||
+      profitValuation.stockItem.bMarketConfig;
+    const [{ price }, { price: exchangeRate }] = await getDynamicData([
+      config!.code,
+      "133.CNHHKD",
+    ]);
+    return new HKMarketValuation(profitValuation, exchangeRate / 100, price);
   }
 }
