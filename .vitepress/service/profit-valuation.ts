@@ -145,12 +145,17 @@ export class ProfitValuation {
 
   // 加其它资产锚点
   anchorWithAssets = computed(() => {
-    return (this.anchor.value + this.otherAssets.value) * this.discount.value;
+    return this.anchor.value + this.otherAssets.value;
   });
 
   // 折现后锚点
   presentAnchor = computed(() => {
-    return this.sumPresentEps.value * this.growth.value.discount;
+    return this.sumPresentEps.value * this.discount.value;
+  });
+
+  // 折现后锚点（加其它资产）
+  presentAnchorWithAssets = computed(() => {
+    return this.presentAnchor.value + this.otherAssets.value;
   });
 
   // 击球区边缘
@@ -509,15 +514,17 @@ export class HKMarketValuation {
   // 当前股价长期平均收益率
   longTermAverageReturnYieldWithPrice = computed(() => {
     const result =
-      this.anchor.value / this.CHN / this.profitValuation.backYearsNum.value;
+      this.profitValuation.anchor.value /
+      this.CHN /
+      this.profitValuation.backYearsNum.value;
     return formatPercent(result * 100);
   });
 
-  // 当前股价长期平均收益率（加其它资产）
-  longTermWithAssets = computed(() => {
+  // 折现后长期平均收益率
+  longTermAverageReturnYieldWithPresent = computed(() => {
     const result =
-      this.anchor.value /
-      (this.CHN - this.profitValuation.otherAssets.value) /
+      this.profitValuation.presentAnchor.value /
+      this.CHN /
       this.profitValuation.backYearsNum.value;
     return formatPercent(result * 100);
   });
@@ -530,10 +537,10 @@ export class HKMarketValuation {
     formatNum(this.anchorWithAssets.value * 1.05, 2)
   );
 
-  // 折现后长期平均收益率
-  longTermAverageReturnYieldWithPresent = computed(() => {
+  // 当前股价长期平均收益率（加其它资产）
+  longTermWithAssets = computed(() => {
     const result =
-      (this.profitValuation.presentAnchor.value * this.discount) /
+      this.profitValuation.anchorWithAssets.value /
       this.CHN /
       this.profitValuation.backYearsNum.value;
     return formatPercent(result * 100);
@@ -542,8 +549,8 @@ export class HKMarketValuation {
   // 折现后长期平均收益率（加其它资产）
   longTermPresentWithAssets = computed(() => {
     const result =
-      (this.profitValuation.presentAnchor.value * this.discount) /
-      (this.CHN - this.profitValuation.otherAssets.value) /
+      this.profitValuation.presentAnchorWithAssets.value /
+      this.CHN /
       this.profitValuation.backYearsNum.value;
     return formatPercent(result * 100);
   });

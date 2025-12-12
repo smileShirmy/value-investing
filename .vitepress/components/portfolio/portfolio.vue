@@ -87,8 +87,8 @@ const basicStocks = ref<BasicItem[]>([
     hkCode: "200596",
     industry: "白酒",
     name: "古井贡B",
-    costBasis: 96.3421, // 96.342
-    sharesHeld: 500,
+    costBasis: 95.1271,
+    sharesHeld: 600,
     dividendTaxRatio: 0,
   },
   {
