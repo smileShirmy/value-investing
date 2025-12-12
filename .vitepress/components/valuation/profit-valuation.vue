@@ -159,7 +159,9 @@ const expectDividendRate = (row: ProfitValuationFutureData) => {
           </tr>
           <tr class="bold-tr">
             <td class="anchor-td">人民币锚点</td>
-            <td class="anchor-td">￥{{ profitValuation.anchor }}</td>
+            <td class="anchor-td">
+              ￥{{ formatNum(profitValuation.anchor.value, 2) }}
+            </td>
             <td colspan="2" class="batting-edge-td">击球区边缘</td>
             <td class="batting-edge-td">￥{{ profitValuation.battingEdge }}</td>
             <td>资产负债率</td>
@@ -324,8 +326,8 @@ const expectDividendRate = (row: ProfitValuationFutureData) => {
           <tr class="align-left">
             <td colspan="7">
               <div>
-                其它资产 = 100%现金 + 75%金融资产 + 50%长期股权投资 -
-                每股少数股东权益
+                其它资产 = (100%现金 + 75%金融资产 + 50%长期股权投资 -
+                每股少数股东权益)×估值折扣
               </div>
               <div>务必根据不同行业、不同公司给予不同折扣</div>
               <div>持续思考迭代，警惕路径依赖</div>

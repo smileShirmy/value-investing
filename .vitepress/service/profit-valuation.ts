@@ -79,6 +79,10 @@ export class ProfitValuation {
 
   calBackYearsNum = computed(() => this.backYearsNum.value - 1);
 
+  discount = computed(() => {
+    return this.growth.value.discount;
+  });
+
   // 折现后 n 年利润
   sumPresentEps = computed(() => {
     const lastYearEps = this.prevYearProfit / this.totalSharesOutstanding;
@@ -122,7 +126,7 @@ export class ProfitValuation {
 
   // 锚点
   anchor = computed(() => {
-    return this.sumEps.value;
+    return this.sumEps.value * this.discount.value;
   });
 
   // 其它资产每股价值
@@ -135,17 +139,18 @@ export class ProfitValuation {
       this.dynamicData.totalSharesOutstanding;
 
     // 减去少数股东权益
-    return other - this.minorityInterestPerShare;
+    const result = other - this.minorityInterestPerShare;
+    return result * this.discount.value;
   });
 
   // 加其它资产锚点
   anchorWithAssets = computed(() => {
-    return this.anchor.value + this.otherAssets.value;
+    return (this.anchor.value + this.otherAssets.value) * this.discount.value;
   });
 
   // 折现后锚点
   presentAnchor = computed(() => {
-    return this.sumPresentEps.value;
+    return this.sumPresentEps.value * this.growth.value.discount;
   });
 
   // 击球区边缘
@@ -171,14 +176,14 @@ export class ProfitValuation {
 
   // 当前股价长期平均收益率
   longTermAverageReturnYieldWithPrice = computed(() => {
-    const result = this.sumEps.value / this.price / this.backYearsNum.value;
+    const result = this.anchor.value / this.price / this.backYearsNum.value;
     return formatPercent(result * 100);
   });
 
   // 当前股价长期平均收益率（加其它资产）
   longTermWithAssets = computed(() => {
     const result =
-      this.sumEps.value /
+      this.anchor.value /
       (this.price - this.otherAssets.value) /
       this.backYearsNum.value;
     return formatPercent(result * 100);
@@ -504,16 +509,14 @@ export class HKMarketValuation {
   // 当前股价长期平均收益率
   longTermAverageReturnYieldWithPrice = computed(() => {
     const result =
-      (this.profitValuation.sumEps.value * this.discount) /
-      this.CHN /
-      this.profitValuation.backYearsNum.value;
+      this.anchor.value / this.CHN / this.profitValuation.backYearsNum.value;
     return formatPercent(result * 100);
   });
 
   // 当前股价长期平均收益率（加其它资产）
   longTermWithAssets = computed(() => {
     const result =
-      (this.profitValuation.sumEps.value * this.discount) /
+      this.anchor.value /
       (this.CHN - this.profitValuation.otherAssets.value) /
       this.profitValuation.backYearsNum.value;
     return formatPercent(result * 100);
@@ -530,7 +533,7 @@ export class HKMarketValuation {
   // 折现后长期平均收益率
   longTermAverageReturnYieldWithPresent = computed(() => {
     const result =
-      (this.profitValuation.sumPresentEps.value * this.discount) /
+      (this.profitValuation.presentAnchor.value * this.discount) /
       this.CHN /
       this.profitValuation.backYearsNum.value;
     return formatPercent(result * 100);
@@ -539,7 +542,7 @@ export class HKMarketValuation {
   // 折现后长期平均收益率（加其它资产）
   longTermPresentWithAssets = computed(() => {
     const result =
-      (this.profitValuation.sumPresentEps.value * this.discount) /
+      (this.profitValuation.presentAnchor.value * this.discount) /
       (this.CHN - this.profitValuation.otherAssets.value) /
       this.profitValuation.backYearsNum.value;
     return formatPercent(result * 100);

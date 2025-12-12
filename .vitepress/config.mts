@@ -50,6 +50,10 @@ export default defineConfig({
               text: "宏观",
               link: "/value-investing/value-investing/macro-level.md",
             },
+            {
+              text: "心得",
+              link: "/value-investing/value-investing/investment-insights.md",
+            },
           ],
         },
         {
@@ -197,6 +201,7 @@ export default defineConfig({
             },
             {
               text: "汽车",
+              link: "/company/car/car.md",
               items: [{ text: "比亚迪", link: "/company/car/byd.md" }],
             },
             {
@@ -282,6 +287,10 @@ export default defineConfig({
             { text: "中国电信", link: "/company/operator/telecom.md" },
             { text: "中国联通", link: "/company/operator/unicom.md" },
           ],
+        },
+        {
+          text: "银行",
+          link: "/company/bank/bank.md",
         },
       ],
     },

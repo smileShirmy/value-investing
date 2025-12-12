@@ -409,20 +409,28 @@ export const stockData: StockItem[] = [
       specialOffer: {
         type: ProfitValuationGrowthType.RATE,
         data: [0],
+        discount: 0.9,
       },
       conservative: {
         type: ProfitValuationGrowthType.RATE,
         data: [0.03],
+        discount: 0.9,
       },
       neutral: {
         type: ProfitValuationGrowthType.RATE,
         data: [0.05],
+        discount: 0.9,
       },
       optimistic: {
         type: ProfitValuationGrowthType.RATE,
         data: [0.08],
+        discount: 0.9,
       },
       backYearsNum: 10,
+    },
+    hkMarketConfig: {
+      code: "06198",
+      dividendTaxRate: 0.8,
     },
   },
   {
