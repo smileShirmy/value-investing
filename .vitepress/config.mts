@@ -129,6 +129,10 @@ export default defineConfig({
           text: "公司治理",
           items: [
             {
+              text: "企业文化",
+              link: "/value-investing/governance/corporate-culture.md",
+            },
+            {
               text: "管理层",
               link: "/value-investing/governance/management.md",
             },
